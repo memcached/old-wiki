@@ -34,7 +34,7 @@ MySQL UDF for memcached http://tangent.org/586/Memcached_Functions_for_MySQL.htm
 
 = Perl =
 
-Cache::Memcached http://search.cpan.org/dist/Cache-Memcached/lib/Cache/Memcached.pm
+Cache::Memcached http://search.cpan.org/dist/Cache-Memcached
 
 http://code.google.com/p/perl-libmemcached (libmemcached wrapper)
 
