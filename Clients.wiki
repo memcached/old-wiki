@@ -36,6 +36,8 @@ MySQL UDF for memcached http://tangent.org/586/Memcached_Functions_for_MySQL.htm
 
 Cache::Memcached http://search.cpan.org/dist/Cache-Memcached/lib/Cache/Memcached.pm
 
+http://code.google.com/p/perl-libmemcached (libmemcached wrapper)
+
 = PHP =
 
 PECL/memcache http://pecl.php.net/package/memcache (pear install pecl/memcache)
@@ -50,6 +52,8 @@ python-memcached ftp://ftp.tummy.com/pub/python-memcached
 
 pooling wrapper class http://jehiah.cz/download/MemcachePool.py.txt for use in multi-threaded applications
 
+http://code.google.com/p/python-libmemcached (libmemcached wrapper)
+
 = Ruby =
 
 memcache-client http://dev.robotcoop.com/Libraries/memcache-client/index.html (pure Ruby)
@@ -58,4 +62,6 @@ Ruby-MemCache http://www.deveiate.org/projects/RMemCache (pure Ruby)
 
 memcached http://blog.evanweaver.com/files/doc/fauna/memcached (compiled, wraps libmemcached)
 
-caffeine http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcache, no license)
+caffeine http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcached, no license)
+
+fauna http://fauna.rubyforge.org/svn/memcached/trunk (another libmemcached wrapper)
