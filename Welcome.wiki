@@ -1,23 +1,32 @@
 #summary Welcome to the memcached wiki
 #labels Featured
 
-The official memcached site is at http://www.danga.com/memcached
+The official memcached site is http://www.danga.com/memcached
 
- * [http://www.socialtext.net/memcached/index.cgi?hackathon Hackathons] - Proposed dates and topics on the proposed hackathons are now posted. Also, find notes from previous hackathons.
- * [http://www.danga.com/memcached/download.bml Downloads]
- * [Clients] - List of Client APIs in various languages
+ * [http://www.danga.com/memcached/download.bml Download] - official memcached server download
+
+ * [Clients] - list of client APIs in various languages
+
  * Ports
   * [http://www.socialtext.net/memcached/index.cgi?windows Windows] - memcached on Windows
 
+ * Protocols
+  * [http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt text protocol] - current memcached networking protocol
+  * [MemcacheBinaryProtocol binary protocol] - forthcoming, optional protocol in development
+
+ * [http://www.socialtext.net/memcached/index.cgi?hackathon Hackathons] - dates and topics on the proposed hackathons. Also, notes from previous hackathons.
+
 == FAQ / How To's / Tutorials ==
 
- * [FAQ]
- * [http://www.socialtext.net/memcached/index.cgi?memcached_client_faq Memcached Client FAQ] - Questions and Answers specific to client authors and cross-compat client behavior.
+ * [FAQ] and [http://www.socialtext.net/memcached/index.cgi?memcached_client_faq Client FAQ]
+
+ * [WhyNotMemcached Why not use Memcached]?
+
  * How To's
    * [HowToSessions Sessions] - How to store sessions in memcached
+
  * Tutorials
    * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
- * [WhyNotMemcached Why not use Memcached]?
 
 == Links ==
 
