@@ -1,4 +1,4 @@
-#summary Welcome to the (new) memcached wiki
+#summary Welcome to the memcached wiki
 #labels Featured
 
 = Welcome to the memcached wiki =
@@ -50,3 +50,5 @@ The official memcached site is at http://www.danga.com/memcached
 == Wiki ==
 
 Please feel free to add or modify pages -- even this one -- as you see fit. That's the idea of a wiki.  (Hmmm, google code wiki seems to want a google id/login and project membership first - apologies until we figure it out.  Please try the mailing list!)
+
+For history: here's the [http://www.socialtext.net/memcached/index.cgi?memcached old memcached wiki] (pre-september 2008)
