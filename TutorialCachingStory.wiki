@@ -1,4 +1,4 @@
-#summary Tutorial - This is a story of Caching
+#summary This is a story of Caching
 
 Two plucky adventurers, Programmer and Sysadmin, set out on a journey. Together they make websites. Websites with webservers and databases. Users from all over the Internet talk to the webservers and ask them to make pages for them. The webservers ask the databases for junk they need to make the pages. Programmer codes, Sysadmin adds webservers and database servers.
 
