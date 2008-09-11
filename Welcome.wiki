@@ -1,26 +1,22 @@
 #summary Welcome to the (new) memcached wiki
+#labels Featured
 
 = Welcome to the memcached wiki =
 
 The official memcached site is at http://www.danga.com/memcached
 
- * [Hackathons] - Proposed dates and topics on the proposed hackathons are now posted. Also, find notes from previous hackathons.
+ * [http://www.socialtext.net/memcached/index.cgi?hackathon Hackathons] - Proposed dates and topics on the proposed hackathons are now posted. Also, find notes from previous hackathons.
  * [http://www.danga.com/memcached/download.bml Downloads]
- * [Clients] - List of Client APIs in various languages
+ * [http://www.socialtext.net/memcached/index.cgi?clients Clients] - List of Client APIs in various languages
  * Ports
-  * [PortWindows Windows] - memcached on Windows
-
-== Proposals ==
-
- * [ProposalTagging Tagging] - Collections and thoughts from the ML about how to do tags in memcached
- * [ProposalCrossPlatformSerialization Cross Platform Serialisation Support] - Collections and thoughts from the ML about how to provide a mechanism for cross-platform serialisation support
+  * [http://www.socialtext.net/memcached/index.cgi?windows Windows] - memcached on Windows
 
 == FAQ / How To's / Tutorials ==
 
  * [FAQ] - We're starting a FAQ here
- * [FAQClient Memcached Client FAQ] - Questions and Answers specific to client authors and cross-compat client behavior.
- * [HowToSessions Sessions] - How to store sessions in memcached
- * [TutorialCaching This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
+ * [http://www.socialtext.net/memcached/index.cgi?memcached_client_faq Memcached Client FAQ] - Questions and Answers specific to client authors and cross-compat client behavior.
+ * [http://www.socialtext.net/memcached/index.cgi?sessions Sessions] - How to store sessions in memcached
+ * [http://www.socialtext.net/memcached/index.cgi?this_is_a_story_of_cachingThis is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
 
 == Links ==
 
@@ -28,8 +24,6 @@ The official memcached site is at http://www.danga.com/memcached
  * Wikipedia Entry - http://en.wikipedia.org/wiki/Memcached
  * PECL Installation - http://pecl.php.net/package/memcache
  * Memcachedb http://code.google.com/p/memcachedb - A distributed key-value storage system designed for persistent, based on memcached, tugela and bdb.
-
-----
 
 == Articles ==
 
@@ -47,6 +41,11 @@ The official memcached site is at http://www.danga.com/memcached
 == IRC ==
 
  * irc.freenode.net #memcached
+
+== Proposals ==
+
+ * [http://www.socialtext.net/memcached/index.cgi?tagsupport Tagging] - Collections and thoughts from the ML about how to do tags in memcached
+ * [http://www.socialtext.net/memcached/index.cgi?cross_platform_serialisation_support Cross Platform Serialisation Support] - Collections and thoughts from the ML about how to provide a mechanism for cross-platform serialisation support
 
 == Wiki ==
 
