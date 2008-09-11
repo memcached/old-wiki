@@ -4,7 +4,7 @@ Two plucky adventurers, Programmer and Sysadmin, set out on a journey. Together 
 
 One day the Sysadmin realizes that their database is sick! It's spewing bile and red stuff all over! Sysadmin declares it has a fever, a load average of 20! Programmer asks Sysadmin, "well, what can we do?" Sysadmin says, "I heard about this great thing called memcached. It really helped livejournal!" "Okay, let's try it!" says the Programmer.
 
-Our plucky Sysadmin eyes his webservers, of which he has six. He decides to use three of them to run the 'memcached' server. Sysadmin adds a gigabyte of ram to each webserver, and starts up memcached with a limit of 1 gigabyte each. So he has three memcached instances, each can hold up to 1 gigabyte of data. So the Programmer and the Sysadmin step back and behold their glorious memcache!
+Our plucky Sysadmin eyes his webservers, of which he has six. He decides to use three of them to run the 'memcached' server. Sysadmin adds a gigabyte of ram to each webserver, and starts up memcached with a limit of 1 gigabyte each. So he has three memcached instances, each can hold up to 1 gigabyte of data. So the Programmer and the Sysadmin step back and behold their glorious memcached!
 
 "So now what?" they say, "it's not DOING anything!" The memcacheds aren't talking to anything and they certainly don't have any data. And NOW their database has a load of 25!
 
