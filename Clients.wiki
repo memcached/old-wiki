@@ -52,7 +52,7 @@ fauna http://blog.evanweaver.com/files/doc/fauna/memcached (compiled, wraps libm
 
 caffeine http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcached, no license)
 
-= .NET =
+= Windows / .NET =
 
 .Net memcached client https://sourceforge.net/projects/memcacheddotnet
 
@@ -60,6 +60,8 @@ caffeine http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcac
  * http://www.codeplex.com/memcachedproviders
 
 BeIT Memcached Client (optimized C# 2.0) http://code.google.com/p/beitmemcached
+
+http://jehiah.cz/projects/memcached-win32
 
 = MySQL =
 
