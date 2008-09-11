@@ -1,0 +1,396 @@
+#summary frequently asked questions
+
+= General Questions =
+
+== What is memcached? ==
+
+memcached is a high-performance, distributed memory object caching system, generic in nature, but intended for use in speeding up dynamic web applications by alleviating database load.
+
+[http://www.danga.com/ Danga Interactive] developed memcached to enhance the speed of [http://www.livejournal.com LiveJournal.com], a site which was already doing 20 million+ dynamic page views per day for 1 million users with a bunch of webservers and a bunch of database servers. memcached dropped the database load to almost nothing, yielding faster page load times for users, better resource utilization, and faster access to the databases on a memcache miss.
+
+== Where can I get memcached? == 
+
+memcached can be downloaded from its official [http://www.danga.com/memcached/download.bml download page] -- http://www.danga.com/memcached/download.bml
+
+== How can I install memcached? == 
+
+For a tutorial, go to: http://blog.ajohnstone.com/archives/installing-memcached
+
+== Where can I run memcached? == 
+
+Anywhere you have spare ram! Memcached runs on linux, BSD, windows. It will usually use very little CPU, so fire it up wherever there's free ram.
+
+== Why might I want to run memcached? == 
+
+If you have a high-traffic site that is dynamically generated with a high database load that contains mostly read threads then memcached can help lighten the load on your database.
+
+== How do I access memcached? == 
+
+Typically, you use a client library from your application to access one or more memcached servers. See http://www.socialtext.net/memcached/index.cgi?clients or http://danga.com/memcached/apis.bml for a list of available libraries, which are available for Perl, C, C#, PHP, Python, Java, Ruby, and Postgresql Stored Procedures and Triggers. You can also write your own client library using the memcached protocol documentation found here: http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt
+
+== How can I use memcached as a database? == 
+
+If you want to use memcached as a _data store_ instead of a cache, you should use a database instead. MySQL Cluster has some of the same properties as memcached (not the ease of install though!) and can be setup as a reliable HA datastore.
+
+== Can I iterate the items of the memcached server? == 
+
+No. memcached doesn't support that and it's not a planned feature. It would be a relatively slow and blocking operation (compared to everything else memcached is doing). See above, it's a cache, not a database. [http://meta.wikimedia.org/wiki/Tugela_Cache Tugela] and [http://memcachedb.org memcachedb]are memcached derived systems that are slower but slightly more like a database.
+
+Of course it's all software, so ultimately in a way the answer is "yes", but for anything but a development or test server it will be slow and _block the server_ while processing, so for 99.9% of real deployments the answer 
+is no.
+
+= Cluster Architecture Questions =
+
+== How does memcached work? == 
+
+Memcached's magic lies in its two-stage hash approach. It behaves as though it were a giant hash table, looking up key = value pairs. Give it a key, and set or get some arbitrary data.
+
+When doing a memcached lookup, first the client hashes the key against the *whole* list of servers. Once it has chosen a server, the client then sends its request, and the *server* does an internal hash key lookup for the actual item data.
+
+For example, if we have *clients* 1, 2, 3, and *servers* A, B, C:
+
+Client 1 wants to *set* key "foo" with value "barbaz". Client 1 takes the full list of servers (A, B, C), hashes the key against them, then lets say ends up picking server B. Client 1 then directly connects to server B, and sets key "foo" with value "barbaz".
+Next, client 2 wants to *get* key "foo". Client 2 runs the same client library as client 1, and has the same server list (A, B, C). It is able to use the *same* hashing process to figure out key "foo" is on server B. It then directly requests key "foo" and gets back "barbaz".
+
+Different client implementations store data into memcached differently (perl Storable, php serialize, java hibernate, JSON, etc). Some clients also implement the hashing algorithm differently. The server is always the same however.
+
+Finally, memcached itself is implemented as a non-blocking event-based server. This is an architecture used to solve the [http://www.kegel.com/c10k.html C10K problem] and scale like crazy.
+
+== What's the big benefit for all this? == 
+
+Carefully read the above entry (How does memcached work?). The big benefit, when dealing with giant systems, is memcached's ability to massively scale out. Since the *client* does one layer of hashing, it becomes entirely trivial to add dozens of nodes to the cluster. There's no interconnect to overload, or multicast protocol to implode. It Just Works. Run out of memory? Add a few more nodes. Run out of CPU? Add a few more nodes. Have some spare RAM here and there? Add nodes!
+
+It's incredibly easy to build on memcached's basic principles to implement many different kinds of caching architectures. Hopefully detailed elsewhere in the FAQ.
+
+== What is memcached's cache? == 
+
+The cache structure is an LRU (Least Recently Used), plus expiration timeouts. When you store items into memcached, you may state how long it should be valid in the cache. Which is forever, or some time in the future. If the server is out of memory, expired slabs are replaced first, then the oldest unused slabs go next.
+
+== How is memcached redundant? == 
+
+It's not! Surprise! Memcached is a *caching layer* for your application. It is not designed to have any data redundancy. If a node loses all of its data, you should still be able to fetch it all again from the source. Especially be careful that your application *can* survive losing memcached instances. Don't write awful queries and expect memcached to be a fix-all! If you're worried about having too much of a spike in database usage during failure, you have some options. You can add more nodes (lessen impact of losing one), hotspares (take over IP address when down), etc.
+
+== How does memcached handle failover? == 
+
+It doesn't! :) There is no central authority to do anything at all in the case of a memcached node failure. The behavior is entirely up to the user. There are many options on what you might want to do in the case of a node failure. You can:
+
+  * Ignore it! Have tons of nodes, deal with the impact of losing one until it can be fixed or replaced.
+  * Remove dead nodes from your list. Be very careful! With default clients *adding or removing* servers will invalidate all of your cache! Since the list of servers to hash against has changed, most of your keys will likely hash to different servers. It's like restarting all of your nodes at the same time.
+  * Start up a hotspare with the same IP address as the dead node. Prevents hashing chaos.
+  * Use consistent hashing algorithms to add and remove servers to the mix. See consistent hashing information elsewhere. These clients are (as of writing) pretty young still.
+
+== How can you dump data from or load data into memcached? == 
+
+You don't! Memcached is what we call a non blocking server. Anything that could cause the server to pause and not respond to requests momentarily must be thought through very carefully. Loading your cache from a dump is often really not what you want anyway! Consider if *any* of your data changes between you dumping and then loading the cache. You now have out of date data to deal with. How do you also manage items that were due to expire from cache before the dump was loaded?
+
+It's not as useful as you might think. There *is* a case where this can be useful. If you have huge amounts of data that *never* changes and you like your caches toasty warm, loading your cache from dump could help. While this is not the typical case at all, it happens often enough that such a feature might appear in the future.
+
+Steven Grimm, as always, gives another good example on the mailing list here:
+http://lists.danga.com/pipermail/memcached/2007-July/004802.html
+
+== How does memcached's authentication mechanisms work? == 
+
+It doesn't! Memcached is the soft, doughy underbelly of your application. Part of what makes the clients and server lightweight is the complete lack of authentication. New connections are fast, and server configuration is nonexistent.
+
+If you wish to restrict access, you may use a firewall, or have memcached listen via unix domain sockets.
+
+== What are memcached threads? Why would I use them? == 
+
+Threads rule! Thanks to Steven Grimm and Facebook, memcached 1.2 and higher has a threaded operation mode. I won't get into great detail here since I might get it wrong. The threaded system allows memcached to utilize more than a single CPU and share the cache between all of them. It does this by having a very simple locking mechanism when certain values, items, etc need to be updated. This helps make multi gets more efficient, versus running multiple nodes on the same physical server to achieve performance.
+
+If you don't have a heavily loaded setup, you probably don't need to configure threads. If you're running a gigantic website with gigantic hardware, you might see benefit here.
+
+== What are some limits in memcached I might hit? == 
+
+The simple limits you will probably see with memcache are the key and item size limits. Keys are restricted to 250 characters. Stored data cannot exceed 1 megabyte in size, since that is the largest typical slab size.
+
+== Can I use different size caches across servers and will memcached use the servers with more memory efficiently? == 
+
+Memcache's hashing algorithm that determines which server a key is cached on does not take into account memory sizes across servers. But a workaround may be to run multiple memcached instances on your server with more memory with each instance using the same size cache as all your other servers.
+
+== What is the binary protocol? Should I care? == 
+
+The best information is in this thread on the mailing list: http://lists.danga.com/pipermail/memcached/2007-July/004636.html
+As of writing it has not been solidified yet, and no finished clients are published.
+
+The binary protocol an attempt to make a more efficient, reliable protocol to help speed up CPU time used for the client/server protocol. According to Facebook's tests, parsing the ASCII protocol is one of the largest consumers of CPU time in memcached. So why not improve on it? :)
+
+== How does memcached's memory allocation work? Why not use malloc/free!? Why the hell does it use slabs!? == 
+
+Actually, it's a compile time option. The _default_ is to use the internal slab allocator. You really really want to use the built-in slab allocator. At first memcached did just use malloc/free for everything. However this does not play very well with OS memory managers. You get fragmentation, and your OS ends up spending more time trying to find contiguous blocks of memory to feed malloc() than it does running the memcached process. If you disagree, of course you're free to try malloc! just don't complain on the lists ;)
+
+The slab allocator was built to work around this. Memory is allocated in chunks internally and constantly reused. Since memory is broken into different size slabs, you do waste memory if your items do not fit perfectly into the slab the server chooses to put it in. This has enjoyed considerable efficiency improvements by Steven Grimm.
+
+Some older posts about the slab changes (power of n vs power of 2), and some tradeoffs are on the mailing list:
+http://lists.danga.com/pipermail/memcached/2006-May/002163.html
+http://lists.danga.com/pipermail/memcached/2007-March/003753.html
+
+And if you'd like to attempt to use malloc/free and see how it works, you may define 'USE_SYSTEM_MALLOC' in build process. It might not be tested very well, so getting developer support for it is unlikely.
+
+= Performance Questions =
+
+== Memcached is not faster than my database. Why? == 
+
+In a one to one comparison, memcached may not be faster than your SQL queries. However, this is not its goal. Memached's goal is scalability. As connections and requests increase, memcached will perform better than most database only solutions. Please test your code under high load with simultaneous connections and requests before deciding memcached is not right for you.
+
+= Client Libraries =
+
+== What client libraries are available for memcached? == 
+
+See *How do I access memcached* above.
+
+== Can I access the same data in memcached with different client libraries? == 
+
+Technically, yes, but the two issues you may run into are as follows:
+
+  # Different libraries will likely serialize data differently, for example, the Perl Cache::Memcached will use Storable to serialize complex structures (like hash references, objects, etc). This format will most likely not be readable by other language's client API. If you are storing complex data and need it to be readable by multiple APIs, you may consider storing simple strings in a format that can easily be parsed by external libraries, such as [http://http://www.json.org JSON] or XML.
+  # Similarly, your data may be compressed from one client but not from another.
+  # Different libraries may hash keys differently. If you are connecting to multiple servers, your keys are likely hashed and then stored according to the algorithm implemented by that language's API. Its possible that different client libraries use a different scheme for making this determination, so keys going to server A from Perl might end up on server B from Python, etc. The Perl API also allows you to weight servers differently, which could also be a factor.
+
+== What is a "consistent hashing" client? == 
+
+Consistent hashing algorithms are a new approach to managing the first-layer hashing system for memcached clients.
+A good post (and library) explaining its usage has been "posted by http://www.last.fm/user/RJ/journal/2007/04/10/392555
+
+= Managing a memcached cluster =
+
+= Memcached Options =
+
+If you want to learn about memcached's options, just run memcached -h. It will give you a brief output of options. You can fiddle with the options to easily learn how they work.
+
+There is also a memcached(1) manpage which (should) come with the memcached distrobution.
+
+= Hashing/Key Distribution =
+
+= Item Expiration =
+
+== When do expired cached items get deleted from the cache? == 
+
+memcached uses a lazy expiration, which means it uses no extra cpu
+expiring items. When an item is requested (a get request) it checks
+the expiration time to see if the item is still valid before returning
+it to the client.
+
+Similarly when adding a new item to the cache, if the cache is full,
+it will look at for expired items to replace before replacing the
+least used items in the cache.
+
+= Namespaces =
+
+memcached does not support namespaces. However, there are some options to simulate them.
+
+== Simulating Namespaces with key prefixes == 
+
+If you simply want to avoid key colision between different types of data, simply prefix your key with a useful string. For example: "user_12345", "article_76890".
+
+== Deleting by Namespace == 
+
+While memcached does not support any type of wildcard deleting or deletion by namespace (since there are not namespaces), there are some tricks that can be used to simulate this. They do require extra trips to the memcached servers however.
+
+Example, in PHP, for using a namespace called foo:
+
+{{{
+$ns_key = $memcache->get("foo_namespace_key");
+
+// if not set, initialize it
+if($ns_key===false) $memcache->set("foo_namespace_key", rand(1, 10000));
+
+$my_key = "foo_".$ns_key."_12345";
+
+//To clear the namespace do:
+$memcache->increment("foo_namespace_key");
+}}}
+
+= Application Design =
+
+== What are some things I should consider with regard to caching when I design my application(s)? == 
+
+= Generic Design Approaches =
+
+(namespaces/session/etc should move or be linked under here instead)
+
+== Simple query result caching == 
+
+Query caching is the storage of an entire result set from a given query. It is best used for queries that are called often but the SQL does not change, such as loading content by a specific set of filters ( e.g., get topics for a specific forum, get products for a category)
+
+{{{
+$key = md5('SELECT * FROM rest_of_sql_statement_goes_here');
+
+if ($memcache->get($key)) {
+ return $memcache->get($key);
+}
+else {
+ // Run the query and transform the result data into your final dataset form
+ $result = $query_results_mangled_into_most_likely_an_array
+ $memcache->set($key, $result, TRUE, 86400); // Store the result of the query for a day
+ return $result;
+}
+}}}
+
+Remember, if the result of this query changes, the results will not show up for a day. This approach isn't always useful, but gets the job done good n' quick.
+
+== Simple row-based query result caching == 
+
+Row-based caching is checking a list of known data identifiers for cached data. Those rows that have data already stored are retrieved. Rows that are not cached are pulled from the database and stored, each with their own key, in memcache and then added to the final dataset, which is returned. Over time, most data points will be cached so more and more queries will pull all their rows from memcache instead of from the database. If the data is relatively static, a longer caching time can be used. This pattern is extremely useful in searches where datasets will vary based on input parameters but will overlap from query to query and the datasets are large or are pulled from multiple tables.
+
+For example, if you have a dataset of users A, B, C, D, E
+
+You view a page with information on users A, B, E. First, ou do a memcached get with three independent keys, one for each user. Say they all come up miss. Then you would do an SQL query to fetch row info for all three users, then store into memcached.
+
+Now, you view another page with users C, D, E on it. When you do that memcached get again, you miss on C, D, and *hit* on E. Select rows for C, D, set into memcached.
+
+At this point, for the next few minutes maybe, any page referring to A, B, C, D, or E, in any mix or order, will be completely cached.
+
+== Action flood control == 
+
+Flood control is the process of throttling user activity, usually for load management. We first try to add a memcache key that uniquely identifies a user and times out after a given interval. If that succeeds, there is no identical key, and thus the user should be allowed to do the action. If the add fails, the user is still in the flood control interval, so shouldn't be allowed to continue their action. If all else fails and the key cannot be added or retrieved, something's wonky with memcache and it's up to you to decide whether to allow action or not (suggested yes to prevent long term memcache issues from stopping all actions).
+
+So, if user A makes a comment in thread 7, and you don't want them to be able to comment again for another 60 seconds:
+'add' a key (eg) 'noflood:A:7' into memcached. If you get a SUCCESS, the user may post. If you get a NOT_STORED (but not an error!), the key still exists and the user should be warned.
+
+Note you may also try fetching a key and doing incr/decr on it if a user should only be allowed to perform an action a certain number of times before being throttled.
+
+== Cache things other than SQL data! == 
+
+When first plugging memcached into everything you can get your hands on, it may not be obvious that you can or should cache anything *other* than SQL resultsets. You can, and you should!
+
+If you were building a profile page for display. You might fetch a user's bio section (name, birthdate, hometown, blurb). Then you might format the blurb to replace custom XML tags with HTML, or do some nasty regexes. Instead of caching 'name, birthdate, hometown, blurb' independently, or as one item, cache the renderred output chunk! Then you may simply fetch the pre-procsesed HTML chunk ready for inclusion in the rest of the page, saving precious CPU cycles.
+
+== Use a cache hierarchy == 
+
+In most cases you have the ability to use a localized cache or memcached. We know to use memcached so we may enjoy a massive volume of cached data in a high speed farm, but sometimes it makes sense to go back to your roots a little and maintain multiple levels of cache.
+
+Peter Zaitsev has written about the speed comparisons of PHP's APC over localhost, vs memcached over localhost, and the benefits of using both:
+  * http://www.mysqlperformanceblog.com/2006/08/09/cache-performance-comparison/
+  * http://www.mysqlperformanceblog.com/2006/09/27/apc-or-memcached/
+
+Oftne you'll have a very small amount of data (product categories, connection information, server status variables, application config variables), which are accessed on nearly every page load. It makes a lot of sense to cache these as close to the process as possible (or even inside the process, if you can). It can help lower page render time, and increase reliability in case of memcached node failures.
+
+== Update memcache as your data updates == 
+
+One of the most important improvements you can make for ensuring your cache is a seamless integration with your application, is to actually update the cache at the same time as updating the database.
+
+So, user A edits his profile. While saving the profile to the database, you may either set the new profile data into memcached (preferred), or simply send a delete to remove old profile data. If you update the data immediate, you may prevent the database from ever having to do a read on that data. When the user habitually reloads their profile to see the latest changes, it will be pulled directly from cache, and they will have the *latest* information available.
+
+This is fantastic, since no user wants to see outdated data, do they?
+
+== Race conditions and stale data == 
+
+One thing to keep in mind as you design your application to cache data, is how to deal with race conditions and occasional stale data.
+
+Say you cache the latest five comments for display on a sidebar in your application. You decide that the data only needs to be refreshed once per minute. However, you neglect to remember that this sidebar display is renderred 50 times per second! Thus, once 60 seconds rolls around and the cache expires, suddenly 10+ processes are running the same SQL query to repopulate that cache. Every time the cache expires, a sudden burst of SQL traffic will result.
+
+Worse yet, you have multiple processes updating the same data, and the wrong one ends up dating the cache. Then you have stale, outdated data floating about.
+
+One should be mindful about possible issues in populating or repopulating our cache. Remember that the process of checking memcached, fetching SQL, and storing into memcached, is *not* atomic at all!
+
+== How to prevent clobbering updates, stampeding requests == 
+
+So how does one prevent clobbering your own updates or stampeding during a cache miss? The easiest answer is to avoid the problem. Don't set caches to expire, and update them via cron, or as data is updated. This does not eliminate the possibility of a stampede, but removes it from becoming the norm.
+
+Some great ideas from the mailing list also underline another approach:
+
+If you want to avoid a stampede if key A expires for its common case (a timeout, for example). Since this is caused by a race condition between the cache miss, and the amount of time it takes to re-fetch and update the cache, you can try shortening the window.
+
+First, set the cache item expire time way out in the future. Then, you embed the "real" timeout serialized with the value. For example you would set the item to timeout in 24 hours, but the embedded timeout might be five minutes in the future.
+
+Then, when you get from the cache and examine the timeout and find it expired, immediately edit the embedded timeout to a time in the future and re-store the data as is. Finally, fetch from the DB and update the cache with the latest value. This does not eliminate, but drastically reduces the amount of time where a stampede can occur.
+
+A decent python example can be found here: http://www.djangosnippets.org/snippets/155/
+
+If you have a lot of data excelling at causing this problem, you might also consider using MySQL Cluster for it, or a tiered caching approach
+
+Another (pretty cool!) idea is to use Gearman, as noted on the mailing list: http://lists.danga.com/pipermail/memcached/2007-July/004858.html
+
+== Emulating locking with the add command == 
+
+If you really need a lock around a key, you can emulate it via the 'add' command. This is not so useful on cache misses, but more useful if you are using memcached as the canonical store for some piece of data (for example, some metadata about the app server pool, perhaps).
+
+Say you want to update key "A".
+
+  * Do an 'add' on key "lock:A" with an expire time of several seconds (long enough to finish your calculations and make your update, but not so long that it won't get released quickly if the locking process dies).
+  * If the 'add' succeeded, you have the lock:
+  ** Go ahead and 'get' the current contents of "A".
+  ** Modify the contents in process.
+  ** 'Set' the new contents back to "A".
+  ** Now 'delete' the "lock:A" key, or just let it expire if you don't expect another update for a while.
+  * If the 'add' failed, someone else has the lock. Do whatever is best suited for the application. Return older data, sleep and try again, etc.
+
+This is analogous to using MySQL's GET_LOCK with a timeout value set to 0. There's no way to emulate GET_LOCK()'s timeout operations via a mutex within memcached. As of writing no one's gotten annoyed enough to try adding such a feature.
+
+== Pre warm your cache == 
+
+If you have a very highly used site, and you're bringing a feature back from the dead, or launching a brand new feature, you might end up having issues with an empty cache. Cache comes up empty, herd of humans click, and your database gets overwhelmed while trying to fill the cache. In order to get around this you may try "warming" your cache with any method available.
+
+You could write a script to walk the website and cache common pages. You could write a commandline tool which runs through your list of users online at that moment, filling caches appropriately. Either way it could potentially help. You may also try to ensure you don't have empty caches during peak hours :)
+
+== Storing lists of data == 
+
+Storing lists of data into memcached can mean either storing a single item with a serialized array, or trying to manipulate a huge "collection" of data by adding, removing items without operating on the whole set. Both should be possible.
+
+One thing to keep in mind is memcached's 1 megabyte limit on item size, so storing the whole collection (ids, data) into memcached might not be the best idea.
+
+Steven Grimm explains a better approach on the mailing list: http://lists.danga.com/pipermail/memcached/2007-July/004578.html
+
+Chris Hondl and Paul Stacey detail alternative approaches to the same ideal: http://lists.danga.com/pipermail/memcached/2007-July/004581.html
+
+A combination of both would make for very scalable lists. IDs between a range are stored in separate keys, and data is strewn about using individual keys.
+
+== Batch your requests with get_multi == 
+
+If you just get started with memcached, you might end up with code which looks similar to this:
+
+{{{
+greet = get("Foo")
+person = get("Bar")
+place = get("Baz")
+}}}
+
+As you scale, you might notice this might come back to this while trying to reduce render time. You'll notice that each of these get() calls will do a full round-trip to memcached:
+
+{{{
+get("Foo") - client - server - client
+get("Bar") - client - server - client
+etc.
+}}}
+
+Most clients support the ability to do multi-key gets, pipelining requests into single memcached instances. Others yet allow for parallel fetches. So if your 3 keys would resolve to 3 different memcached's, the requests all happen in parallel and you end up waiting for the slowest one to return instead of all three independently. If you have many keys to fetch, this can mean a _huge_ difference in speed!
+
+More good techniques on how to coalesce and parallelize requests are on the mailinglist, with a recent one from Brad here: http://lists.danga.com/pipermail/memcached/2007-July/004528.html
+
+== Creating good keys == 
+
+It's a good idea to use sprintf (), or a similar function, when creating keys. Otherwise, it's easy for null values and boolean values to slip into your keys and these may not work as you expect. e.g. memKey = sprintf ( 'cat:%u', categoryId );
+
+WIP: Mulled this over, need someone with better examples to fill this in. Short keys tend to be good, using prefixes along with an MD5 or short SHA1 can be good, namespace prep is good. What else?
+
+== *Using Memcached as a simple message queue* == 
+
+Perhaps you want to use memcached as a cheap queue or write-back cache. One technique is using incr/decr to generate unique keys for queue item management, as described here: http://broddlit.wordpress.com/ 2008/04/09/memcached-as-simple-message-queue/
+
+Be aware of hitting memory limits, however, and cache expiry.
+
+= Troubleshooting common problems =
+
+== Sporadic disconnections == 
+
+If you are seeing occasional dropped or refused connections to your memcached servers, there are a lot of potential explanations. Often it'll be one of:
+
+  * Client is too old. Older versions of the php pecl/memcache had an extra tough time staying connected.
+  * Sending invalid keys to the server. If spaces/newlines/etc leak through your client it will probably lose sync with the server.
+  * A stateful firewall in the middle is running out of resources. See http://lists.danga.com/pipermail/memcached/2006-November/003112.html for an example fix for iptables.
+  * Running out of TIME_WAIT buckets, or local tcp/ip ports. See documentation for your particular OS.
+
+== Too many connections to memcached == 
+
+Constantly maxing out connections to a particular (or all) memcached server(s)? First, keep in mind that it's okay to have as many connections as you want connected to memcached. Increase the max size to be what you need. On the other hand, if you have 4,000 connections and three servers, something's out of whack.
+
+The number of ESTABLISHED connections to your memcached instances can be at least _one_ per webserver (apache) slot you have. If you have an application running under apache2, and your set !MaxClients to 10, you can have up to 10 memcached connections under normal circumstances. On the other hand, if you choose to run apache in threaded mode and set !MaxClients to 1024, obviously your count will be much higher. The world will also question just how many CPU's you have in there. The connection rate also depends on your preferred client a little. Some perform connection pooling, which will alter the amount of connections per server.
+
+Remember nothing is stopping you from accidentally connecting many times. If you instantiate a memcached client object as part of the object you're trying to store, don't be surprised when 1,000 objects in one request create 1,000 parallel connections. Look carefully for bugs like this before hopping on the list.
+
+= Ideas for FAQ entries =
+
+  * creating keys for caching queries
+  * getting stale entries when a memcached server flaps in and out of the cluster
+  * What platforms do you know that memcached was used on besides Linux (Solaris, AIX, HPUX, SCO)?
