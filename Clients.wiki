@@ -28,9 +28,9 @@ http://code.google.com/p/perl-libmemcached (libmemcached wrapper)
 
 = Java =
 
-spymemcached http://code.google.com/p/spymemcached
+spymemcached http://code.google.com/p/spymemcached An improved Java API maintained by Dustin Sallings. Aggressively optimised, ability to run async, supports binary protocol, etc. See site for details: 
 
-Java memcached client http://www.whalin.com/memcached
+Java memcached client http://www.whalin.com/memcached A Java API is maintained by Greg Whalin from Meetup.com. 
 
 = Python =
 
