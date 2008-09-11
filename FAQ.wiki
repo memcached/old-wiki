@@ -111,10 +111,11 @@ Memcache's hashing algorithm that determines which server a key is cached on doe
 
 == What is the binary protocol? Should I care? == 
 
-The best information is in this thread on the mailing list: http://lists.danga.com/pipermail/memcached/2007-July/004636.html
-As of writing it has not been solidified yet, and no finished clients are published.
+The best information is in the [MemcacheBinaryProtocol binary protocol spec].
 
 The binary protocol an attempt to make a more efficient, reliable protocol to help speed up CPU time used for the client/server protocol. According to Facebook's tests, parsing the ASCII protocol is one of the largest consumers of CPU time in memcached. So why not improve on it? :)
+
+Older information in this thread on the mailing list: http://lists.danga.com/pipermail/memcached/2007-July/004636.html
 
 == How does memcached's memory allocation work? Why not use malloc/free!? Why the hell does it use slabs!? == 
 
@@ -285,6 +286,8 @@ Worse yet, you have multiple processes updating the same data, and the wrong one
 
 One should be mindful about possible issues in populating or repopulating our cache. Remember that the process of checking memcached, fetching SQL, and storing into memcached, is *not* atomic at all!
 
+Another solution on the old mailing list: [http://lists.danga.com/pipermail/memcached/2007-July/004807.html probabilistic timeout] (2007)
+
 == How to prevent clobbering updates, stampeding requests == 
 
 So how does one prevent clobbering your own updates or stampeding during a cache miss? The easiest answer is to avoid the problem. Don't set caches to expire, and update them via cron, or as data is updated. This does not eliminate the possibility of a stampede, but removes it from becoming the norm.
@@ -318,6 +321,8 @@ Say you want to update key "A".
   * If the 'add' failed, someone else has the lock. Do whatever is best suited for the application. Return older data, sleep and try again, etc.
 
 This is analogous to using MySQL's GET_LOCK with a timeout value set to 0. There's no way to emulate GET_LOCK()'s timeout operations via a mutex within memcached. As of writing no one's gotten annoyed enough to try adding such a feature.
+
+Here's an attempt to build [http://www.grepmymind.com/2008/01/11/memcached-php-semaphore-cache-expiration-handling/ semaphore locks] in memcached.
 
 == Pre warm your cache == 
 
