@@ -49,7 +49,8 @@ The official memcached site is http://www.danga.com/memcached
 == Mailing Lists ==
 
  * http://groups.google.com/group/memcached
-  * mailing list for developers and users
+  * official mailing list for developers and users, since July 2008
+ * [http://lists.danga.com/pipermail/memcached mailing list archives] with lots of classic, good advice, pre-July 2008
 
 == IRC ==
 
