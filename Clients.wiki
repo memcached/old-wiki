@@ -68,7 +68,7 @@ http://jehiah.cz/projects/memcached-win32
 
 MySQL user data functions for memcached http://tangent.org/586/Memcached_Functions_for_MySQL.html
 
-MySQL Engine http://tangent.org/index.pl?node_id=507 (MySQL plugin to make MySQL store data in memcached)
+MySQL Engine http://tangent.org/index.pl?node_id=507 (MySQL plugin to make MySQL store data in memcached. The memcache_engine allows memcache to work as a storage engine to MySQL. This means that you can SELECT/UPDATE/INSERTE/DELETE from it as though it is a table in MySQL.)
 
 = PostgreSQL =
 
