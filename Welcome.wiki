@@ -33,9 +33,11 @@ The official memcached site is at http://www.danga.com/memcached
  * [http://linuxjournal.com/article/7451 LinuxJournal article by Brad Fitzpatrick] (2004) 
  * [http://www.slideshare.net/vishnu/livejournals-backend-a-history-of-scaling LiveJournal's Backend A History of Scaling]
  * [http://highscalability.com/bunch-great-strategies-using-memcached-and-mysql-better-together fotolog's memcached usage and patterns] (2008)
+   * [http://mashraqi.com/2008/07/memcached-for-mysql-advanced-use-cases_09.html Memcached for Mysql Advanced Use Cases] by Farhan Mashraqi of Fotolog, 2008
  * [http://www.mysqlperformanceblog.com/2006/09/27/apc-or-memcached APC or Memcached Article - MySQL Performance Blog] (2006)
  * [http://www.slideshare.net/acme/scaling-with-memcached Scaling with memcached] (slides) 
- * [http://www.bytebot.net/blog/archives/2008/04/14/memcached-and-mysql-tutorial Memcached and Mysql tutorial]
+ * [http://www.bytebot.net/blog/archives/2008/04/14/memcached-and-mysql-tutorial Memcached and Mysql tutorial] (2008)
+   * [http://download.tangent.org/talks/Memcached%20Study.pdf Memcached Study slides] by Brian Aker, 2008
 
 == Mailing Lists ==
 
