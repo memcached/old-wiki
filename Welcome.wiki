@@ -4,10 +4,9 @@
 The official memcached site is http://www.danga.com/memcached
 
  * [http://www.danga.com/memcached/download.bml Download] - official memcached server 
-  * source: [http://code.sixapart.com/svn/memcached svn] 
+  * source code: [http://code.sixapart.com/svn/memcached svn] 
 
- * [Clients] - list of client APIs in various languages
-  * [http://pecl.php.net/package/memcache php]
+ * [Clients] - list of client APIs in various languages (like for [http://pecl.php.net/package/memcache php], etc)
 
  * Ports
   * [http://www.socialtext.net/memcached/index.cgi?windows Windows] - memcached on Windows
