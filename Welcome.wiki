@@ -15,8 +15,10 @@ The official memcached site is at http://www.danga.com/memcached
 
  * [FAQ] - We're starting a FAQ here
  * [http://www.socialtext.net/memcached/index.cgi?memcached_client_faq Memcached Client FAQ] - Questions and Answers specific to client authors and cross-compat client behavior.
- * [HowToSessions Sessions] - How to store sessions in memcached
- * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
+ * How To's
+   * [HowToSessions Sessions] - How to store sessions in memcached
+ * Tutorials
+   * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
 
 == Links ==
 
