@@ -2,7 +2,7 @@
 
 Danga list of clients http://www.danga.com/memcached/apis.bml
 
-= C++ =
+= C / C++ =
 
 libmemcached http://tangent.org/552/libmemcached.html
 
@@ -11,6 +11,8 @@ libmemcache http://people.freebsd.org/%7Eseanc/libmemcache
 apr_memcache http://www.outoforder.cc/projects/libs/apr_memcache
 
 !MemCacheClient http://code.jellycan.com/memcacheclient (cross-platform, but primary focus on Windows
+
+libketama http://www.last.fm/user/RJ/journal/2007/04/10/rz_libketama (the original consistent hashing algorithm from last.fm)
 
 = PHP =
 
@@ -41,7 +43,8 @@ http://code.google.com/p/python-libmemcached (libmemcached wrapper)
 = Ruby =
 
 memcache-client http://dev.robotcoop.com/Libraries/memcache-client/index.html (pure Ruby)
- * Another pointer: http://www.freshports.org/databases/rubygem-memcache-client
+ * http://seattlerb.rubyforge.org/memcache-client/
+ * http://www.freshports.org/databases/rubygem-memcache-client
 
 Ruby-MemCache http://www.deveiate.org/projects/RMemCache (pure Ruby)
 
@@ -71,9 +74,10 @@ pgmemcache http://pgfoundry.org/projects/pgmemcache
 
 http://luamemcached.luaforge.net
 
-= Chicken Scheme =
+= Lisp dialects = 
 
-http://chicken.wiki.br/memcached
+ * http://common-lisp.net/project/cl-memcached
+ * http://chicken.wiki.br/memcached
 
 = Protocol =
 
