@@ -79,8 +79,13 @@ http://luamemcached.luaforge.net
 
 = Lisp dialects = 
 
- * http://common-lisp.net/project/cl-memcached
- * http://chicken.wiki.br/memcached
+http://common-lisp.net/project/cl-memcached
+
+http://chicken.wiki.br/memcached
+
+= Cold Fusion =
+
+http://memcached.riaforge.org
 
 = Protocol =
 
