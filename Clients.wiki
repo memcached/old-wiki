@@ -1,0 +1,59 @@
+#summary List of Client libraries
+
+Danga list of clients http://www.danga.com/memcached/apis.bml
+
+= C++ =
+
+libmemcached http://tangent.org/552/libmemcached.html
+
+libmemcache http://people.freebsd.org/%7Eseanc/libmemcache
+
+apr_memcache http://www.outoforder.cc/projects/libs/apr_memcache
+
+!MemCacheClient http://code.jellycan.com/memcacheclient (cross-platform, but primary focus on Windows
+
+= Java =
+
+spymemcached http://code.google.com/p/spymemcached
+
+Java memcached client http://www.whalin.com/memcached
+
+= .NET =
+
+.Net memcached client https://sourceforge.net/projects/memcacheddotnet
+
+.Net 2.0 memcached client http://www.codeplex.com/EnyimMemcached
+
+BeIT Memcached Client (optimized C# 2.0) http://code.google.com/p/beitmemcached
+
+= MySQL =
+
+MySQL Engine http://tangent.org/index.pl?lastnode_id=478&node_id=507 (experimental MySQL plugin to make MySQL store data in memcached)
+
+MySQL UDF for memcached http://tangent.org/586/Memcached_Functions_for_MySQL.html
+
+= Perl =
+
+Cache::Memcached http://search.cpan.org/dist/Cache-Memcached/lib/Cache/Memcached.pm
+
+= PHP =
+
+PECL/memcache http://pecl.php.net/package/memcache (pear install pecl/memcache)
+
+= PostgreSQL =
+
+pgmemcache http://pgfoundry.org/projects/pgmemcache
+
+= Python =
+
+python-memcached ftp://ftp.tummy.com/pub/python-memcached> and a "pooling wrapper class" http://jehiah.cz/download/MemcachePool.py.txt for use in multi-threaded applications
+
+= Ruby =
+
+memcache-client http://dev.robotcoop.com/Libraries/memcache-client/index.html (pure Ruby)
+
+Ruby-MemCache http://www.deveiate.org/projects/RMemCache (pure Ruby)
+
+memcached http://blog.evanweaver.com/files/doc/fauna/memcached (compiled, wraps libmemcached)
+
+caffeine http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcache, no license)
