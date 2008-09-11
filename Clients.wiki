@@ -57,6 +57,7 @@ http://code.google.com/p/python-libmemcached (libmemcached wrapper)
 = Ruby =
 
 memcache-client http://dev.robotcoop.com/Libraries/memcache-client/index.html (pure Ruby)
+ * Another pointer: http://www.freshports.org/databases/rubygem-memcache-client
 
 Ruby-MemCache http://www.deveiate.org/projects/RMemCache (pure Ruby)
 
