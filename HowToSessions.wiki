@@ -13,3 +13,7 @@ If for example you need to update a timestamp on each request (or something else
 If you are using PECL memcached extension and want redundant sessions you should look at this thread:
 
 http://pecl.php.net/bugs/bug.php?id=11637
+
+= Links = 
+
+ * [http://dormando.livejournal.com/495593.html Cache your sessions. Don't piss off your users] by dormando
