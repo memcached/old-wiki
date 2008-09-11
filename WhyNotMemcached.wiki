@@ -1,0 +1,21 @@
+#summary Why should you not use Memcached?
+
+Memcached is terrific!  But not for every situation...
+
+ * You have objects larger than 1MB.
+   * Memcached is not for large media and streaming huge blobs.
+   * Consider other solutions like: http://www.danga.com/mogilefs
+
+ * You have keys larger than 200 chars.
+   * If so, perhaps you're doing something wrong?
+
+ * Your hosting provider won't let you run memcached.
+   * If you're on a low-end virtual private server (a slice of a machine), virtualization tech like vmware or xen might not be a great place to run memcached.  Memcached really wants to take over and control a hunk of memory -- if that memory gets swapped out by the OS or hypervisor, performance goes away.  Using virtualization, though, just to ease deployment across dedicated boxes is fine.
+
+ * You're running in an unsecure environment.
+   * Remember, anyone can just telnet to any memcached server.  If you're on a shared system, watch out!
+
+ * You want persistence.
+
+ * You want a database.
+   * If you really just wish that memcached had a SQL interface, then you probably need to rethink your understanding of caching.
