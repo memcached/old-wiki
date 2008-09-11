@@ -7,7 +7,7 @@ The official memcached site is at http://www.danga.com/memcached
 
  * [http://www.socialtext.net/memcached/index.cgi?hackathon Hackathons] - Proposed dates and topics on the proposed hackathons are now posted. Also, find notes from previous hackathons.
  * [http://www.danga.com/memcached/download.bml Downloads]
- * [http://www.socialtext.net/memcached/index.cgi?clients Clients] - List of Client APIs in various languages
+ * [Clients] - List of Client APIs in various languages
  * Ports
   * [http://www.socialtext.net/memcached/index.cgi?windows Windows] - memcached on Windows
 
