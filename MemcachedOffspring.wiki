@@ -1,0 +1,17 @@
+#summary projects forked or inspired from Memcached
+
+ * Memcachedb http://code.google.com/p/memcachedb - A distributed key-value storage system designed for persistent, based on memcached, tugela and bdb.
+
+ * tugela cache
+
+ * repcached
+
+ * http://memcachedb.org/memcacheq
+
+ * starling - queueing based on memcached protocol
+
+Reimplementations
+
+ * jmemcached - java version of memcached
+ * http://code.google.com/p/actord - scala version of memcached
+ * http://code.google.com/p/cacherl - erlang version of memcached
