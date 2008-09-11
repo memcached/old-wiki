@@ -60,8 +60,6 @@ memcache-client http://dev.robotcoop.com/Libraries/memcache-client/index.html (p
 
 Ruby-MemCache http://www.deveiate.org/projects/RMemCache (pure Ruby)
 
-memcached http://blog.evanweaver.com/files/doc/fauna/memcached (compiled, wraps libmemcached)
+fauna http://blog.evanweaver.com/files/doc/fauna/memcached (compiled, wraps libmemcached)
 
 caffeine http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcached, no license)
-
-fauna http://fauna.rubyforge.org/svn/memcached/trunk (another libmemcached wrapper)
