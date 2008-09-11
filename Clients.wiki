@@ -4,11 +4,11 @@ Danga list of clients http://www.danga.com/memcached/apis.bml
 
 = C / C++ =
 
-libmemcached http://tangent.org/552/libmemcached.html
+libmemcached http://tangent.org/552/libmemcached.html by Brian Aker; BSD license. This is a new library, under heavy development.
 
-libmemcache http://people.freebsd.org/%7Eseanc/libmemcache
+libmemcache http://people.freebsd.org/%7Eseanc/libmemcache by Sean Chittenden; BSD license. This is the original C library. It is no longer under active development. You should try libmemcached instead.
 
-apr_memcache http://www.outoforder.cc/projects/libs/apr_memcache
+apr_memcache http://www.outoforder.cc/projects/libs/apr_memcache by Paul Querna; Apache Software License version 2.0
 
 !MemCacheClient http://code.jellycan.com/memcacheclient (cross-platform, but primary focus on Windows
 
