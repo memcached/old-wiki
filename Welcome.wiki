@@ -30,10 +30,6 @@ The official memcached site is http://www.danga.com/memcached
  * Tutorials
    * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
 
-== Links ==
-
- * Memcachedb http://code.google.com/p/memcachedb - A distributed key-value storage system designed for persistent, based on memcached, tugela and bdb.
-
 == Articles ==
 
  * [http://linuxjournal.com/article/7451 LinuxJournal article by Brad Fitzpatrick] (2004) 
@@ -46,6 +42,7 @@ The official memcached site is http://www.danga.com/memcached
    * [http://download.tangent.org/talks/Memcached%20Study.pdf Memcached Study slides] by Brian Aker and dormando, 2008
  * [http://blog.leetsoft.com/2007/5/22/the-secret-to-memcached The secret to using Memcached] (2007)
  * Wikipedia on Memcached - http://en.wikipedia.org/wiki/Memcached
+ * [MemcachedOffspring Spawn of Memcached]
 
 == Mailing Lists ==
 
