@@ -72,7 +72,7 @@ MySQL Engine http://tangent.org/index.pl?node_id=507 (MySQL plugin to make MySQL
 
 = PostgreSQL =
 
-pgmemcache http://pgfoundry.org/projects/pgmemcache
+pgmemcache http://pgfoundry.org/projects/pgmemcache The pgmemcache project allows you to access memcache servers from Postgresql Stored Procedures and Triggers.
 
 = Lua =
 
