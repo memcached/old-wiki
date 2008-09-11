@@ -19,7 +19,7 @@ The official memcached site is at http://www.danga.com/memcached
    * [HowToSessions Sessions] - How to store sessions in memcached
  * Tutorials
    * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
- * [WhyNot Why not use Memcached]?
+ * [WhyNotMemcached Why not use Memcached]?
 
 == Links ==
 
