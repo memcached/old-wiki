@@ -36,7 +36,7 @@ The official memcached site is at http://www.danga.com/memcached
  * [http://www.slideshare.net/acme/scaling-with-memcached Scaling with memcached] (slides) 
  * [http://www.bytebot.net/blog/archives/2008/04/14/memcached-and-mysql-tutorial Memcached and Mysql tutorial] (2008)
    * [http://download.tangent.org/talks/Memcached%20Study.pdf Memcached Study slides] by Brian Aker and dormando, 2008
- * [http://blog.leetsoft.com/2007/5/22/the-secret-to-memcached The secret to using Memcached]
+ * [http://blog.leetsoft.com/2007/5/22/the-secret-to-memcached The secret to using Memcached] (2007)
 
 == Mailing Lists ==
 
