@@ -1,8 +1,6 @@
 #summary Welcome to the memcached wiki
 #labels Featured
 
-= Welcome to the memcached wiki =
-
 The official memcached site is at http://www.danga.com/memcached
 
  * [http://www.socialtext.net/memcached/index.cgi?hackathon Hackathons] - Proposed dates and topics on the proposed hackathons are now posted. Also, find notes from previous hackathons.
