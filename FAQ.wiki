@@ -1,4 +1,5 @@
 #summary frequently asked questions
+#labels Featured
 
 = General Questions =
 
