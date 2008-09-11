@@ -57,6 +57,7 @@ caffeine http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcac
 .Net memcached client https://sourceforge.net/projects/memcacheddotnet
 
 .Net 2.0 memcached client http://www.codeplex.com/EnyimMemcached
+ * Client developed in .NET 2.0 keeping performance and extensibility in mind. (Supports consistent hashing.)
  * http://www.codeplex.com/memcachedproviders
 
 BeIT Memcached Client (optimized C# 2.0) http://code.google.com/p/beitmemcached
