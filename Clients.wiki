@@ -46,7 +46,9 @@ pgmemcache http://pgfoundry.org/projects/pgmemcache
 
 = Python =
 
-python-memcached ftp://ftp.tummy.com/pub/python-memcached> and a "pooling wrapper class" http://jehiah.cz/download/MemcachePool.py.txt for use in multi-threaded applications
+python-memcached ftp://ftp.tummy.com/pub/python-memcached
+
+pooling wrapper class http://jehiah.cz/download/MemcachePool.py.txt for use in multi-threaded applications
 
 = Ruby =
 
