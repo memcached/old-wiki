@@ -6,7 +6,7 @@ Memcached is terrific!  But not for every situation...
    * Memcached is not for large media and streaming huge blobs.
    * Consider other solutions like: http://www.danga.com/mogilefs
 
- * You have keys larger than 200 chars.
+ * You have keys larger than 250 chars.
    * If so, perhaps you're doing something wrong?
 
  * Your hosting provider won't let you run memcached.
@@ -15,7 +15,10 @@ Memcached is terrific!  But not for every situation...
  * You're running in an unsecure environment.
    * Remember, anyone can just telnet to any memcached server.  If you're on a shared system, watch out!
 
- * You want persistence.
+ * You want persistence.  Or, a database.
+   * If you really just wish that memcached had a SQL interface, then you probably need to rethink your understanding of caching and memcached.
 
- * You want a database.
-   * If you really just wish that memcached had a SQL interface, then you probably need to rethink your understanding of caching.
+ * Links:
+   * 2008/08
+     * [http://highscalability.com/strategy-drop-memcached-add-more-mysql-servers Memcached versus more rdbms sharding] at highscalability.com
+     * [http://dormando.livejournal.com/496639.html Should you use memcached? Should you just shard mysql more?] by dormando
