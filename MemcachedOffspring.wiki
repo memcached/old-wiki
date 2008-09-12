@@ -15,3 +15,7 @@ Reimplementations
  * jmemcached - java version of memcached
  * http://code.google.com/p/actord - scala version of memcached
  * http://code.google.com/p/cacherl - erlang version of memcached
+
+Other
+
+ * http://memcachefs.sourceforge.net
