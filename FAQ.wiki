@@ -372,7 +372,7 @@ WIP: Mulled this over, need someone with better examples to fill this in. Short 
 
 == *Using Memcached as a simple message queue* == 
 
-Perhaps you want to use memcached as a cheap queue or write-back cache. One technique is using incr/decr to generate unique keys for queue item management, as described here: http://broddlit.wordpress.com/ 2008/04/09/memcached-as-simple-message-queue/
+Perhaps you want to use memcached as a cheap queue or write-back cache. One technique is using incr/decr to generate unique keys for queue item management, as described here: http://broddlit.wordpress.com/2008/04/09/memcached-as-simple-message-queue/
 
 Be aware of hitting memory limits, however, and cache expiry.
 
