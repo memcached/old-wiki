@@ -26,8 +26,8 @@ The official memcached site is http://www.danga.com/memcached
 
  * How To's
    * [HowToSessions Sessions] - How to store sessions in memcached
-   * [HowToMultipleDatacenters Multiple Datacenters]
-   * [HowToWithNginx Using Memcached with Nginx]
+   * [HowToMultipleDatacenters Multiple datacenters]
+   * [HowToWithNginx Nginx integration]
 
  * Tutorials
    * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
