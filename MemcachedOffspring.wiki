@@ -6,6 +6,8 @@
 
  * repcached
 
+ * http://code.google.com/p/memcached-pro
+
  * http://memcachedb.org/memcacheq
 
  * starling - queueing based on memcached protocol
