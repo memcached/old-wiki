@@ -1,6 +1,7 @@
 #summary Welcome to the memcached wiki
 #labels Featured
 
+----
 The official memcached site is http://www.danga.com/memcached
 
  * [http://www.danga.com/memcached/download.bml Download] - official memcached server 
@@ -32,6 +33,8 @@ The official memcached site is http://www.danga.com/memcached
  * Tutorials
    * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
 
+ * [MemcachedOffspring Spawn of memcached]
+
 == Articles ==
 
  * [http://linuxjournal.com/article/7451 LinuxJournal article by Brad Fitzpatrick] (2004) 
@@ -42,15 +45,14 @@ The official memcached site is http://www.danga.com/memcached
  * [http://www.slideshare.net/acme/scaling-with-memcached Scaling with memcached] (slides) 
  * [http://www.bytebot.net/blog/archives/2008/04/14/memcached-and-mysql-tutorial Memcached and Mysql tutorial] (2008)
    * [http://download.tangent.org/talks/Memcached%20Study.pdf Memcached Study slides] by Brian Aker and dormando, 2008
- * [http://blog.leetsoft.com/2007/5/22/the-secret-to-memcached The secret to using Memcached] (2007)
- * Wikipedia on Memcached - http://en.wikipedia.org/wiki/Memcached
- * [MemcachedOffspring Spawn of Memcached]
+ * [http://blog.leetsoft.com/2007/5/22/the-secret-to-memcached The secret to using memcached] (2007)
+ * [http://en.wikipedia.org/wiki/Memcached wikipedia entry on memcached]
 
 == Mailing Lists ==
 
  * http://groups.google.com/group/memcached
   * official mailing list for developers and users, since July 2008
- * [http://lists.danga.com/pipermail/memcached mailing list archives] with lots of classic, good advice, pre-July 2008
+ * [http://lists.danga.com/pipermail/memcached mailing list archives] with lots of classic, good advice, before July 2008
 
 == IRC ==
 
@@ -61,8 +63,6 @@ The official memcached site is http://www.danga.com/memcached
  * [http://www.socialtext.net/memcached/index.cgi?tagsupport Tagging] - Collections and thoughts from the ML about how to do tags in memcached
  * [http://www.socialtext.net/memcached/index.cgi?cross_platform_serialisation_support Cross Platform Serialisation Support] - Collections and thoughts from the ML about how to provide a mechanism for cross-platform serialisation support
 
-== Wiki ==
-
-Please feel free to add or modify pages -- even this one -- as you see fit. That's the idea of a wiki.  (Hmmm, google code wiki seems to want a google id/login and project membership first - apologies until we figure it out.  Please try the mailing list!)
+== Archive ==
 
 For history: here's the [http://www.socialtext.net/memcached/index.cgi?memcached old memcached wiki] (pre-september 2008)
