@@ -1,0 +1,4 @@
+#summary How to use memcached with nginx
+
+ * http://www.igvita.com/2008/02/11/nginx-and-memcached-a-400-boost
+ * http://blog.kovyrin.net/2007/08/05/using-nginx-ssi-and-memcache-to-make-your-web-applications-faster/
