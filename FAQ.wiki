@@ -101,6 +101,8 @@ Threads rule! Thanks to Steven Grimm and Facebook, memcached 1.2 and higher has 
 
 If you don't have a heavily loaded setup, you probably don't need to configure threads. If you're running a gigantic website with gigantic hardware, you might see benefit here.
 
+More info: http://code.sixapart.com/svn/memcached/trunk/server/doc/threads.txt
+
 == What are some limits in memcached I might hit? == 
 
 The simple limits you will probably see with memcache are the key and item size limits. Keys are restricted to 250 characters. Stored data cannot exceed 1 megabyte in size, since that is the largest typical slab size.
@@ -128,6 +130,8 @@ http://lists.danga.com/pipermail/memcached/2006-May/002163.html
 http://lists.danga.com/pipermail/memcached/2007-March/003753.html
 
 And if you'd like to attempt to use malloc/free and see how it works, you may define 'USE_SYSTEM_MALLOC' in build process. It might not be tested very well, so getting developer support for it is unlikely.
+
+More info: http://code.sixapart.com/svn/memcached/trunk/server/doc/memory_management.txt
 
 = Performance Questions =
 
