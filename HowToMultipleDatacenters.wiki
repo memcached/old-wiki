@@ -1,0 +1,3 @@
+#summary How to use memcached with multiple datacenters
+
+See: http://www.facebook.com/note.php?note_id=23844338919
