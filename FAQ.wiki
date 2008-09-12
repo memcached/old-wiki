@@ -286,8 +286,6 @@ Worse yet, you have multiple processes updating the same data, and the wrong one
 
 One should be mindful about possible issues in populating or repopulating our cache. Remember that the process of checking memcached, fetching SQL, and storing into memcached, is *not* atomic at all!
 
-Another solution on the old mailing list: [http://lists.danga.com/pipermail/memcached/2007-July/004807.html probabilistic timeout] (2007)
-
 == How to prevent clobbering updates, stampeding requests == 
 
 So how does one prevent clobbering your own updates or stampeding during a cache miss? The easiest answer is to avoid the problem. Don't set caches to expire, and update them via cron, or as data is updated. This does not eliminate the possibility of a stampede, but removes it from becoming the norm.
@@ -305,6 +303,8 @@ A decent python example can be found here: http://www.djangosnippets.org/snippet
 If you have a lot of data excelling at causing this problem, you might also consider using MySQL Cluster for it, or a tiered caching approach
 
 Another (pretty cool!) idea is to use Gearman, as noted on the mailing list: http://lists.danga.com/pipermail/memcached/2007-July/004858.html
+
+Another solution on the old mailing list: [http://lists.danga.com/pipermail/memcached/2007-July/004807.html probabilistic timeout] (2007)
 
 == Emulating locking with the add command == 
 
