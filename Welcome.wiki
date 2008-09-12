@@ -22,7 +22,7 @@ The official memcached site is http://www.danga.com/memcached
 
  * [FAQ] and [http://www.socialtext.net/memcached/index.cgi?memcached_client_faq Client FAQ]
 
- * [WhyNotMemcached Why not use Memcached]?
+ * [WhyNotMemcached Why not use memcached]?
 
  * How To's
    * [HowToSessions Sessions] - How to store sessions in memcached
