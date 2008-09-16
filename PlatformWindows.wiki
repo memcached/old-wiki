@@ -1,11 +1,11 @@
  * [http://jehiah.cz/projects/memcached-win32 memcached for win32 ver 1.2.1 port]
  * [http://www.splinedancer.com/memcached-win32 memcached for win32 ver 1.2.4 port]
 
-Eventually win32 support will be integrated into the main distribution.
+Eventually win32 support will be integrated into the main server distribution.
 
-Many/most of the [Clients] should work on windows.
+See the [Clients] page for Windows client libraries.
 
 ASP.net Cache Provider & Session State Provider for memcached can be downloaded from the following link
  * http://www.codeplex.com/memcachedproviders
 
-Intro to [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx Memcached on Windows]
+Introduction to [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx Memcached on Windows]
