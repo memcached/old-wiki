@@ -33,6 +33,7 @@ The official memcached site is http://www.danga.com/memcached
    * [HowToLearnMoreScalability Learn more about scalability]
    * [HowToMonitor Monitor memcached]
    * [HowToConsistentHashing Consistent hashing]
+   * [http://drupal.org/files/issues/memcache.txt Drupal integration]
 
  * Tutorials
    * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
