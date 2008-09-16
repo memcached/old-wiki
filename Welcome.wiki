@@ -11,7 +11,7 @@ The official memcached site is http://www.danga.com/memcached
  * [Clients] - list of client APIs in various languages (for [http://pecl.php.net/package/memcache php], etc)
 
  * Ports
-  * [http://www.socialtext.net/memcached/index.cgi?windows Windows] - memcached on Windows
+  * [PlatformWindows Windows] - memcached on Windows
 
  * Protocols
   * [http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt text protocol] - current memcached networking protocol
