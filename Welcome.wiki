@@ -31,6 +31,7 @@ The official memcached site is http://www.danga.com/memcached
    * [HowToWithNginx Nginx integration]
    * [HowToLearnMoreScalability Learn more about scalability]
    * [HowToMonitor Monitor memcached]
+   * [HowToConsistentHashing Consistent hashing]
 
  * Tutorials
    * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
