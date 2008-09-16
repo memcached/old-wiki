@@ -1,0 +1,6 @@
+#summary One-sentence summary of this page.
+
+ * [http://dealnews.com/developers/cacti/memcached.html Cacti template]
+ * [http://www.hyperic.com/products/managed/memcached-management.htm Hyperic plugin]
+ * [http://search.cpan.org/~zigorou/Nagios-Plugins-Memcached-0.02/lib/Nagios/Plugins/Memcached.pm Nagios plugin]
+ * [http://livebookmark.net/journal/2008/05/21/memcachephp-stats-like-apcphp/ PHP-based control panel]
