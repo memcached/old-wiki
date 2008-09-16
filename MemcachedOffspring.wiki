@@ -12,6 +12,8 @@
 
  * http://rubyforge.org/projects/starling - queue based on memcached protocol
 
+ * http://code.google.com/p/sparrow/ - queue based on memcached protocol
+
 Reimplementations
 
  * http://www.thimbleware.com/projects/jmemcached - java version of memcached
