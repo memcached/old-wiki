@@ -60,6 +60,7 @@ caffeine http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcac
 
 More info:
  * [http://nubyonrails.com/articles/2006/08/17/memcached-basics-for-rails Memcached basics for rails]
+ * [http://zilkey.com/2008/7/5/rails-cache-memcached-development-mode-and-offline-cache-invalidation Rails and memcached while developing your app]
 
 = Windows / .NET =
 
