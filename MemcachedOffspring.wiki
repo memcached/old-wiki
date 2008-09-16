@@ -4,9 +4,9 @@
 
  * http://code.google.com/p/dbcached - memcached + qdbm/berkeley-db
 
- * http://meta.wikimedia.org/wiki/Tugela_Cache
+ * http://meta.wikimedia.org/wiki/Tugela_Cache - memcached + persistence
 
- * http://repcached.lab.klab.org
+ * http://repcached.lab.klab.org - memcached + replication
 
  * http://code.google.com/p/memcached-pro
 
@@ -14,7 +14,9 @@
 
  * http://rubyforge.org/projects/starling - queue based on memcached protocol
 
- * http://code.google.com/p/sparrow/ - queue based on memcached protocol
+ * http://code.google.com/p/sparrow - queue based on memcached protocol
+
+ * http://code.google.com/p/memagent - memcached proxy
 
 Reimplementations
 
