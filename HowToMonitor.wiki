@@ -1,4 +1,4 @@
-#summary One-sentence summary of this page.
+#summary Monitoring memcached
 
  * [http://dealnews.com/developers/cacti/memcached.html Cacti template]
  * [http://www.hyperic.com/products/managed/memcached-management.htm Hyperic plugin]
