@@ -6,3 +6,8 @@
  * [http://errtheblog.com/static/pdfs/memcached.pdf CNet scaling] (PDF, Ruby/Rails oriented)
  * [http://www.scribd.com/doc/49575/Scaling-Rails-Presentation Scribd scaling]
  * [http://www.slideshare.net/acme/scaling-with-memcached Scaling with memcached]
+ * Adventures in scaling - poocs.net
+   * [http://poocs.net/2006/3/13/the-adventures-of-scaling-stage-1 Part 1]
+   * [http://poocs.net/2006/3/20/the-adventures-of-scaling-stage-2 Part 2]
+   * [http://poocs.net/2006/3/27/the-adventures-of-scaling-stage-3 Part 3]
+   * [http://poocs.net/2006/4/3/the-adventures-of-scaling-stage-4 Part 4]
