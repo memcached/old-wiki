@@ -20,6 +20,7 @@ The official memcached site is http://www.danga.com/memcached
 
  * [http://www.socialtext.net/memcached/index.cgi?hackathon Hackathons] - dates and topics on the proposed hackathons. Also, notes from previous hackathons.
 
+----
 == FAQ / How To's / Tutorials ==
 
  * [FAQ] and [http://www.socialtext.net/memcached/index.cgi?memcached_client_faq Client FAQ]
@@ -56,6 +57,7 @@ The official memcached site is http://www.danga.com/memcached
  * [http://pragprog.com/titles/memcd/using-memcached Using Memcached] ebook
  * [http://en.wikipedia.org/wiki/Memcached wikipedia entry on memcached]
 
+----
 == Mailing Lists ==
 
  * http://groups.google.com/group/memcached
