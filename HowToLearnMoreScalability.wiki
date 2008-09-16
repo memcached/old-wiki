@@ -1,0 +1,3 @@
+#summary Learn more about scalablity
+
+ * [http://www.slideshare.net/techdude/scalable-web-architectures-common-patterns-and-approaches Flickr talk]
