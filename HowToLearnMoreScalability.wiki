@@ -1,3 +1,7 @@
 #summary Learn more about scalablity
 
- * [http://www.slideshare.net/techdude/scalable-web-architectures-common-patterns-and-approaches Flickr talk]
+ * [http://www.slideshare.net/vishnu/livejournals-backend-a-history-of-scaling Livejournal scaling]
+ * [http://www.slideshare.net/techdude/scalable-web-architectures-common-patterns-and-approaches Scaling Flickr talk - Scalable web architectures]
+ * [http://mashraqi.com/2008/07/memcached-for-mysql-advanced-use-cases_09.html fotolog scaling]
+ * [http://www.scribd.com/doc/49575/Scaling-Rails-Presentation Scaling Scribd]
+ * [http://www.slideshare.net/acme/scaling-with-memcached Scaling with memcached]
