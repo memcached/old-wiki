@@ -35,6 +35,7 @@ The official memcached site is http://www.danga.com/memcached
 
  * Tutorials
    * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
+   * [http://www.majordojo.com/2007/03/memcached-howto.php An introduction to Memcached] (2007)
 
  * [MemcachedOffspring Spawn of memcached]
 
