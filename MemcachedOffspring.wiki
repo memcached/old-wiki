@@ -2,6 +2,8 @@
 
  * http://code.google.com/p/memcachedb - A distributed key-value storage system designed for persistent, based on memcached, tugela and bdb.
 
+ * http://code.google.com/p/dbcached - memcached + qdbm/berkeley-db
+
  * http://meta.wikimedia.org/wiki/Tugela_Cache
 
  * http://repcached.lab.klab.org
@@ -16,7 +18,9 @@
 
 Reimplementations
 
- * http://www.thimbleware.com/projects/jmemcached - java version of memcached
+ * Java versions
+   * http://www.thimbleware.com/projects/jmemcached
+   * http://code.google.com/p/gmemcached - on Grizzly NIO framework
  * http://code.google.com/p/actord - scala version of memcached
  * http://code.google.com/p/cacherl - erlang version of memcached
 
