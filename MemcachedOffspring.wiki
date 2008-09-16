@@ -20,6 +20,7 @@
 
 Reimplementations
 
+ * http://code.google.com/p/spcached/
  * Java versions
    * http://www.thimbleware.com/projects/jmemcached
    * http://code.google.com/p/jemcache/
