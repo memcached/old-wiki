@@ -30,4 +30,6 @@ Other
 
  * http://memcachefs.sourceforge.net
  * http://github.com/andrewfromgeni/mcinsight - GUI to examine memcached server
- * http://tangent.org/608/mod_memcached.html - accessing memcached from apache/HTTP
+ * Accessing memcached directly from Apache
+   * http://tangent.org/608/mod_memcached.html
+   * http://code.google.com/p/modmemcachecache/
