@@ -40,6 +40,8 @@ pooling wrapper class http://jehiah.cz/download/MemcachePool.py.txt for use in m
 
 http://code.google.com/p/python-libmemcached (libmemcached wrapper)
 
+http://gijsbert.org/cmemcache/index.html
+
 = Ruby =
 
 memcache-client http://dev.robotcoop.com/Libraries/memcache-client/index.html (pure Ruby)
