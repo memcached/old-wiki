@@ -18,6 +18,8 @@ libketama http://www.last.fm/user/RJ/journal/2007/04/10/rz_libketama (the origin
 
 PECL/memcache http://pecl.php.net/package/memcache (pear install pecl/memcache)
 
+ * [http://www.php.net/manual/en/book.memcache.php php memcached docs]
+
 = Perl =
 
 Cache::Memcached http://search.cpan.org/dist/Cache-Memcached
