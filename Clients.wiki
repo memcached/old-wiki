@@ -102,3 +102,7 @@ http://memcached.riaforge.org
 To write a new client, check out the [http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt protocol docs]. Be aware that the most important part of the client is the hashing across multiple servers, based on the key, or an optional caller-provided hashing value. Feel free to join the mailing list for help, inclusion in Subversion, and/or a link to your client from this site.
 
 Also, see the forthcoming [MemcacheBinaryProtocol binary protocol docs].
+
+= Archive / Old  =
+
+http://dealnews.com/developers/memcached.html - fastest client implementations (2006), obsoleted as more languages wrap the C-based libmemcached client library.
