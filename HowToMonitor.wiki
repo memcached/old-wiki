@@ -8,3 +8,4 @@
  * Python: [http://effbot.org/zone/django-memcached-view.htm django examples]
  * During development:
    * http://github.com/andrewfromgeni/mcinsight - GUI to examine memcached server
+ * http://code.google.com/p/memcached-manager
