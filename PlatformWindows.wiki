@@ -8,4 +8,4 @@ See the [Clients] page for Windows client libraries.
 ASP.net Cache Provider & Session State Provider for memcached can be downloaded from the following link
  * http://www.codeplex.com/memcachedproviders
 
-Introduction to [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx Memcached on Windows]
+Article: [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx introduction to Memcached on Windows]
