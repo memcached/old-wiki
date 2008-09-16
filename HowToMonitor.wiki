@@ -6,3 +6,5 @@
  * [http://livebookmark.net/journal/2008/05/21/memcachephp-stats-like-apcphp/ PHP-based control panel]
  * Ruby gem: memcache-client-stats
  * Python: [http://effbot.org/zone/django-memcached-view.htm django examples]
+ * During development:
+   * http://github.com/andrewfromgeni/mcinsight - GUI to examine memcached server
