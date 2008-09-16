@@ -32,6 +32,8 @@ spymemcached http://code.google.com/p/spymemcached An improved Java API maintain
 
 Java memcached client http://www.whalin.com/memcached A Java API is maintained by Greg Whalin from Meetup.com. 
 
+http://code.google.com/p/javamemcachedclient
+
 = Python =
 
 python-memcached ftp://ftp.tummy.com/pub/python-memcached
