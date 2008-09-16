@@ -18,6 +18,8 @@
 
  * http://code.google.com/p/memagent - memcached proxy
 
+ * http://labs.gree.jp/Top/OpenSource/Flared.html - yet another memcached
+
 Reimplementations
 
  * http://code.google.com/p/spcached/
