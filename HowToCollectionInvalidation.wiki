@@ -1,0 +1,1 @@
+http://www.aminus.org/blogs/index.php/2007/12/30/memcached_set_invalidation
