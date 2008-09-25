@@ -4,6 +4,8 @@ Article:
  * [http://jehiah.cz/projects/memcached-win32 memcached for win32 ver 1.2.1 port]
  * [http://www.splinedancer.com/memcached-win32 memcached for win32 ver 1.2.4 port]
 
+ * [http://stackoverflow.com/questions/8896/memcached-on-windows-x64 general discussion]
+
 Eventually win32 support will be integrated into the main server distribution.
 
 See the [Clients] page for Windows client libraries.
