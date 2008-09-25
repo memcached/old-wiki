@@ -11,6 +11,7 @@ The official memcached site is http://www.danga.com/memcached
  * [Clients] - list of client APIs in various languages (for [http://pecl.php.net/package/memcache php], etc)
 
  * Other platforms / ports of the server
+  * [http://www.lullabot.com/articles/setup-memcached-mamp-sandbox-environment Mac OS X]
   * [PlatformWindows Windows]
   * [PlatformSolaris Solaris]
 
