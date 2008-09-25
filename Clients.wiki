@@ -20,6 +20,8 @@ PECL/memcache http://pecl.php.net/package/memcache (pear install pecl/memcache)
 
  * [http://www.php.net/manual/en/book.memcache.php php memcached docs]
 
+PHP libmemcached http://github.com/kajidai/php-libmemcached/tree/master (wraps libmemcached)
+
 = Perl =
 
 Cache::Memcached http://search.cpan.org/dist/Cache-Memcached
