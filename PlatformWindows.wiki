@@ -1,8 +1,9 @@
 Article:  
  * [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx introduction to Memcached on Windows] (2008)
 
- * [http://jehiah.cz/projects/memcached-win32 memcached for win32 ver 1.2.1 port]
- * [http://www.splinedancer.com/memcached-win32 memcached for win32 ver 1.2.4 port]
+ * [http://jehiah.cz/projects/memcached-win32 memcached for windows, version 1.2.1 port]
+ * [http://www.splinedancer.com/memcached-win32 memcached for windows, version 1.2.4 port]
+ * [http://code.jellycan.com/memcached/ memcached for windows, version 1.2.6 and 1.2.5 ports] (Sept 2008)
 
  * [http://stackoverflow.com/questions/8896/memcached-on-windows-x64 general discussion]
 
