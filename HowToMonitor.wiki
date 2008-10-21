@@ -2,14 +2,20 @@
 
  * [http://dealnews.com/developers/cacti/memcached.html Cacti template]
    * [http://www.netuality.ro/monitoring-memcached-with-cacti/tools/20060802 blog article] (2006)
+   * http://forums.cacti.net/about14605.html
+   * http://www.faemalia.net/mysqlUtils/
+
  * [http://www.hyperic.com/products/managed/memcached-management.htm Hyperic plugin]
  * [http://search.cpan.org/~zigorou/Nagios-Plugins-Memcached-0.02/lib/Nagios/Plugins/Memcached.pm Nagios plugin]
  * Ganglia
    * http://ben.hartshorne.net/ganglia/ (2006)
    * http://www.hitflip.de/opensource.html
  * [http://livebookmark.net/journal/2008/05/21/memcachephp-stats-like-apcphp/ PHP-based control panel]
+ * [http://munin.projects.linpro.no/wiki/plugin-memcache Munin plugin]
  * Ruby gem: memcache-client-stats
  * Python: [http://effbot.org/zone/django-memcached-view.htm django examples]
  * During development:
    * http://github.com/andrewfromgeni/mcinsight - GUI to examine memcached server
  * http://code.google.com/p/memcached-manager
+
+Or, just do a simple connect to the port where memcached is listening. 
