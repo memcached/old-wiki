@@ -27,6 +27,8 @@ Reimplementations
    * http://www.thimbleware.com/projects/jmemcached
    * http://code.google.com/p/jemcache/
    * http://code.google.com/p/gmemcached - on Grizzly NIO framework
+   * http://www.jgroups.org/javagroupsnew/docs/memcached/memcached.html - jgroups version of memcached
+     * http://www.infoq.com/news/2008/10/jgroups-memcached
  * http://code.google.com/p/actord - scala version of memcached
  * http://code.google.com/p/cacherl - erlang version of memcached
 
