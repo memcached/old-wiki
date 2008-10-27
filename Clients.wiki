@@ -50,6 +50,8 @@ http://gijsbert.org/cmemcache/index.html
 
 = Ruby =
 
+cache_fu http://github.com/defunkt/cache_fu/tree/master
+
 memcache-client http://dev.robotcoop.com/Libraries/memcache-client/index.html (pure Ruby)
  * http://seattlerb.rubyforge.org/memcache-client/
  * http://www.freshports.org/databases/rubygem-memcache-client
