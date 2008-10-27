@@ -51,6 +51,8 @@ http://gijsbert.org/cmemcache/index.html
 = Ruby =
 
 cache_fu http://github.com/defunkt/cache_fu/tree/master
+ * http://errtheblog.com/posts/57-kickin-ass-w-cachefu
+ * http://blog.onmylist.com/articles/2007/06/15/memcached-and-cache_fu
 
 memcache-client http://dev.robotcoop.com/Libraries/memcache-client/index.html (pure Ruby)
  * http://seattlerb.rubyforge.org/memcache-client/
