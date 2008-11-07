@@ -14,5 +14,8 @@ See the [Clients] page for Windows client libraries.
 ASP.net Cache Provider & Session State Provider for memcached can be downloaded from the following link
  * http://www.codeplex.com/memcachedproviders
 
+MemCacheD Manager, by Nick Pirocanac
+ * http://allegiance.chi-town.com/MemCacheDManager.aspx
+
 Old:
  * [http://www.ctoforaday.com/articles/000039.html windows port] (2004)
