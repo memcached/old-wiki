@@ -20,6 +20,9 @@ The official memcached site is http://www.danga.com/memcached
   * [MemcacheBinaryProtocol binary protocol] - forthcoming, optional protocol in development
    * [http://www.slideshare.net/tmaesaka/memcached-binary-protocol-in-a-nutshell-presentation/ slides on the binary protocol] by Toru Maesaka (2008)
 
+ * Engine interface
+  * [EngineInterface Engine interface] - Proposal for the engine interface
+
  * [http://www.socialtext.net/memcached/index.cgi?hackathon Hackathons] - dates and topics on the proposed hackathons. Also, notes from previous hackathons.
 
 ----
