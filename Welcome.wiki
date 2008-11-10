@@ -53,6 +53,7 @@ The official memcached site is http://www.danga.com/memcached
 
  * [http://linuxjournal.com/article/7451 LinuxJournal article by Brad Fitzpatrick] (2004) 
  * [http://www.slideshare.net/vishnu/livejournals-backend-a-history-of-scaling LiveJournal's Backend A History of Scaling]
+ * [http://www.scribd.com/doc/4069180/Caching-Performance-Lessons-from-Facebook Caching and Performance Lessons from Facebook] (2008)
  * [http://highscalability.com/bunch-great-strategies-using-memcached-and-mysql-better-together fotolog's memcached usage and patterns] (2008)
    * [http://mashraqi.com/2008/07/memcached-for-mysql-advanced-use-cases_09.html Memcached for Mysql Advanced Use Cases] by Farhan Mashraqi of Fotolog, 2008
  * [http://assets.en.oreilly.com/1/event/2/Just-In-Time%20Scalability_%20Agile%20Methods%20to%20Support%20Massive%20Growth%20Presentation.ppt IMVU's scalability approach: sharding, memcached] (2008) [http://www.speakeasy.org/%7Eericries/Just-In-Time%20Scalability_%20Agile%20Methods%20to%20Support%20Massive%20Growth%20Presentation.pdf PDF version]
