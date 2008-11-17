@@ -1,0 +1,8 @@
+== Proposals ==
+
+ * [http://www.socialtext.net/memcached/index.cgi?tagsupport Tagging] - Collections and thoughts from the ML about how to do tags in memcached
+ * [http://www.socialtext.net/memcached/index.cgi?cross_platform_serialisation_support Cross Platform Serialisation Support] - Collections and thoughts from the ML about how to provide a mechanism for cross-platform serialisation support
+
+== Archive ==
+
+For history: here's the [http://www.socialtext.net/memcached/index.cgi?memcached old memcached wiki] (pre-september 2008)
