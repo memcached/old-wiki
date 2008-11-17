@@ -1,0 +1,28 @@
+#summary memcached Documentation
+
+= General =
+ * [FAQ]
+ * [HowTo How To's]
+ * [Tutorials]
+ * [Resources]
+
+[Clients Client API's] - list of client libraries for your favorite programming language
+
+= Server ports to other platforms =
+
+memcached was originally created and maintained for the Linux OS.
+ * [http://www.lullabot.com/articles/setup-memcached-mamp-sandbox-environment Mac OS X]
+ * [PlatformWindows Windows]
+ * [PlatformSolaris Solaris]
+ * [PlatformBSD BSD]
+
+= Development =
+
+== Wire Protocols ==
+ * [http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt text protocol] - current memcached networking protocol
+ * [MemcacheBinaryProtocol binary protocol] - forthcoming, optional protocol in development
+  * [http://www.slideshare.net/tmaesaka/memcached-binary-protocol-in-a-nutshell-presentation/ slides on the binary protocol] by Toru Maesaka (2008)
+
+== Engine Interface ==
+ * [EngineInterface Engine interface] - Proposal for the pluggable storage engine interface
+
