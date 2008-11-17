@@ -1,4 +1,4 @@
-#summary projects forked or inspired from Memcached
+#summary projects forked/inspired from, related to memcached
 
  * http://code.google.com/p/memcachedb - A distributed key-value storage system designed for persistent, based on memcached, tugela and bdb.
 
@@ -24,11 +24,11 @@ Reimplementations
 
  * http://code.google.com/p/spcached/
  * Java versions
-   * http://www.thimbleware.com/projects/jmemcached
-   * http://code.google.com/p/jemcache/
-   * http://code.google.com/p/gmemcached - on Grizzly NIO framework
-   * http://www.jgroups.org/javagroupsnew/docs/memcached/memcached.html - jgroups version of memcached
-     * http://www.infoq.com/news/2008/10/jgroups-memcached
+  * http://www.thimbleware.com/projects/jmemcached
+  * http://code.google.com/p/jemcache/
+  * http://code.google.com/p/gmemcached - on Grizzly NIO framework
+  * http://www.jgroups.org/javagroupsnew/docs/memcached/memcached.html - jgroups version of memcached
+   * http://www.infoq.com/news/2008/10/jgroups-memcached
  * http://code.google.com/p/actord - scala version of memcached
  * http://code.google.com/p/cacherl - erlang version of memcached
 
@@ -37,5 +37,8 @@ Other
  * http://memcachefs.sourceforge.net
  * http://github.com/andrewfromgeni/mcinsight - GUI to examine memcached server
  * Accessing memcached directly from Apache
-   * http://tangent.org/608/mod_memcached.html
-   * http://code.google.com/p/modmemcachecache/
+  * http://tangent.org/608/mod_memcached.html
+  * http://code.google.com/p/modmemcachecache/
+
+ * HTTP caching frontend to memcached
+  * http://tomayko.com/writings/rack-cache-announce = Rack::Cache
