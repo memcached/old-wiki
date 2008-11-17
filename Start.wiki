@@ -1,4 +1,5 @@
 #summary memcached Documentation
+#labels Featured
 
 = General =
  * [FAQ]

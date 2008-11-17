@@ -11,7 +11,7 @@ libmemcache
 apr_memcache 
  * http://www.outoforder.cc/projects/libs/apr_memcache by Paul Querna; Apache Software License version 2.0
 
-MemCacheClient 
+memcacheclient
  * http://code.jellycan.com/memcacheclient (cross-platform, but primary focus on Windows
 
 libketama 
