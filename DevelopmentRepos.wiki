@@ -1,13 +1,9 @@
-= Development / Source Code repositories =
+= Development / source code repositories =
 
 = Stable =
 
- * Subversion repository
-  * http://code.sixapart.com/svn/memcached/
-
- * Integration / stable 
-  * http://consoleninja.net/code/memcached/memcached.git
-  * http://consoleninja.net/gitweb/gitweb.cgi?p=memcached.git;a=summary
+ * http://consoleninja.net/code/memcached/memcached.git 
+  * [http://consoleninja.net/gitweb/gitweb.cgi?p=memcached.git;a=summary gitweb view]
 
 = Development =
 
@@ -15,7 +11,12 @@
   * http://github.com/dustin/memcached/tree/rewritten-bin
    * Includes corrected authorship/attribution history
   * http://github.com/dustin/memcached-test
-   * Client and server test code (used primarily for binary protocol testing).  by Dustin Sallings
+   * Client and server test code (used primarily for binary protocol testing)
 
  * Plugin storage engine development
   * http://github.com/tmaesaka/memcached/tree/master
+
+= Archive =
+
+ * Subversion 
+  * http://code.sixapart.com/svn/memcached/
