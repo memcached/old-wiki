@@ -18,5 +18,5 @@
 
 = Archive =
 
- * The community's moved to git distributed sccs, but the old subversion archive's still available.
+ * The community's moved to git distributed sccs for its development needs, but the original subversion repository is still available.
   * http://code.sixapart.com/svn/memcached/
