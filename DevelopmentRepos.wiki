@@ -1,5 +1,7 @@
 = Development / Source Code repositories =
 
+= Stable =
+
  * Subversion repository
   * http://code.sixapart.com/svn/memcached/
 
@@ -7,7 +9,7 @@
   * http://consoleninja.net/code/memcached/memcached.git
   * http://consoleninja.net/gitweb/gitweb.cgi?p=memcached.git;a=summary
 
-= Dev repositories =
+= Development =
 
  * Binary protocol development
   * http://github.com/dustin/memcached/tree/rewritten-bin
