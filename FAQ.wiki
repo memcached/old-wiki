@@ -336,6 +336,8 @@ This is analogous to using MySQL's GET_LOCK with a timeout value set to 0. There
 
 Here's an attempt to build [http://www.grepmymind.com/2008/01/11/memcached-php-semaphore-cache-expiration-handling/ semaphore locks] in memcached.
 
+Also see the [http://groups.google.com/group/memcached/msg/3834e3ce9e130d79 mailing list discussion]
+
 == Pre warm your cache == 
 
 If you have a very highly used site, and you're bringing a feature back from the dead, or launching a brand new feature, you might end up having issues with an empty cache. Cache comes up empty, herd of humans click, and your database gets overwhelmed while trying to fill the cache. In order to get around this you may try "warming" your cache with any method available.
@@ -411,5 +413,3 @@ Remember nothing is stopping you from accidentally connecting many times. If you
 
  * creating keys for caching queries
  * getting stale entries when a memcached server flaps in and out of the cluster
-
-
