@@ -300,7 +300,7 @@ One should be mindful about possible issues in populating or repopulating our ca
 
 == How to prevent clobbering updates, stampeding requests == 
 
-So how does one prevent clobbering your own updates or stampeding during a cache miss? The easiest answer is to avoid the problem. Don't set caches to expire, and update them via cron, or as data is updated. This does not eliminate the possibility of a stampede, but removes it from becoming the norm.
+So how does one prevent clobbering your own updates or stampeding during a cache miss?  Aka, "cache stampedes" or "database stampedes". The easiest answer is to avoid the problem. Don't set caches to expire, and update them via cron, or as data is updated. This does not eliminate the possibility of a stampede, but removes it from becoming the norm.
 
 Some great ideas from the mailing list also underline another approach:
 
@@ -316,7 +316,9 @@ If you have a lot of data excelling at causing this problem, you might also cons
 
 Another (pretty cool!) idea is to use Gearman, as noted on the mailing list: http://lists.danga.com/pipermail/memcached/2007-July/004858.html
 
-Another solution on the old mailing list: [http://lists.danga.com/pipermail/memcached/2007-July/004807.html probabilistic timeout] (2007)
+Other threads from the mailing list: 
+ * [http://lists.danga.com/pipermail/memcached/2007-July/004810.html cache miss stampedes] (2007)
+ * [http://lists.danga.com/pipermail/memcached/2007-July/004807.html probabilistic timeout] (2007)
 
 == Emulating locking with the add command == 
 
