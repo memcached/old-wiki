@@ -380,6 +380,10 @@ Most clients support the ability to do multi-key gets, pipelining requests into 
 
 More good techniques on how to coalesce and parallelize requests are on the mailinglist, with a recent one from Brad here: http://lists.danga.com/pipermail/memcached/2007-July/004528.html
 
+== Is there a guaranteed order to the results returned by get_multi? ==
+
+No, you'll have to do your own processing (such as sorting) in your client/application if you depend on some ordering.  [http://groups.google.com/group/memcached/browse_thread/thread/5536bfb258e3bc5a source]
+
 == Creating good keys == 
 
 It's a good idea to use sprintf (), or a similar function, when creating keys. Otherwise, it's easy for null values and boolean values to slip into your keys and these may not work as you expect. e.g. memKey = sprintf ( 'cat:%u', categoryId );
