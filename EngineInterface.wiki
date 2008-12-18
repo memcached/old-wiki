@@ -1,13 +1,16 @@
 {{{
+
+
+
 Network Working Group                                        Norbye, Ed.
 Internet-Draft                                     Sun Microsystems, INC
 Intended status: Informational                              Maesaka, Ed.
-Expires: April 26, 2009                                        mixi, INC
-                                                        October 23, 2008
+Expires: June 21, 2009                                         mixi, INC
+                                                       December 18, 2008
 
 
                        Memcache Engine Interface
-                    draft-norbye-engine-interface-01
+                    draft-norbye-engine-interface-02
 
 Status of this Memo
 
@@ -31,7 +34,7 @@ Status of this Memo
    The list of Internet-Draft Shadow Directories can be accessed at
    http://www.ietf.org/shadow.html.
 
-   This Internet-Draft will expire on April 26, 2009.
+   This Internet-Draft will expire on June 21, 2009.
 
 Abstract
 
@@ -50,9 +53,9 @@ Abstract
 
 
 
-Norbye & Maesaka         Expires April 26, 2009                 [Page 1]
+Norbye & Maesaka          Expires June 21, 2009                 [Page 1]
 
-Internet-Draft          Memcache Engine Interface           October 2008
+Internet-Draft          Memcache Engine Interface          December 2008
 
 
 Table of Contents
@@ -61,27 +64,29 @@ Table of Contents
      1.1.  Conventions Used In This Document  . . . . . . . . . . . .  3
    2.  Data structures  . . . . . . . . . . . . . . . . . . . . . . .  3
      2.1.  Error codes  . . . . . . . . . . . . . . . . . . . . . . .  3
-     2.2.  struct item  . . . . . . . . . . . . . . . . . . . . . . .  3
-     2.3.  Interface structure  . . . . . . . . . . . . . . . . . . .  4
-   3.  Create instance  . . . . . . . . . . . . . . . . . . . . . . .  4
-   4.  Interface structure v. 1 . . . . . . . . . . . . . . . . . . .  4
-     4.1.  interface  . . . . . . . . . . . . . . . . . . . . . . . .  6
-     4.2.  get_info . . . . . . . . . . . . . . . . . . . . . . . . .  6
-     4.3.  initialize . . . . . . . . . . . . . . . . . . . . . . . .  6
-     4.4.  destroy  . . . . . . . . . . . . . . . . . . . . . . . . .  6
-     4.5.  item_allocate  . . . . . . . . . . . . . . . . . . . . . .  6
-     4.6.  item_delete  . . . . . . . . . . . . . . . . . . . . . . .  7
-     4.7.  item_release . . . . . . . . . . . . . . . . . . . . . . .  7
-     4.8.  get  . . . . . . . . . . . . . . . . . . . . . . . . . . .  7
-     4.9.  get_stats  . . . . . . . . . . . . . . . . . . . . . . . .  8
-     4.10. store  . . . . . . . . . . . . . . . . . . . . . . . . . .  9
-     4.11. arithmetic . . . . . . . . . . . . . . . . . . . . . . . .  9
-     4.12. flush  . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-     4.13. touch  . . . . . . . . . . . . . . . . . . . . . . . . . . 10
-   5.  Asynchronous interface . . . . . . . . . . . . . . . . . . . . 10
-   6.  Security Considerations  . . . . . . . . . . . . . . . . . . . 11
-   7.  Normative References . . . . . . . . . . . . . . . . . . . . . 11
-   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 11
+     2.2.  Store operations . . . . . . . . . . . . . . . . . . . . .  3
+     2.3.  rel_time_t . . . . . . . . . . . . . . . . . . . . . . . .  3
+     2.4.  struct item  . . . . . . . . . . . . . . . . . . . . . . .  4
+     2.5.  Interface structure  . . . . . . . . . . . . . . . . . . .  5
+   3.  Create instance  . . . . . . . . . . . . . . . . . . . . . . .  5
+   4.  Interface structure v. 1 . . . . . . . . . . . . . . . . . . .  5
+     4.1.  interface  . . . . . . . . . . . . . . . . . . . . . . . .  7
+     4.2.  get_info . . . . . . . . . . . . . . . . . . . . . . . . .  7
+     4.3.  initialize . . . . . . . . . . . . . . . . . . . . . . . .  7
+     4.4.  destroy  . . . . . . . . . . . . . . . . . . . . . . . . .  7
+     4.5.  item_allocate  . . . . . . . . . . . . . . . . . . . . . .  7
+     4.6.  item_delete  . . . . . . . . . . . . . . . . . . . . . . .  8
+     4.7.  item_release . . . . . . . . . . . . . . . . . . . . . . .  8
+     4.8.  get  . . . . . . . . . . . . . . . . . . . . . . . . . . .  8
+     4.9.  get_stats  . . . . . . . . . . . . . . . . . . . . . . . .  9
+     4.10. store  . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+     4.11. arithmetic . . . . . . . . . . . . . . . . . . . . . . . . 10
+     4.12. flush  . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+     4.13. touch  . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+   5.  Asynchronous interface . . . . . . . . . . . . . . . . . . . . 11
+   6.  Security Considerations  . . . . . . . . . . . . . . . . . . . 12
+   7.  Normative References . . . . . . . . . . . . . . . . . . . . . 12
+   Authors' Addresses . . . . . . . . . . . . . . . . . . . . . . . . 12
 
 
 
@@ -104,11 +109,9 @@ Table of Contents
 
 
 
-
-
-Norbye & Maesaka         Expires April 26, 2009                 [Page 2]
+Norbye & Maesaka          Expires June 21, 2009                 [Page 2]
 
-Internet-Draft          Memcache Engine Interface           October 2008
+Internet-Draft          Memcache Engine Interface          December 2008
 
 
 1.  Introduction
@@ -137,10 +140,44 @@ Internet-Draft          Memcache Engine Interface           October 2008
    ENGINE_EWOULDBLOCK  This would cause the engine to block
    ENGINE_E2BIG        The data is too big for the engine
 
-2.2.  struct item
+2.2.  Store operations
+
+   The engine interface defines the enum ENGINE_STORE_OPERATION with the
+   following values:
+
+   OPERATION_ADD       TODO: fillme!!
+   OPERATION_SET
+   OPERATION_REPLACE
+   OPERATION_APPEND
+   OPERATION_PREPEND
+   OPERATION_CAS
+
+2.3.  rel_time_t
+
+   Items will only expire some time in the future, and the rel_time_t is
+   a datatype to represent a time period relative to process startup
+   time.
+
+   rel_time_t
+
+     typedef uint32_t rel_time_t;
+
+
+
+
+Norbye & Maesaka          Expires June 21, 2009                 [Page 3]
+
+Internet-Draft          Memcache Engine Interface          December 2008
+
+
+2.4.  struct item
 
    Each "key-value" pair stored in memcached is represented with an item
-   structure in memcached:
+   structure consisting of a fixed part and a variable part.  This might
+   sound unnecessary complex, but adds extra flexibility for the various
+   storage engines.
+
+   The fixed part of the item structure consists of:
 
    struct item
 
@@ -149,37 +186,54 @@ Internet-Draft          Memcache Engine Interface           October 2008
      uint32_t nbytes;
      uint32_t flags;
      uint16_t nkey;
-     uint64_t cas_id;
-     void* key;
-     void* data;
+     uint16_t iflag;
    } item;
 
    exptime             When the item will expire (relative to process
                        startup)
-
-
-
-
-
-
-Norbye & Maesaka         Expires April 26, 2009                 [Page 3]
-
-Internet-Draft          Memcache Engine Interface           October 2008
-
-
    nbytes              The total size of the data (in bytes)
    flags               Flags associated with the item
    nkey                The total length of the key (in bytes)
-   cas_id              The Data Version Check
-   key                 Pointer to the key
-   data                Pointer to the data
+   iflag               Item flags describing the content of the item
+                       structure.  The upper 8 bits is reserved for the
+                       storage engine to use
 
-   NOTE: In previous versions of memcached the key and data was stored
-   together with the item structure.  The motivation for abandoning this
-   is that using a dedicated pointer allows us to store the metadata
-   somewhere else than the actual data.
+   The variable part of the item structure contains the following
+   optional data.  Please note that the optional fields MUST be present
+   in the specified order.
 
-2.3.  Interface structure
+   struct item variable data
+
+   cas_id          Optional, stored as uint64_t
+   inline key      Optional, stored as n bytes containing the key
+   pointer to key  Optional, stored as a void*
+   inline data     Optional, stored as n bytes containing the data
+   padding         Optional, stored as n bytes
+   pointer to data Optional, Stored as a void*
+
+   cas_id              Only present if iflag " ITEM_WITH_CAS
+   inline key          Present if !(iflag " ITEM_KEY_PTR)
+   pointer to key      Present if iflag " ITEM_KEY_PTR
+
+
+
+
+
+
+
+Norbye & Maesaka          Expires June 21, 2009                 [Page 4]
+
+Internet-Draft          Memcache Engine Interface          December 2008
+
+
+   inline data         Present if !(iflag " ITEM_DATA_PTR)
+   padding             Only present if !(iflag " ITEM_KEY_PTR) "" (iflag
+                       " ITEM_DATA_PTR)
+   pointer to data     Present if iflag " ITEM_DATA_PTR
+
+   The size of the padding is (sizeof(void*) - (nkey % sizeof(void*))
+
+2.5.  Interface structure
 
    All communication with the storage engine will go through the engine
    interface structure.  This is defined as an extendible structure to
@@ -212,37 +266,36 @@ Internet-Draft          Memcache Engine Interface           October 2008
 
    typedef struct engine_interface_v1 {
       struct engine_interface interface;
-      uint32_t interface_level;
-      const char* (*get_info)(struct engine_handle* handle);
-      ENGINE_ERROR_CODE (*initialize)(struct engine_handle* handle,
-
-
-
-Norbye & Maesaka         Expires April 26, 2009                 [Page 4]
-
-Internet-Draft          Memcache Engine Interface           October 2008
-
-
+      const char* (*get_info)(ENGINE_HANDLE* handle);
+      ENGINE_ERROR_CODE (*initialize)(ENGINE_HANDLE* handle,
                                       const char* config_str);
-      void (*destroy)(struct engine_handle* handle);
-      ENGINE_ERROR_CODE (*item_allocate)(struct engine_handle* handle,
+      void (*destroy)(ENGINE_HANDLE* handle);
+      ENGINE_ERROR_CODE (*item_allocate)(ENGINE_HANDLE* handle,
                                          const void* cookie,
                                          item **item,
                                          const void* key,
+
+
+
+Norbye & Maesaka          Expires June 21, 2009                 [Page 5]
+
+Internet-Draft          Memcache Engine Interface          December 2008
+
+
                                          const size_t nkey,
                                          const size_t nbytes,
                                          const int flags,
                                          const rel_time_t exptime);
-      ENGINE_ERROR_CODE (*item_delete)(struct engine_handle* handle,
+      ENGINE_ERROR_CODE (*item_delete)(ENGINE_HANDLE* handle,
                                        const void* cookie,
                                        item* item);
-      void (*item_release)(struct engine_handle* handle, item* item);
-      ENGINE_ERROR_CODE (*get)(struct engine_handle* handle,
+      void (*item_release)(ENGINE_HANDLE* handle, item* item);
+      ENGINE_ERROR_CODE (*get)(ENGINE_HANDLE* handle,
                                const void* cookie,
                                item** item,
                                const void* key,
                                const int nkey);
-      char *(*get_stats)(struct engine_handle* handle,
+      char *(*get_stats)(ENGINE_HANDLE* handle,
                          const char *stat_key,
                          int nkey,
                          uint32_t (*callback)(char *buf,
@@ -253,11 +306,11 @@ Internet-Draft          Memcache Engine Interface           October 2008
                                               void *cookie),
                          const void *cookie,
                          int *buflen);
-      ENGINE_ERROR_CODE (*store)(struct engine_handle* handle,
+      ENGINE_ERROR_CODE (*store)(ENGINE_HANDLE* handle,
                                  const void *cookie,
                                  item* item,
                                  enum operation operation);
-      ENGINE_ERROR_CODE (*arithmetic)(struct engine_handle* handle,
+      ENGINE_ERROR_CODE (*arithmetic)(ENGINE_HANDLE* handle,
                                       const void* cookie,
                                       const void* key,
                                       const int nkey,
@@ -268,21 +321,22 @@ Internet-Draft          Memcache Engine Interface           October 2008
                                       const rel_time_t exptime,
                                       uint64_t *cas,
                                       uint64_t *result);
-      ENGINE_ERROR_CODE (*flush)(struct engine_handle* handle,
+      ENGINE_ERROR_CODE (*flush)(ENGINE_HANDLE* handle,
                                  const void* cookie, time_t when);
-      ENGINE_ERROR_CODE (*touch)(struct engine_handle* handle,
-
-
-
-Norbye & Maesaka         Expires April 26, 2009                 [Page 5]
-
-Internet-Draft          Memcache Engine Interface           October 2008
-
-
+      ENGINE_ERROR_CODE (*touch)(ENGINE_HANDLE* handle,
                                  const void* cookie,
                                  item *item,
                                  const rel_time_t newtime);
-   } ENGINE_HANDLE;
+   } ENGINE_HANDLE_V1;
+
+
+
+
+
+Norbye & Maesaka          Expires June 21, 2009                 [Page 6]
+
+Internet-Draft          Memcache Engine Interface          December 2008
+
 
 4.1.  interface
 
@@ -297,7 +351,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
    returned, so the engine SHOULD reuse this buffer to aviod memory
    leakage.
 
-   const char* (*get_info)(struct engine_handle* handle);
+   const char* (*get_info)(ENGINE_HANDLE* handle);
 
    handle              Pointer to the engine
 
@@ -306,7 +360,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
    Called during initialization of memcached.  The engine should do all
    of its initalization in this routine.
 
-   ENGINE_ERROR_CODE (*initialize)(struct engine_handle* handle,
+   ENGINE_ERROR_CODE (*initialize)(ENGINE_HANDLE* handle,
                                    const char* config_str);
 
    handle              Pointer to the engine
@@ -317,7 +371,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
    Called during shutdown of memcached.  The engine should release all
    resources and perform shutdown logic in this routine.
 
-   void (*destroy)(struct engine_handle* handle);
+   void (*destroy)(ENGINE_HANDLE* handle);
 
    handle              Pointer to the engine
 
@@ -325,23 +379,21 @@ Internet-Draft          Memcache Engine Interface           October 2008
 
    Allocate space to store an item.
 
-
-
-
-
-
-Norbye & Maesaka         Expires April 26, 2009                 [Page 6]
-
-Internet-Draft          Memcache Engine Interface           October 2008
-
-
-   ENGINE_ERROR_CODE (*item_allocate)(struct engine_handle* handle,
+   ENGINE_ERROR_CODE (*item_allocate)(ENGINE_HANDLE* handle,
                                       const void* cookie,
                                       item **item,
                                       const void* key,
                                       const size_t nkey,
                                       const size_t nbytes.
                                       const int flags,
+
+
+
+Norbye & Maesaka          Expires June 21, 2009                 [Page 7]
+
+Internet-Draft          Memcache Engine Interface          December 2008
+
+
                                       const rel_time_t exptime);
 
    handle              Pointer to the engine
@@ -359,7 +411,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
 
    Delete an item.
 
-   ENGINE_ERROR_CODE (*item_delete)(struct engine_handle* handle,
+   ENGINE_ERROR_CODE (*item_delete)(ENGINE_HANDLE* handle,
                                     const void* cookie,
                                     item* item);
 
@@ -373,7 +425,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
    Release an item.  The core server will no longer reference the
    object, so the engine may release or modify it.
 
-   void (*item_release)(struct engine_handle* handle, item* item);
+   void (*item_release)(ENGINE_HANDLE* handle, item* item);
 
    handle              Pointer to the engine
    item                The item to release
@@ -382,20 +434,21 @@ Internet-Draft          Memcache Engine Interface           October 2008
 
    Get an item identified by a key
 
-
-
-
-
-Norbye & Maesaka         Expires April 26, 2009                 [Page 7]
-
-Internet-Draft          Memcache Engine Interface           October 2008
-
-
-   ENGINE_ERROR_CODE (*get)(struct engine_handle* handle,
+   ENGINE_ERROR_CODE (*get)(ENGINE_HANDLE* handle,
                             const void* cookie,
                             item** item,
                             const void* key,
                             const int nkey);
+
+
+
+
+
+
+Norbye & Maesaka          Expires June 21, 2009                 [Page 8]
+
+Internet-Draft          Memcache Engine Interface          December 2008
+
 
    handle              Pointer to the engine
    cookie              Cookie for the engine to use with
@@ -411,7 +464,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
    represents a single row of stats.
 
 
-   char *(*get_stats)(struct engine_handle* handle,
+   char *(*get_stats)(ENGINE_HANDLE* handle,
                       const char *stat_key,
                       int nkey,
                       uint32_t (*callback)(char *buf,
@@ -440,18 +493,19 @@ Internet-Draft          Memcache Engine Interface           October 2008
    Details on the callback is as follows:
 
 
-
-
-Norbye & Maesaka         Expires April 26, 2009                 [Page 8]
-
-Internet-Draft          Memcache Engine Interface           October 2008
-
-
    uint32_t (*callback)(char *buf,
                         const char *key,
                         const uint16_t klen,
                         const char *val,
                         const uint32_t vlen,
+
+
+
+Norbye & Maesaka          Expires June 21, 2009                 [Page 9]
+
+Internet-Draft          Memcache Engine Interface          December 2008
+
+
                         void *cookie);
 
    buf                 Buffer to write to which the engine MUST allocate
@@ -468,7 +522,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
 
    Store an item in the cache.
 
-   ENGINE_ERROR_CODE (*store)(struct engine_handle* handle,
+   ENGINE_ERROR_CODE (*store)(ENGINE_HANDLE* handle,
                               const void *cookie,
                               item* item,
                               enum operation operation);
@@ -484,7 +538,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
    Perform arithmetic operation (increment / decrement) on the value of
    a key.
 
-   ENGINE_ERROR_CODE (*arithmetic)(struct engine_handle* handle,
+   ENGINE_ERROR_CODE (*arithmetic)(ENGINE_HANDLE* handle,
                                    const void* cookie,
                                    const void* key,
                                    const int nkey,
@@ -498,9 +552,14 @@ Internet-Draft          Memcache Engine Interface           October 2008
 
 
 
-Norbye & Maesaka         Expires April 26, 2009                 [Page 9]
+
+
+
+
+
+Norbye & Maesaka          Expires June 21, 2009                [Page 10]
 
-Internet-Draft          Memcache Engine Interface           October 2008
+Internet-Draft          Memcache Engine Interface          December 2008
 
 
    handle              Pointer to the engine
@@ -521,7 +580,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
 
    Flush all items from the cache
 
-   ENGINE_ERROR_CODE (*flush)(struct engine_handle* handle,
+   ENGINE_ERROR_CODE (*flush)(ENGINE_HANDLE* handle,
                               const void *cookie,
                               time_t when);
 
@@ -534,7 +593,7 @@ Internet-Draft          Memcache Engine Interface           October 2008
 
    Set the last referenced time for an object
 
-   ENGINE_ERROR_CODE (*touch)(struct engine_handle* handle,
+   ENGINE_ERROR_CODE (*touch)(ENGINE_HANDLE* handle,
                               const void* cookie,
                               item* item,
                               const rel_time_t newtime);
@@ -554,9 +613,9 @@ Internet-Draft          Memcache Engine Interface           October 2008
 
 
 
-Norbye & Maesaka         Expires April 26, 2009                [Page 10]
+Norbye & Maesaka          Expires June 21, 2009                [Page 11]
 
-Internet-Draft          Memcache Engine Interface           October 2008
+Internet-Draft          Memcache Engine Interface          December 2008
 
 
    void notify_io_complete(const void* cookie,
@@ -610,6 +669,6 @@ Authors' Addresses
 
 
 
-Norbye & Maesaka         Expires April 26, 2009                [Page 11]
+Norbye & Maesaka          Expires June 21, 2009                [Page 12]
 
 }}}
