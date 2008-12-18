@@ -211,9 +211,9 @@ Internet-Draft          Memcache Engine Interface          December 2008
    padding         Optional, stored as n bytes
    pointer to data Optional, Stored as a void*
 
-   cas_id              Only present if iflag " ITEM_WITH_CAS
-   inline key          Present if !(iflag " ITEM_KEY_PTR)
-   pointer to key      Present if iflag " ITEM_KEY_PTR
+   cas_id              Only present if iflag & ITEM_WITH_CAS
+   inline key          Present if !(iflag & ITEM_KEY_PTR)
+   pointer to key      Present if iflag & ITEM_KEY_PTR
 
 
 
@@ -226,10 +226,10 @@ Norbye & Maesaka          Expires June 21, 2009                 [Page 4]
 Internet-Draft          Memcache Engine Interface          December 2008
 
 
-   inline data         Present if !(iflag " ITEM_DATA_PTR)
-   padding             Only present if !(iflag " ITEM_KEY_PTR) "" (iflag
-                       " ITEM_DATA_PTR)
-   pointer to data     Present if iflag " ITEM_DATA_PTR
+   inline data         Present if !(iflag & ITEM_DATA_PTR)
+   padding             Only present if !(iflag & ITEM_KEY_PTR) && (iflag
+                       & ITEM_DATA_PTR)
+   pointer to data     Present if iflag & ITEM_DATA_PTR
 
    The size of the padding is (sizeof(void*) - (nkey % sizeof(void*))
 
@@ -671,4 +671,5 @@ Authors' Addresses
 
 Norbye & Maesaka          Expires June 21, 2009                [Page 12]
 
+
 }}}
