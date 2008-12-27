@@ -1,5 +1,7 @@
 #summary How To's
 
+Discussions, notes, or external links.
+
  * [HowToSessions Sessions] - How to store sessions in memcached
  * [HowToMonitor Monitoring memcached]
  * [HowToMultipleDatacenters Multiple datacenters]
