@@ -1,5 +1,7 @@
 #summary This is a story of Caching
 
+_ed note: this is an overview of basic memcached use case, and how memcached clients work_
+
 Two plucky adventurers, Programmer and Sysadmin, set out on a journey. Together they make websites. Websites with webservers and databases. Users from all over the Internet talk to the webservers and ask them to make pages for them. The webservers ask the databases for junk they need to make the pages. Programmer codes, Sysadmin adds webservers and database servers.
 
 One day the Sysadmin realizes that their database is sick! It's spewing bile and red stuff all over! Sysadmin declares it has a fever, a load average of 20! Programmer asks Sysadmin, "well, what can we do?" Sysadmin says, "I heard about this great thing called memcached. It really helped livejournal!" "Okay, let's try it!" says the Programmer.
