@@ -1,6 +1,5 @@
 #summary memcached Documentation
 #labels Featured
-
 #sidebar TableOfContents
 
 = General =
