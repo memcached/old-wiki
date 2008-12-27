@@ -2,12 +2,12 @@
 #labels Featured
 
 = General =
- * [FAQ]
+ * [FAQ] - get started here
  * [HowTo How To's]
  * [Tutorials]
- * [Resources]
+ * [Resources] - links to outside articles
 
-[Clients Client API's] - list of client libraries for your favorite programming language
+ * [Clients Client API's] - Client libraries for your favorite programming language
 
 = Server ports to other platforms =
 
