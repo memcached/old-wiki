@@ -1,26 +1,15 @@
 #summary projects forked/inspired from, related to memcached
 
+== Forks and patchsets ==
+
  * http://code.google.com/p/memcachedb - A distributed key-value storage system designed for persistent, based on memcached, tugela and bdb.
-
  * http://code.google.com/p/dbcached - memcached + qdbm/berkeley-db
-
  * http://meta.wikimedia.org/wiki/Tugela_Cache - memcached + persistence
-
  * http://repcached.lab.klab.org - memcached + replication
-
  * http://code.google.com/p/memcached-pro
-
  * http://memcachedb.org/memcacheq - queue based on memcached protocol
 
- * http://rubyforge.org/projects/starling - queue based on memcached protocol
-
- * http://code.google.com/p/sparrow - queue based on memcached protocol
-
- * http://code.google.com/p/memagent - memcached proxy
-
- * http://labs.gree.jp/Top/OpenSource/Flared.html - yet another memcached
-
-Reimplementations
+== Reimplementations ==
 
  * http://code.google.com/p/spcached/
  * Java versions
@@ -31,8 +20,13 @@ Reimplementations
    * http://www.infoq.com/news/2008/10/jgroups-memcached
  * http://code.google.com/p/actord - scala version of memcached
  * http://code.google.com/p/cacherl - erlang version of memcached
+ * http://rubyforge.org/projects/starling - queue based on memcached protocol
+ * http://code.google.com/p/sparrow - queue based on memcached protocol
+ * http://labs.gree.jp/Top/OpenSource/Flared.html - yet another memcached
 
-Other
+== Other ==
+
+ * http://code.google.com/p/memagent - memcached proxy
 
  * http://memcachefs.sourceforge.net
  * http://github.com/andrewfromgeni/mcinsight - GUI to examine memcached server
