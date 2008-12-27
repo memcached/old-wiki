@@ -16,7 +16,6 @@ memcached was originally created and maintained for the Linux OS.
  * [http://www.lullabot.com/articles/setup-memcached-mamp-sandbox-environment Mac OS X]
  * [PlatformWindows Windows]
  * [PlatformSolaris Solaris]
- * [PlatformBSD BSD]
 
 = Development =
 
