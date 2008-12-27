@@ -25,6 +25,7 @@
 == Books about or referencing memcached ==
 
  * [http://pragprog.com/titles/memcd/using-memcached Using Memcached] ebook
+ * [http://oreilly.com/catalog/9780596101718/index.html High Performance MySQL 2nd ed] (discusses caching in many forms)
 
 == Docs and Links ==
 
