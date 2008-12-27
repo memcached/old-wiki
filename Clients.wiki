@@ -9,7 +9,7 @@ libmemcache
  * http://people.freebsd.org/%7Eseanc/libmemcache by Sean Chittenden; BSD license. This is the original C library. It is no longer under active development. You should try libmemcached instead.
 
 apr_memcache 
- * http://www.outoforder.cc/projects/libs/apr_memcache by Paul Querna; Apache Software License version 2.0
+ * http://www.outoforder.cc/projects/libs/apr_memcache by Paul Querna; Apache Software License version 2.0 (doesn't appear to be actively maintained since 2005)
 
 memcacheclient
  * http://code.jellycan.com/memcacheclient (cross-platform, but primary focus on Windows
@@ -36,6 +36,9 @@ Cache::Memcached::Fast
 
 Perl libmemcached wrapper
  * http://code.google.com/p/perl-libmemcached (libmemcached wrapper)
+
+Cache::Memcached-compatible perl libmemcached wrapper wrapper (heh)
+ * http://search.cpan.org/dist/Cache-Memcached-libmemcached/
 
 = Java =
 
@@ -144,4 +147,3 @@ Also, see the forthcoming [MemcacheBinaryProtocol binary protocol docs].
 Danga Interactive list of clients http://www.danga.com/memcached/apis.bml
 
 http://dealnews.com/developers/memcached.html - fastest client implementations (2006), obsoleted as more languages wrap the C-based libmemcached client library.
-
