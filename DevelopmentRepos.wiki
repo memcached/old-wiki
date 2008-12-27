@@ -4,6 +4,7 @@
 
  * http://consoleninja.net/code/memcached/memcached.git 
   * [http://consoleninja.net/gitweb/gitweb.cgi?p=memcached.git;a=summary gitweb view]
+  * [http://danga.com/memcached/download.bml more info + quick git tutorial]
 
 = Development =
 
