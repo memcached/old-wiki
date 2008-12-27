@@ -1,7 +1,7 @@
 #summary TOC
 
-* [Start Main Page]
-* [FAQ]
-* [HowTo How To's]
-* [Tutorials]
-* [Resources External Resources]
+ * [Start Main Page]
+ * [FAQ]
+ * [HowTo How To's]
+ * [Tutorials]
+ * [Resources External Resources]
