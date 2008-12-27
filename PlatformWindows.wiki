@@ -1,3 +1,5 @@
+_note: we're looking for ways to integrate a windows port into mainline. Please contact the list if you're interested in this work_
+
 Article:  
  * [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx introduction to Memcached on Windows] (2008)
 
