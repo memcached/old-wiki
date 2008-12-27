@@ -21,4 +21,4 @@
    * MemCacheD Manager, by Nick Pirocanac
      * http://allegiance.chi-town.com/MemCacheDManager.aspx
 
-Or, just do a simple connect to the port where memcached is listening. 
+Or, just do a simple connect to the port where memcached is listening. You can run a simple command like 'version' or 'stats' to see if memcached is listening.
