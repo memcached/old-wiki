@@ -1,1 +1,0 @@
-http://www.lexemetech.com/2007/11/consistent-hashing.html
