@@ -1,3 +1,0 @@
-#summary How to invalidate a collection or list of keys
-
-http://www.aminus.org/blogs/index.php/2007/12/30/memcached_set_invalidation
