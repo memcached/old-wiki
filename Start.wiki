@@ -34,3 +34,4 @@ memcached was originally created and maintained for the Linux OS.
 == Proposals ==
 
  * [ProposalTagSupport Tag Support]
+ * [ProposalCrossCompatClients Cross Compatible Client Discussion]
