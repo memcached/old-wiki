@@ -12,6 +12,11 @@
 
  * [HowToLearnMoreScalability Learn more about scalability]
 
+== Communication ==
+
+ * [http://groups.google.com/group/memcached Mailing list]
+ * IRC - irc.freenode.net #memcached
+
 = Server ports to other platforms =
 
 memcached was originally created and maintained for the Linux OS.
