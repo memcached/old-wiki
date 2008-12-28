@@ -30,3 +30,7 @@ memcached was originally created and maintained for the Linux OS.
 
 == Engine Interface ==
  * [EngineInterface Engine interface] - Proposal for the pluggable storage engine interface
+
+== Proposals ==
+
+[ProposalTagSupport Tag Support]
