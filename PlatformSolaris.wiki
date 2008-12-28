@@ -1,1 +1,0 @@
-http://blogs.sun.com/trond/entry/memcached_in_solaris
