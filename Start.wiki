@@ -16,6 +16,7 @@
 
  * [http://groups.google.com/group/memcached Mailing list]
  * IRC - irc.freenode.net #memcached
+ * [Hackathons]
 
 = Server ports to other platforms =
 
