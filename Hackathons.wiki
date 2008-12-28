@@ -1,0 +1,112 @@
+#summary Notes on the latest and older memcached hackathons
+
+_note: This is a copy/paste from the old wiki. We can format/update the next time we schedule a hackathon_
+
+Hackathon
+Who: anyone interested in helping to implement and/or suggest features, bug fixes, add documentation, etc. may attend.
+
+What: memcached hackathon
+What's a hackathon?
+Pretty simple: it's a marathon coding session. The goal is to get something done. Come
+armed with a pet project of your own if you like, or just with some
+energy and a willingness to think hard and pound out code. It has a
+scheduled start time, and it ends when it ends. (But people are
+expected to call it quits as their body clocks and real lives dictate.
+We don't want bleary-eyed programmers pounding out buggy code because
+they stopped thinking straight an hour earlier. It's not an insomnia
+contest!)
+
+At Facebook's hackathons, the beginning of the evening usually involves
+throwing lots of ideas around to see which ones have the most merit and
+interest the most people. There are always many more proposals than end
+up getting worked on, and there is no stigma whatsoever to suggesting
+something then hearing someone else's idea and wanting to work on that
+instead.
+Upcoming events
+Previous Hackathons
+Memcached Hackathon at Sun Microsystems, 14 October 2008
+When: Final date: October 14th, starting at 6pm-ish
+Where: Sun Microsystems, 10 Network Circle, Menlo Park, CA
+Who: Brian Aker, Trond Norbye, Toru Maesaka, Matt Ingenthron, Denis Sheahan, Don MacAskill, Senthil Krishna Bryan Guillemette, John Menerick, Eric Lambert, Dustin Sallings, Steve Yen, Ken Shepppardson, Alan Kasindorf, Brad Fitzpatrick, Paul Saab,
+ Pallab Bhattacharya, Heidi Bergh-Hoff
+What:
+
+Primary things to hack out at this hackathon are...
+
+    * Binary protocol
+          o Possibly add an OPCODE for engine specific request (Toru)
+    * Storage interface
+    * Testing
+    * Client libraries
+    * Durable engine
+    * Scaling on highly threaded servers
+          o Lower number of locks in design (ask Trond here :) )
+    * Enforce warnings as errors
+          o Great idea but depending on the version/type of the C compiler, this might become troublesome for end-users. -Wall and -Werror flags should be there to enforce memcached developers to write valid code, hence Toru proposes the following:
+                + These compiler options will only be enabled when configured with --enable-(debug|devel)
+                + Alternatively, make everyone use these flags unless it is turned off explicitly, e.g. --enable-ship (Trond)
+    * GPU (CUDA) performance?
+    * ??? (put thoughts here -- see list below for possibilities)
+
+To help us bring you on campus faster, it would be helpful if you
+could send an email to matt dot ingenthron at sun with your first name,
+last name and company (if appropriate). Sorry for the hassle, but it's
+fun legal stuff. Someone will meet you in the lobby of buidling 10 and
+bring you over to the hackathon.
+
+If you happen to be coming in from out of town, we recommend staying near University Ave in downtown Palo Alto, CA.
+Notes:
+
+    * http://torum.net/2008/10/memcached-hackathon-at-sun/
+    * http://groups.google.com/group/memcached/browse_thread/thread/b1368c245d9c0d94
+
+Memcached Hackathon at MySQL BoF 2008
+
+When: 2008 April 15, 8pm-ish to midnight
+Who: Dormando, Brian Aker, Dustin S., Trond, Toru, Patrick G, Roy L, Harrison F, lots more mysql guys, ~30 folks in a very loud room.
+
+One liner: the core guys hashed through binary protocol and Toru's multi-engine code, threading...
+Notes (thanks Dustin) http://lists.danga.com/pipermail/memcached/2008-April/006734.html
+
+Memcached Hackathon at Yahoo 2007
+
+When: Date is Thursday, December 13th, 2007
+If you're interested in attending, please drop a note to goffinet <at> yahoo-inc <dot> com with which date works best for you. We have tried to anchor the hackathon around core contributors for productivity's sake.
+
+Where: Yahoo! Sunnyvale Campus</http>, Building C, Classroom 5.
+Why:
+
+    * fix bugs
+    * add features
+    * addition of a binary protocol
+    * get some content on the wiki
+
+Possible projects
+
+(please edit and propose away...)
+
+    * Prototype and measure use of libumem portable slab allocator for performance/fragmentation (1) (2)
+    * Allow dependencies for cache entries: one key depends on another, when one is invalidated, the other is.
+
+Possible projects from the first (and other) Hackathons
+Think about these and add more of your own. Or propose something else entirely at the event. The only constraint is that you should limit yourself to things that you honestly think could be implemented or at least convincingly prototyped in a single night.
+
+    * Binary wire protocol (probably best to spec this out on the mailing list ahead of time)
+    * Pluggable storage backends
+    * Dump/restore functionality
+          o What happens if a client updates the DB while you're restoring or while you were stopped? (Restoring can take a while on a large cache.)
+    * Support for more sophisticated data structures: lists, etc.
+    * Replace slab allocator with a different memory manager for better memory utilization
+          o malloc()/free() can suffer from fragmentation, so something custom is probably better (but has anyone actually measured the memory loss from fragmentation on real production data?)
+          o Might want to separate fixed-size header (which requires word alignment) from key/data (which doesn't)
+          o One possibility: a background thread (or a "process a bit on each request" task in non-MT mode) that defragments the cache
+    * Make I/O buffers count as memory usage; eat into the cache to make room for them rather than letting the process grow without bound despite the "max memory usage" option
+    * Multidimensional keys
+          o Support wildcard queries ("get all objects where key[0] = 'abc', regardless of key[1]")
+          o Any way to prevent clients from having to broadcast wildcard requests to all hosts, while still maintaining good load balancing? (The answer may be "no," but it's a shame to have to broadcast to 20 memcached servers when only two of them have items of interest.)
+    * Wildcard (regex?) deletes
+          o Facebook has one of these in its internal version of memcached for use as a one-off administration tool, but it is brute-force and freezes the cache while it runs, so isn't suitable for normal production use.
+          o Brad's idea: make the cache generational, and you can lazy-evaluate these deletes as objects with older generation IDs are accessed
+    * Cache replication (for load balancing, not for reliability)
+    * Documentation improvements
+    * Client library improvements
