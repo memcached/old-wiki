@@ -33,4 +33,4 @@ memcached was originally created and maintained for the Linux OS.
 
 == Proposals ==
 
-[ProposalTagSupport Tag Support]
+ * [ProposalTagSupport Tag Support]
