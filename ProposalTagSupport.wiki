@@ -73,5 +73,5 @@ glib has something similar as well. It's not guaranteed to be lock-free, but it 
 
 === Quick Notes By Dormando ===
 
-- libatomic_ops for atomic operations.
-- must be fully switchable at runtime... if you switch off tag support, zero extra memory is allocated/used.
+ * libatomic_ops for atomic operations.
+ * must be fully switchable at runtime... if you switch off tag support, zero extra memory is allocated/used.
