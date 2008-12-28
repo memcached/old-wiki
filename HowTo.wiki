@@ -6,7 +6,6 @@ Discussions, notes, or external links.
  * [HowToMonitor Monitoring memcached]
  * [http://www.facebook.com/note.php?note_id=23844338919 Multiple datacenters (facebook)]
  * [HowToWithNginx Nginx integration]
- * [HowToLearnMoreScalability Learn more about scalability]
  * [http://www.lexemetech.com/2007/11/consistent-hashing.html Consistent hashing]
  * [HowToCollectionStore Collection / list storage]
  * [http://www.aminus.org/blogs/index.php/2007/12/30/memcached_set_invalidation Collection / list invalidation]
