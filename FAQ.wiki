@@ -138,7 +138,7 @@ It's not as useful as you might think. There *is* a case where this can be usefu
 Steven Grimm, as always, gives another good example on the mailing list here:
 http://lists.danga.com/pipermail/memcached/2007-July/004802.html
 
-== But I *really* need to dump and load data from memcached! ==
+== But I really need to dump and load data from memcached! ==
 
 Okay okay. The common issue for dump/loading is often that you have cache items which take a _very_ long time to regenerate, or you get significant database pain from losing a server.
 
