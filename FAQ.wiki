@@ -18,6 +18,7 @@ Follow the pointers from the [http://www.danga.com/memcached/download.bml downlo
 == How can I install memcached? == 
 
 For a tutorial, go to: http://blog.ajohnstone.com/archives/installing-memcached
+Also consider checking your distrobution's package management system (apt, yum, etc).
 
 == Where can I run memcached? == 
 
@@ -26,6 +27,10 @@ Anywhere you have spare ram! Memcached runs on linux, BSD, windows. It will usua
 == Why might I want to run memcached? == 
 
 If you have a high-traffic site that is dynamically generated with a high database load that contains mostly read threads then memcached can help lighten the load on your database.
+
+It can be useful in many other situations as well. Read through the whole FAQ and related tutorials for ideas. If your DB load is low but CPU usage very high, you could cache computed objects and renderred templates. You can reduce writes related to session handling, temporarily stash data, cache small but frequently accessed files, cache results from web "services" or RSS feeds...
+
+Even if you're not totally out of resources, but want your pages to render with less latency, it can be helpful.
 
 == Why should I not use memcached? ==
 
