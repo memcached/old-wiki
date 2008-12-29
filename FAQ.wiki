@@ -365,7 +365,7 @@ Peter Zaitsev has written about the speed comparisons of PHP's APC over localhos
  * http://www.mysqlperformanceblog.com/2006/08/09/cache-performance-comparison/
  * http://www.mysqlperformanceblog.com/2006/09/27/apc-or-memcached/
 
-Oftne you'll have a very small amount of data (product categories, connection information, server status variables, application config variables), which are accessed on nearly every page load. It makes a lot of sense to cache these as close to the process as possible (or even inside the process, if you can). It can help lower page render time, and increase reliability in case of memcached node failures.
+Often you'll have a very small amount of data (product categories, connection information, server status variables, application config variables), which are accessed on nearly every page load. It makes a lot of sense to cache these as close to the process as possible (or even inside the process, if you can). It can help lower page render time, and increase reliability in case of memcached node failures.
 
 == Update memcache as your data updates == 
 
