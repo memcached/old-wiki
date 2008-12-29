@@ -173,9 +173,32 @@ In short summary: command parsing (where memcached spends most of its time) is r
 
 == What is the maxiumum key length? (250 bytes) ==
 
+The maximum size of a key is 250 characters. Note this value will be less if you are using client "prefixes" or similar features, since the prefix is tacked onto the front of the original key. Shorter keys are generally better since they save memory and use less bandwidth.
+
 == What is the maximum data size you can store? (1 megabyte) ==
 
+The maximum size of a value you can store in memcached is 1 megabyte. If your data is larger, consider clientside compression or splitting the value up into multiple keys.
+
 == Why are items limited to 1 megabyte in size? ==
+
+Ahh, this is a popular question!
+
+Short answer: Because of how the memory allocator's algorithm works.
+
+Long answer: Memcached's memory storage engine (which will be pluggable/adjusted in the future...), uses a slabs approach to memory management. Memory is broken up into slabs chunks of varying sizes, starting at a minimum number and ascending by a factorial up to the largest possible value.
+
+Say the minimum value is 400 bytes, and the maximum value is 1 megabyte, and the factorial is 1.20:
+
+slab 1 - 400 bytes
+slab 2 - 480 bytes
+slab 3 - 576 bytes
+... etc.
+
+The larger the slab, the more of a gap there is between it and the previous slab. So the larger the maximum value the less efficient the memory storage is. Memcached also has to pre-allocate some memory for every slab that exists, so setting a smaller factorial with a larger max value will require even more overhead.
+
+There're other reason why you wouldn't want to do that... If we're talking about a *web page* and you're attempting to store/load values that large, you're probably doing something wrong. At that size it'll take a noticeable amount of time to load and unpack the data structure into memory, and your site will likely not perform very well.
+
+If you really do want to store items larger than 1MB, you can recompile memcached with an edited slabs.c:POWER_BLOCK value, or use the inefficient malloc/free backend. Other suggestions include a database, MogileFS, etc.
 
 == Can I use different size caches across servers and will memcached use the servers with more memory efficiently? == 
 
