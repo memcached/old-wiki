@@ -512,6 +512,14 @@ id_by_bar: "id_main005"
 
 = Troubleshooting common problems =
 
+== Help! My keys are all wanged up / disappear / etc ==
+
+Do you have a cluster of memcached servers and webservers?
+
+Are you using localhost ('127.0.0.1') as server IP in any of your server lists?
+
+If so, don't do that. All of your webservers need to have the *same* list of memcached IP's in the _same order_, even if the instance is local to that server. This is so the server hashing algorithm works correctly.
+
 == Sporadic disconnections == 
 
 If you are seeing occasional dropped or refused connections to your memcached servers, there are a lot of potential explanations. Often it'll be one of:
