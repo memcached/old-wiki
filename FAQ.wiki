@@ -56,6 +56,12 @@ No. memcached doesn't support that and it's not a planned feature. It would be a
 Of course it's all software, so ultimately in a way the answer is "yes", but for anything but a development or test server it will be slow and _block the server_ while processing, so for 99.9% of real deployments the answer 
 is no.
 
+What exactly do we mean by "block the server" ? All of memcached's non-debug commands... add, set, get, flush, all take near constant time to execute, no matter how much data is in the cache. Any command which needs to iterate cache items will get progressively slower as there is more data in the cache. The blocking issue comes in when other commands are unable to execute because they are waiting on the slow iterative command to finish.
+
+Say your "delete all my keys by (blah blah)" command takes half a second on average. You have plenty of CPU free on your memcached server, and you only need to run this command once every few seconds. So what's the problem? For that half second, most of your other requests will be delayed by _at least_ half a second. It'll take as long as it takes the hardware to process through that queue in order to catch up. So all of your other requests end up taking too long.
+
+So we try real hard not to do that. If you really need to iterate over your items, consider that using a MySQL store where primary accesses are *all* by primary key, and you only have a single secondary index for doing searches, is actually relatively fast.
+
 = Cluster Architecture Questions =
 
 == How does memcached work? == 
