@@ -152,6 +152,9 @@ If you just take a very long time (15 seconds to 5+ minutes) to generate your ca
 
 Again, the above option is cacheable in memcached, and should offer good performance in the case of needing to restart memcached. It should improve overall performance, as you don't have to worry about memcached's LRU accidentally evicting a hot item, or users always needing to wait several minutes to regenerate a cache item if it suddenly disappears out of RAM.
 
+Note this is the same approach detailed in this blog post about sessions:
+http://dormando.livejournal.com/495593.html
+
 == How does memcached's authentication mechanisms work? == 
 
 It doesn't! Memcached is the soft, doughy underbelly of your application. Part of what makes the clients and server lightweight is the complete lack of authentication. New connections are fast, and server configuration is nonexistent.
