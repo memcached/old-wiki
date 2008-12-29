@@ -15,6 +15,7 @@
 == Communication ==
 
  * [http://groups.google.com/group/memcached Mailing list]
+ * [http://lists.danga.com/mailman/listinfo/memcached Old Mailing List Archive]
  * IRC - irc.freenode.net #memcached
  * [Hackathons]
 
