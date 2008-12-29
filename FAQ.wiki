@@ -171,9 +171,11 @@ More info: http://code.sixapart.com/svn/memcached/trunk/server/doc/threads.txt
 
 In short summary: command parsing (where memcached spends most of its time) is ran under multiple threads. Operating on the cache internals are under global locks (and thus that time is not threaded). Future improvements in the threading system should remove more global locks and further improve performance under extreme loads.
 
-== What are some limits in memcached I might hit? == 
+== What is the maxiumum key length? (250 bytes) ==
 
-The simple limits you will probably see with memcache are the key and item size limits. Keys are restricted to 250 characters. Stored data cannot exceed 1 megabyte in size, since that is the largest typical slab size.
+== What is the maximum data size you can store? (1 megabyte) ==
+
+== Why are items limited to 1 megabyte in size? ==
 
 == Can I use different size caches across servers and will memcached use the servers with more memory efficiently? == 
 
