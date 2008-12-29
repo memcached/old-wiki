@@ -28,7 +28,7 @@ memcached was originally created and maintained for the Linux OS.
 
 = Development =
 
-[DevelopmentRepos Development / Source Code repositories]
+* [DevelopmentRepos Development / Source Code repositories]
 
 == Wire Protocols ==
  * [http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt text protocol] - current memcached networking protocol
