@@ -79,7 +79,7 @@ Different client implementations store data into memcached differently (perl Sto
 
 Finally, memcached itself is implemented as a non-blocking event-based server. This is an architecture used to solve the [http://www.kegel.com/c10k.html C10K problem] and scale like crazy.
 
-For an even simpler, drawn out explanation of how memcached client/server iteraction works, see [TutorialCachingStory]
+For an even simpler, drawn out explanation of how memcached client/server iteraction works, see [TutorialCachingStory A Story of Caching]
 
 == What's the big benefit for all this? == 
 
