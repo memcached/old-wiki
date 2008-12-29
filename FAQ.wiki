@@ -126,7 +126,7 @@ It doesn't! :) There is no central authority to do anything at all in the case o
   * Ignore it! Have tons of nodes, deal with the impact of losing one until it can be fixed or replaced.
   * Remove dead nodes from your list. Be very careful! With default clients *adding or removing* servers will invalidate all of your cache! Since the list of servers to hash against has changed, most of your keys will likely hash to different servers. It's like restarting all of your nodes at the same time.
   * Start up a hotspare with the same IP address as the dead node. Prevents hashing chaos.
-  * Use consistent hashing algorithms to add and remove servers to the mix. See consistent hashing information elsewhere. These clients are (as of writing) pretty young still.
+  * Use consistent hashing algorithms to add and remove servers to the mix. See consistent hashing information elsewhere. These clients are (as of writing) mature and in common usage. Give the feature a shot!
   * Use the old default "key rehashing" mode. If a memcache client detects a down server, the previous default behavior was to pick another server and set/fetch the data from there. This can be dangerous if you have a server that "flaps" up and down, as you can end up with stale data on broken and working servers.
 
 == How can you dump data from or load data into memcached? == 
