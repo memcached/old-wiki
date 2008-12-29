@@ -79,6 +79,8 @@ Different client implementations store data into memcached differently (perl Sto
 
 Finally, memcached itself is implemented as a non-blocking event-based server. This is an architecture used to solve the [http://www.kegel.com/c10k.html C10K problem] and scale like crazy.
 
+For an even simpler, drawn out explanation of how memcached client/server iteraction works, see [TutorialCachingStory]
+
 == What's the big benefit for all this? == 
 
 Carefully read the above entry (How does memcached work?). The big benefit, when dealing with giant systems, is memcached's ability to massively scale out. Since the *client* does one layer of hashing, it becomes entirely trivial to add dozens of nodes to the cluster. There's no interconnect to overload, or multicast protocol to implode. It Just Works. Run out of memory? Add a few more nodes. Run out of CPU? Add a few more nodes. Have some spare RAM here and there? Add nodes!
