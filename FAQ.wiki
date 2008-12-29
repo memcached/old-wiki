@@ -483,6 +483,19 @@ Perhaps you want to use memcached as a cheap queue or write-back cache. One tech
 
 Be aware of hitting memory limits, however, and cache expiry.
 
+== Improving multi_get efficiency for related data (fetch by master key) ==
+
+Some clients support a special feature which allows you to cluster "related" data on the same memcached instance. Normally a multi_get command will issue one request for each memcached instance your keys map to. In using this feature, you're almost guaranteed to fetch all of your keys from a single instance in a single roundtrip, which is more efficient.
+
+This is called fetch/store "by master key" usually. libmemcached has *_by_master_key() and related commands. When using this feature, you submit two keys with your data. The first key is used by the client to determine which server to access data from, the second key is what's actually sent to memcached for storage.
+
+For example, if you want to load a user's profile page, they might have a lot of little settings/twiddles/values to load at the same time:
+
+ * use a master key of 'user:profile:1359135891' (or shorter: u:p:$user_id)
+ * then each individual keys are "u:p:$user_id:aolim" or :jabber or :bio or whatnot.
+
+... then fetch away from a single instance. Whoo fun! If you use the namespaces trick, you're often able to use this trick as well, since that data is often related by whatever specified the namespace.
+
 = Troubleshooting common problems =
 
 == Sporadic disconnections == 
