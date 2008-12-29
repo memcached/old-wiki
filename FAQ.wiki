@@ -253,7 +253,10 @@ A good post (and library) explaining its usage has been "posted by http://www.la
 
 == Client FAQ ==
 
-See also: [http://www.socialtext.net/memcached/index.cgi?memcached_client_faq Client FAQ]
+A few notes, for now:
+
+* Clients may implement a "prefix" in order to set the domain of a key. For instance you can take the customer name and use it to create a specific domain for their keys in a shared hosting environment. The "prefix" should be applied to the key when storing the value, but should not be used when calculating hash.
+* While Memcached itself implements not method for serializing structures, JSON is the most widely deployed object neutral serialization type.
 
 = Memcached Options =
 
