@@ -163,11 +163,13 @@ If you wish to restrict access, you may use a firewall, or have memcached listen
 
 == What are memcached threads? Why would I use them? == 
 
-Threads rule! Thanks to Steven Grimm and Facebook, memcached 1.2 and higher has a threaded operation mode. I won't get into great detail here since I might get it wrong. The threaded system allows memcached to utilize more than a single CPU and share the cache between all of them. It does this by having a very simple locking mechanism when certain values, items, etc need to be updated. This helps make multi gets more efficient, versus running multiple nodes on the same physical server to achieve performance.
+Threads rule! Thanks to Steven Grimm and Facebook, memcached 1.2 and higher has a threaded operation mode. The threaded system allows memcached to utilize more than a single CPU and share the cache between all of them. It does this by having a very simple locking mechanism when certain values, items, etc need to be updated. This helps make multi gets more efficient, versus running multiple nodes on the same physical server to achieve performance.
 
 If you don't have a heavily loaded setup, you probably don't need to configure threads. If you're running a gigantic website with gigantic hardware, you might see benefit here.
 
 More info: http://code.sixapart.com/svn/memcached/trunk/server/doc/threads.txt
+
+In short summary: command parsing (where memcached spends most of its time) is ran under multiple threads. Operating on the cache internals are under global locks (and thus that time is not threaded). Future improvements in the threading system should remove more global locks and further improve performance under extreme loads.
 
 == What are some limits in memcached I might hit? == 
 
