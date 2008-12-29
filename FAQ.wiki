@@ -175,6 +175,10 @@ In short summary: command parsing (where memcached spends most of its time) is r
 
 The maximum size of a key is 250 characters. Note this value will be less if you are using client "prefixes" or similar features, since the prefix is tacked onto the front of the original key. Shorter keys are generally better since they save memory and use less bandwidth.
 
+== What are the limits on setting expire time? (why is there a 30 day limit?) ==
+
+You can set expire times up to 30 days in the future. After that memcached interprets it as a date, and will expire the item after said date. This is a simple (but obscure) mechanic.
+
 == What is the maximum data size you can store? (1 megabyte) ==
 
 The maximum size of a value you can store in memcached is 1 megabyte. If your data is larger, consider clientside compression or splitting the value up into multiple keys.
