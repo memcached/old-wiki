@@ -138,6 +138,20 @@ It's not as useful as you might think. There *is* a case where this can be usefu
 Steven Grimm, as always, gives another good example on the mailing list here:
 http://lists.danga.com/pipermail/memcached/2007-July/004802.html
 
+== But I *really* need to dump and load data from memcached! ==
+
+Okay okay. The common issue for dump/loading is often that you have cache items which take a _very_ long time to regenerate, or you get significant database pain from losing a server.
+
+If you get too much pain from having a single memcached disappear, you're in trouble for a lot of reasons. Your system is very fragile. Consider looking for some things to tune. Work on stampeding herd issues (if your DB gets clogged up with repeat queries after a cache disappears... noted elsewhere in the FAQ), or tuning bad queries. Memcached is not an excuse for not tuning your queries.
+
+If you just take a very long time (15 seconds to 5+ minutes) to generate your cache entries, you might consider using a database again. Note some quick options:
+
+ * MogileFS (or CouchDB or similar...) item storage. Calculate your cache objects then dump them to disk. MogileFS makes it simple to overwrite an item and can serve the data relatively quickly. You can even cache items stored in mogilefs, in memcached, for an additional read boost. This improves the speed of your cache miss rate and general site reliability.
+
+ * Just use MySQL again. MySQL's InnoDB has very fast primary key lookups, with okay blob support. If most of your cache items will fit into a VARCHAR field, even better. Fetching by key in memcached is almost identical to fetching by PKID in MySQL: Take your key, hash it to a 64-bit number, then store your data into MySQL. You can bundle the original key in a separate column, and have a secondary index or two for scanning work... Expire old keys passively, mass-delete keys, etc.
+
+Again, the above option is cacheable in memcached, and should offer good performance in the case of needing to restart memcached. It should improve overall performance, as you don't have to worry about memcached's LRU accidentally evicting a hot item, or users always needing to wait several minutes to regenerate a cache item if it suddenly disappears out of RAM.
+
 == How does memcached's authentication mechanisms work? == 
 
 It doesn't! Memcached is the soft, doughy underbelly of your application. Part of what makes the clients and server lightweight is the complete lack of authentication. New connections are fast, and server configuration is nonexistent.
