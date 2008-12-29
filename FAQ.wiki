@@ -500,6 +500,16 @@ For example, if you want to load a user's profile page, they might have a lot of
 
 ... then fetch away from a single instance. Whoo fun! If you use the namespaces trick, you're often able to use this trick as well, since that data is often related by whatever specified the namespace.
 
+== Referencing multiple keys to one value ==
+
+In short, you can't do this. One key goes to one value. What you can do is have multiple items point to a central item.
+
+id_main005: "data goes here"
+id_by_foo: "id_main005"
+id_by_bar: "id_main005"
+
+... then you do multiple fetches to find the indirect item. Weird, but not too bad. Would be simplified if memcached ever gets proper tag support.
+
 = Troubleshooting common problems =
 
 == Sporadic disconnections == 
