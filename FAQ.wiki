@@ -87,6 +87,30 @@ Carefully read the above entry (How does memcached work?). The big benefit, when
 
 It's incredibly easy to build on memcached's basic principles to implement many different kinds of caching architectures. Hopefully detailed elsewhere in the FAQ.
 
+See the following few FAQ entries for how this compares to a server's local cache or MySQL's query cache, which should help you grok the big picture!
+
+== How does it compare to MySQL's query cache? ==
+
+Adding memcached support to your application can be a lot of work. MySQL has a handy query cache feature that will automatically cache the results of your SQL queries, making them way faster on repeat runs. How does memcached compare to this? MySQL's query cache is centralized, so its benefits are seen by all servers connecting to it.
+
+ * MySQL's query cache flushes as soon as you modify a table. You can store a memcached item for a minimum amount of time, but if you get a lot of write traffic, MySQL's query cache will be constantly expiring *all entries*
+
+ * MySQL's query cache has scalability issues for many CPUs. It adds a global lock, and gets slower as it has to flush more queries.
+
+ * You can't store arbitrary data objects into the cache. You can build much more efficient caches with memcached. Run several separate queries to build a user object, build the user object, then cache *that*. MySQL's query cache can help small sites, but can do more harm than good at scale.
+
+ * Memory is limited to how much spare RAM you have on your database. It's much nicer to give your database more RAM to cache data :) With memcached you spread out the cluster wherever you have spare memory, so you can cache much much more.
+
+== How does it compare to a server local cache? (PHP's APC, mmap memory, etc) ==
+
+Note a lot of the similar issues above. Memory usage is limited to what spare memory you have on your single box. A local cache benefits over both MySQL query cache _and_ memcached because you can store arbitrary data objects into it, and it does not have latency associated with a fetch over a network.
+
+ * Fetches will be much faster. Consider storing some very highly common items in a local cache! If you load it on every page load, and it's a small amount of data, consider using some local caching.
+
+ * You have no group invalidation. With a memcached cluster, deleting or updating a key freshens the cache for all viewers. With local caches, you either need to notify all of your servers that they need to refresh their cache (slow, doesn't scale!), or rely _solely_ on cache timeouts.
+
+ * Memory limits can be severe, as noted above.
+
 == What is memcached's cache? == 
 
 The cache structure is an LRU (Least Recently Used), plus expiration timeouts. When you store items into memcached, you may state how long it should be valid in the cache. Which is forever, or some time in the future. If the server is out of memory, expired slabs are replaced first, then the oldest unused slabs go next.
