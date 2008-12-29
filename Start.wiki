@@ -42,3 +42,17 @@ memcached was originally created and maintained for the Linux OS.
 
  * [ProposalTagSupport Tag Support]
  * [ProposalCrossCompatClients Cross Compatible Client Discussion]
+
+== Contributing to the Wiki ==
+
+Anyone's free to contribute. Due to spam issues and trying to consolidate product pages, wiki edits now require authorization. Don't be let down though! We want your content/corrections and getting in changes is trivial!
+
+First:
+
+ * Think up something to change!
+
+Then:
+
+ * Send it to the mailing list!
+
+Someone will chuck it into the wiki or refine it until it can be in short order. If you contribute a few good changes, we'll grant you membership so you can do further edits on your own. Or just ask up front for acess. Whatever you want.
