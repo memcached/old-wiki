@@ -520,6 +520,16 @@ Are you using localhost ('127.0.0.1') as server IP in any of your server lists?
 
 If so, don't do that. All of your webservers need to have the *same* list of memcached IP's in the _same order_, even if the instance is local to that server. This is so the server hashing algorithm works correctly.
 
+Also see below.
+
+== My cache items always expire early! My cache never fills all the way! ==
+
+Help help! My cache is buggy! I set an expire time of one day, and five minutes later the cache item is gone! Memcached is a buggy pile of crap!
+
+I've tracked this down a few times ... you've likely written something which is executing "flush_all" against memcached often. The 1.2.7 and higher stable release should have a counter, so you can run the 'stats' command and see if flush_all is getting ran often. You can also confirm this by running memcached in -vv mode, logging to file, then grepping for "flush_all". It should pop up a few times.
+
+If you don't see this, it's also possible you've set your memory limit very low. It is not advisable to start memcached with a memory limit less than 64 megabytes. It will not be able to pre-allocate enough slabs for your data, and some slabs will only be able to store a handful of items before being forced to evict them. Use as much memory as you can with the -m option.
+
 == Sporadic disconnections == 
 
 If you are seeing occasional dropped or refused connections to your memcached servers, there are a lot of potential explanations. Often it'll be one of:
