@@ -230,6 +230,18 @@ And if you'd like to attempt to use malloc/free and see how it works, you may de
 
 More info: http://code.sixapart.com/svn/memcached/trunk/server/doc/memory_management.txt
 
+== Is memcached atomic? ==
+
+Of course! Well, lets be specific:
+
+ * All individual commands sent to memcached are _absolutely_ atomic. If you send a set and a get in parallel, against the same object, they will not clober each other. They will be serialized and one will be executed before the other. Even in threaded mode, all commands are atomic. If they are not, it's a bug :)
+
+ * A series of commands is not atomic. If you issue a 'get' against an item, operate on the data, then wish to 'set' it back into memcached, you are *not* guaranteed to be the only process working on that value. In parallel, you could end up overwriting a value set by something else.
+
+In 1.2.5 and higher there are the "gets" and "cas" commands, which are used to deal with these situations. If you issue a 'gets' command to fetch a key, you get a unique identifier back with that value. If you later wish to overwrite the original key, you send that identifier back with the "cas" command. If the identifier stored in memcached is identical to the one you supplied, you win and your write succeeds. If another process has modified that same key in the meantime, the identifier will have changed and your write will fail.
+
+In general updating memcached based on data in memcached is tricky, you should only do it if you're confident in what you're doing.
+
 = Performance Questions =
 
 == Memcached is not faster than my database. Why? == 
