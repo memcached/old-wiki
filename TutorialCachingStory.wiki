@@ -80,5 +80,3 @@ So again, he takes keys that the Programmer uses and looks for them on his memca
 So, the Programmer and Sysadmin continue to build websites. They continue to cache. When they have questions, they ask the mailing list or read the faq again. They watch their graphs. And all live happily ever after.
 
 Author: Dormando via IRC. Edited by Brian Moon for fun. Further fun editing by Emufarmers.
-
-Original: http://www.socialtext.net/memcached/index.cgi?this_is_a_story_of_caching
