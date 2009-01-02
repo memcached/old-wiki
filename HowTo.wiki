@@ -1,13 +1,16 @@
 #summary How To's
 
-Discussions, notes, or external links.
+== Discussions, notes ==
 
  * [HowToSessions Sessions] - How to store sessions in memcached
  * [HowToMonitor Monitoring memcached]
- * [http://www.facebook.com/note.php?note_id=23844338919 Multiple datacenters (facebook)]
  * [HowToWithNginx Nginx integration]
- * [http://www.lexemetech.com/2007/11/consistent-hashing.html Consistent hashing]
  * [HowToCollectionStore Collection / list storage]
+
+== External links ==
+
+ * [http://www.facebook.com/note.php?note_id=23844338919 Multiple datacenters (facebook)]
+ * [http://www.lexemetech.com/2007/11/consistent-hashing.html Consistent hashing]
  * [http://www.aminus.org/blogs/index.php/2007/12/30/memcached_set_invalidation Collection / list invalidation]
  * [http://drupal.org/files/issues/memcache.txt Drupal integration] and [http://drupal.org/node/133410 here]
  * [http://smoothspan.wordpress.com/2007/09/23/memcached-when-you-absolutely-positively-have-to-get-it-to-scale-the-next-day Explaining memcached to the pointy haired boss]
