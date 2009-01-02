@@ -1,4 +1,9 @@
 #summary Tutorials
 
+== Wiki ==
+
  * [TutorialCachingStory This is a Story of Caching] - A tutorial in story form that may help you understand how to use memcached.
+
+== External ==
+
  * [http://www.majordojo.com/2007/03/memcached-howto.php An introduction to Memcached] (2007)
