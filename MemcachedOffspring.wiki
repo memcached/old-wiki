@@ -7,7 +7,6 @@
  * http://meta.wikimedia.org/wiki/Tugela_Cache - memcached + persistence
  * http://repcached.lab.klab.org - memcached + replication
  * http://code.google.com/p/memcached-pro
- * http://memcachedb.org/memcacheq - queue based on memcached protocol
 
 == Reimplementations ==
 
@@ -21,6 +20,7 @@
  * http://code.google.com/p/actord - scala version of memcached
  * http://code.google.com/p/cacherl - erlang version of memcached
  * Queues based on memcached protocol
+  * http://memcachedb.org/memcacheq - queue based on memcached protocol
   * http://rubyforge.org/projects/starling - ruby based, from twitter
   * http://code.google.com/p/sparrow - ruby based
   * http://code.google.com/p/peafowl - python based
