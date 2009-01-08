@@ -20,14 +20,16 @@
    * http://www.infoq.com/news/2008/10/jgroups-memcached
  * http://code.google.com/p/actord - scala version of memcached
  * http://code.google.com/p/cacherl - erlang version of memcached
- * http://rubyforge.org/projects/starling - queue based on memcached protocol
- * http://code.google.com/p/sparrow - queue based on memcached protocol
+ * Queues based on memcached protocol
+  * http://rubyforge.org/projects/starling - ruby based, from twitter
+  * http://code.google.com/p/sparrow - ruby based
+  * http://code.google.com/p/peafowl - python based
+  * http://xph.us/software/beanstalkd - incompatible protocol was inspired by memcached protocol
  * http://labs.gree.jp/Top/OpenSource/Flared.html - yet another memcached
 
 == Other ==
 
  * http://code.google.com/p/memagent - memcached proxy
-
  * http://memcachefs.sourceforge.net
  * http://github.com/andrewfromgeni/mcinsight - GUI to examine memcached server
  * Accessing memcached directly from Apache
