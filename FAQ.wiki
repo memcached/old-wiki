@@ -499,6 +499,10 @@ Perhaps you want to use memcached as a cheap queue or write-back cache. One tech
 
 Be aware of hitting memory limits, however, and cache expiry.
 
+Related, here is another writeup on using memcached as a queue.  The client code is ruby but should be applicable to any client language.
+ * http://coderrr.wordpress.com/2009/01/17/memcachequeue-a-pure-memcached-queue/
+ * http://github.com/coderrr/memcache_queue/tree/master
+
 == Improving multi_get efficiency for related data (fetch by master key) ==
 
 Some clients support a special feature which allows you to cluster "related" data on the same memcached instance. Normally a multi_get command will issue one request for each memcached instance your keys map to. In using this feature, you're almost guaranteed to fetch all of your keys from a single instance in a single roundtrip, which is more efficient.
