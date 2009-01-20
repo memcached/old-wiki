@@ -15,6 +15,8 @@
  * [http://www.slideshare.net/acme/scaling-with-memcached Scaling with memcached] (slides) 
  * [http://www.bytebot.net/blog/archives/2008/04/14/memcached-and-mysql-tutorial Memcached and Mysql tutorial] (2008)
   * [http://download.tangent.org/talks/Memcached%20Study.pdf Memcached Study slides] by Brian Aker and dormando (2008)
+ * [http://www.slideshare.net/tag/memcached memcached presentations at slideshare]
+  * If you share a presentation about memcached at slideshare, be sure to tag it with 'memcached'
 
 == Blog posts ==
 
