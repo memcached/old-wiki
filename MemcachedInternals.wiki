@@ -132,8 +132,8 @@ the same chunk size.  And a slab, finally, is divvied up into 1 or
 more chunks of the same chunk size.
 
 (Sometimes, you'll see the codebase use the word 'page' instead of
-slab.  Same thing.  Sometimes, it mixed up the word 'chunk' for other
-meanings.  At least there's comments!)
+slab.  Same thing.  Sometimes, it mixes up the word 'chunk' for other
+meanings.  Just look at the code/comment context to figure it out.)
 
 Why are there only a fixed number of slabclass structs?  Because the
 slab allocator uses an array for quick O(1) lookup.  The array index
@@ -148,7 +148,7 @@ command-line parameter).  The default chunk size growth factor is
 Ths slab allocator just runs through its array of slabclass structs,
 assigning chunk sizes using the chunk size growth factor.  To get the
 most out of memcached, you'll want to tune this chunk size growth
-factor so avoid wasting memory.
+factor to avoid wasting memory.
 
 How is slabs_free() handled?  Each slabclass also has an array of
 pointers to free, unused chunks.  The free array (actually a stack,
