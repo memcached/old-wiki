@@ -1,5 +1,5 @@
 Want to hack on memcached, or just learn how memcached works 
-underneath the hood from curiosity?  Here are some of my notes 
+underneath the hood from curiosity?  Here are some notes 
 from code spelunking.  Enjoy -- steve.yen
 
 Let's start from bottom's up...
