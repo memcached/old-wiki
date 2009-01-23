@@ -1,0 +1,173 @@
+Want to hack on memcached, or just learn how memcached works 
+underneath the hood from curiosity?  Here are some of my notes 
+from code spelunking.  Enjoy -- steve.yen
+
+Let's start from bottom's up...
+
+= Slab Allocator =
+
+The meat of memcached's famous slab allocator, or slabber, lives in
+the files slabs.h and slabs.c.  The slab allocator does all the 
+memory-management heavy lifting for item data in memcached, and
+I kinda assume you know what a slab allocator is at a high handwavy
+level, but just wanted to dig into the details of a real one.
+
+When you start memcached with a max memory parameter ("-m" on the 
+command-line), for example, it's the slab allocator that knows and
+tracks when you've hit that max memory limit.
+
+Memcached doesn't use the slab allocator for all its memory needs,
+just for item data (the key/value/length/flags/expiration/cas data
+that's tracked in the 'item' data structure).  Throughout the 
+memcached codebase, you'll see plenty of calls to 
+malloc/calloc/realloc, not to the slab allocator.  Memcached will use
+good old malloc() for lots of the miscellaneous stuff 
+such as for the hashtable buckets or connection tracking data
+structures.  
+
+Although the slab allocator is tuned and exists mostly for memcached's
+item data, it's actually 99% general-purpose.  The 1% is because
+you'll find a handful of references in the slabs.c file to the
+higher-level "item" application-specific data structure.  This
+dependency can be easily refactored away so that the slab allocator
+could become truly general purpose, perhaps another day. 
+
+The main interface to the slab allocator at runtime are with these
+functions... 
+
+{{{
+unsigned int slabs_clsid(const size_t size);
+void *slabs_alloc(size_t size, unsigned int id);
+void slabs_free(void *ptr, size_t size, unsigned int id);
+}}}
+
+ASIDE: Actually, when you look at slabs_alloc() and slabs_free(),
+you'll see that they just do some locking and call these respective
+functions in slabs.c, which do the real work...
+
+{{{
+void *do_slabs_alloc(const size_t size, unsigned int id);
+void do_slabs_free(void *ptr, const size_t size, unsigned int id);
+}}}
+
+This foo_bar() and do_foo_bar() naming and coding pattern is pretty
+common in memcached, where a foo_bar() function merely acquires a
+lock, invokes do_foo_bar(), and then releases the lock.  This naming
+pattern is an artifact from an earlier point in memcached's history
+when you could choose to have multithreading support or just be 
+single-threaded.  Nowadays, memcached always runs multithreaded.  See
+the thread.c file for more of this pattern in usage.  
+
+Anyways, when other parts of code in memcached want to allocate memory
+for an item that has a certain item_size, they call...
+
+{{{
+  unsigned int clsid;
+  item *it;
+  clsid = slabs_clsid(item_size);
+  it = slabs_alloc(item_size, clsid);
+}}}
+
+And, to free an item, they call...
+
+{{{
+  slabs_free(it, item_size, clsid);
+}}}
+
+Not quite as simple as malloc() and free() but good enough.
+
+ANOTHER ASIDE: if you want memcached to use malloc() instead of the
+usual slab allocator, just define USE_SYSTEM_MALLOC and recompile.
+When you do that, do_slabs_alloc() and do_slabs_free() will be
+compiled with code paths that just uses malloc() and free(),
+respectively.  Perhaps you're itching to prove that the hoard,
+jemalloc or other memory allocator scheme works better with memcached,
+and this would be your simple pathway to do so when you have a
+malloc-signature-compatible alternative. 
+
+So, what's that clsid?  
+
+It's a 'slab class id', so let's talk about slabclass, slabs, chunks,
+chunk size growth factors, and calling malloc() as little as possible.
+
+Because normal malloc() is slow, we don't want to use malloc() to get
+new memory every time memcached wants to remember an item.  Instead, 
+the strategy is to invoke malloc() as little as possible, and that's
+what the slab allocator does by initially calling malloc() to allocate
+a big hunk (or 'slab') of memory.  The slab allocator then divvies up
+that slab into smaller 'chunks', where these chunks are all the same
+size in a slab in order to keep things simple.  When memcached needs
+memory to remember an item, the slab allocator can just peel off the
+next unused chunk from a slab.  Since all the chunks are the same
+size, this is just simple and fast pointer math to get the next chunk.
+Eventually, the slab allocator will run out of unused chunks and will
+need to call malloc() to allocate another big slab, but for the most
+part the slab allocator can avoid calling malloc() so much. 
+
+You might have realized, of course, that the size of a chunk might
+actually be bigger than the item data size that we're trying to
+remember, since the chunk size is fixed for a slab.  In short, the
+slab allocator is trading off some wasted space to get better
+performance.
+
+Every slab, too, is the same size, 1MB.  (Actually, memcached has a
+nice optimization here that makes this not quite true, but let's keep
+it simple for now.)
+
+It's the chunk size that requires an extra layer to track, and that
+layer is called a 'slabclass'.
+
+Here's a high-level containment hierarchy that we'll use to talk about
+this...
+
+  slab-allocator
+    slabclass
+      slab
+        chunk
+
+A slab-allocator manages a fixed number of slabclass structs.  Each
+slabclass struct has a unique chunk size.  A slabclass struct can
+track zero or more slabs, where all the slabs in that slabclass have
+the same chunk size.  And a slab, finally, is divvied up into 1 or
+more chunks of the same chunk size.
+
+(Sometimes, you'll see the codebase use the word 'page' instead of
+slab.  Same thing.  Sometimes, it mixed up the word 'chunk' for other
+meanings.  At least there's comments!)
+
+Why are there only a fixed number of slabclass structs?  Because the
+slab allocator uses an array for quick O(1) lookup.  The array index
+is the same as the slabclass's id, or the 'clsid'.
+
+When memcached starts up, it initializes the slab allocator by calling
+slabs_init() with a max memory limit (the "-m" command-line
+parameter) and a chunk size growth factor (the "-f"
+command-line parameter).  The default chunk size growth factor is
+1.25.
+
+Ths slab allocator just runs through its array of slabclass structs,
+assigning chunk sizes using the chunk size growth factor.  To get the
+most out of memcached, you'll want to tune this chunk size growth
+factor so avoid wasting memory.
+
+How is slabs_free() handled?  Each slabclass also has an array of
+pointers to free, unused chunks.  The free array (actually a stack,
+although the code calls it a list) is consulted first and popped during
+slabs_alloc().  If there are no free, unused chunks, a new slab is allocated.
+
+Also, by default, at startup the slab allocator allocates one slab to
+each slabclass, even though those chunk sizes might never be used.
+Otherwise, the slab allocator pretty much creates new slabs lazily,
+only on an as-needed basis.
+
+(EXCEPT: there's an interesting -L command-line flag that makes
+memcached and the slab allocator grab the max amount of memory
+(specified with the '-m' parameter) right away on startup, by doing a
+single gigantic malloc() call.  This feature only appears to work on
+platforms that support HAVE_GETPAGES_SIZES and HAVE_MEMCNTL -- this
+might be one of Trond's Solaris-centric improvements.) 
+
+Earlier, I wrote that slabs can be simply thought of just being 1MB in
+size.  In reality, since not all chunk sizes fit perfectly into 1MB,
+the slab allocator has an optimization that will allocate the closest
+multiple of chunk size to 1MB, so there's no wasted slop. 
