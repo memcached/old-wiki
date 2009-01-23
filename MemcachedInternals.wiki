@@ -126,9 +126,12 @@ this...
         chunk
 
 A slab-allocator manages a fixed number of slabclass structs.  Each
-slabclass struct has a unique chunk size.  A slabclass struct can
-track zero or more slabs, where all the slabs in that slabclass have
-the same chunk size.  And a slab, finally, is divvied up into 1 or
+slabclass struct is assigned to manage a unique chunk size.  
+
+A slabclass struct can track zero or more slabs, where all the slabs 
+in that slabclass will have the same, exact chunk size.  
+
+And a slab, finally, is divvied up into 1 or
 more chunks of the same chunk size.
 
 (Sometimes, you'll see the codebase use the word 'page' instead of
@@ -136,8 +139,10 @@ slab.  Same thing.  Sometimes, it mixes up the word 'chunk' for other
 meanings.  Just look at the code/comment context to figure it out.)
 
 Why are there only a fixed number of slabclass structs?  Because the
-slab allocator uses an array for quick O(1) lookup.  The array index
-is the same as the slabclass's id, or the 'clsid'.
+slab allocator uses an array for quick O(1) lookup.  The array of 
+slabclass structs is sorted from smallest chunk size to largest
+chunk size.  The array index is the same as the slabclass's id, 
+or the 'clsid'.
 
 When memcached starts up, it initializes the slab allocator by calling
 slabs_init() with a max memory limit (the "-m" command-line
@@ -172,4 +177,7 @@ might be one of Trond's Solaris-centric improvements.
 Earlier, I wrote that slabs can be simply thought of just being 1MB in
 size.  In reality, since not all chunk sizes fit perfectly into 1MB,
 the slab allocator has an optimization that will allocate the closest
-multiple of chunk size to 1MB, so there's no wasted slop. 
+multiple of chunk size to 1MB, so there's no wasted slop.  
+For example, if the chunk size is 400K, the slab allocator will only
+create a slab of size 800K, which can hold two chunks (400K + 400K),
+since 1200K goes over the 1MB limit.
