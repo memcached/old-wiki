@@ -155,17 +155,19 @@ pointers to free, unused chunks.  The free array (actually a stack,
 although the code calls it a list) is consulted first and popped during
 slabs_alloc().  If there are no free, unused chunks, a new slab is allocated.
 
-Also, by default, at startup the slab allocator allocates one slab to
-each slabclass, even though those chunk sizes might never be used.
-Otherwise, the slab allocator pretty much creates new slabs lazily,
-only on an as-needed basis.
+By default, the slab allocator only creates new slabs lazily,
+on an as-needed basis.
 
-(EXCEPT: there's an interesting -L command-line flag that makes
+EXCEPT 1: there's a DONT_PREALLOC_SLABS flag, which is set by default.  
+If you unset it, the slab allocator will create and assign a 
+slab to each slabclass on startup. 
+
+EXCEPT 2: there's an interesting -L command-line flag that makes
 memcached and the slab allocator grab the max amount of memory
 (specified with the '-m' parameter) right away on startup, by doing a
 single gigantic malloc() call.  This feature only appears to work on
 platforms that support HAVE_GETPAGES_SIZES and HAVE_MEMCNTL -- this
-might be one of Trond's Solaris-centric improvements.) 
+might be one of Trond's Solaris-centric improvements.
 
 Earlier, I wrote that slabs can be simply thought of just being 1MB in
 size.  In reality, since not all chunk sizes fit perfectly into 1MB,
