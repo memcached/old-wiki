@@ -5,4 +5,4 @@ from code spelunking.
 From bottom's up...
 
  * [MemcachedSlabAllocator Slab Allocator]
- * [MemcachedItem Item Module]
+ * [MemcachedItemModule Item Module]
