@@ -165,7 +165,7 @@ on an as-needed basis, and does not free them.
 == But... ==
 
 EXCEPT 1: there's a DONT_PREALLOC_SLABS flag, which is set by default.  
-If you unset it, the slab allocator will create and assign a 
+If you unset it, the slab allocator will create and assign a single
 slab to each slabclass on startup. 
 
 EXCEPT 2: there's an interesting -L command-line flag that makes
@@ -201,3 +201,6 @@ To learn more about slab allocators...
 
  * http://en.wikipedia.org/wiki/Slab_allocation
  * http://www.usenix.org/publications/library/proceedings/bos94/full_papers/bonwick.a
+
+----
+Author: steve.yen, with thanks to trond for the feedback & improvements.
