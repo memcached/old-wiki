@@ -180,8 +180,8 @@ enomem errors later on.
 Currently (2009/01/20 - rewritten/bin branch), the -L feature only 
 appears to work on platforms that support HAVE_GETPAGES_SIZES and 
 HAVE_MEMCNTL, such as Solaris.  With Solaris's support of large, 
-multiple page sizes, the -L flag can help (not much but a tiny 
-little bit) by reducing TLB misses.
+multiple page sizes, the -L flag can help ("not much but a tiny 
+little bit") by reducing TLB misses.
 Trond Norbye, who worked on these Solaris improvements, 
 is working to make the preallocate part of the -L flag 
 available for all systems.
@@ -203,4 +203,4 @@ To learn more about slab allocators...
  * http://www.usenix.org/publications/library/proceedings/bos94/full_papers/bonwick.a
 
 ----
-Author: steve.yen, with thanks to trond for the feedback & improvements.
+Author: steve.yen, with thanks to trond for the feedback, improvements and pointers.
