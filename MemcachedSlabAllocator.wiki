@@ -28,6 +28,8 @@ higher-level "item" application-specific data structure.  This
 dependency can be easily refactored away so that the slab allocator
 could become truly general purpose, perhaps another day. 
 
+== Slab Allocator Interface ==
+
 The main interface to the slab allocator at runtime are with these
 functions... 
 
@@ -81,7 +83,7 @@ jemalloc or other memory allocator scheme works better with memcached,
 and this would be your simple pathway to do so when you have a
 malloc-signature-compatible alternative. 
 
-So, what's that clsid?  
+== What's a clsid? ==
 
 It's a 'slab class id', so let's talk about slabclass, slabs, chunks,
 chunk size growth factors, and calling malloc() as little as possible.
@@ -158,21 +160,34 @@ although the code calls it a list) is consulted first and popped during
 slabs_alloc().  If there are no free, unused chunks, a new slab is allocated.
 
 By default, the slab allocator only creates new slabs lazily,
-on an as-needed basis.
+on an as-needed basis, and does not free them.
+
+== But... ==
 
 EXCEPT 1: there's a DONT_PREALLOC_SLABS flag, which is set by default.  
 If you unset it, the slab allocator will create and assign a 
 slab to each slabclass on startup. 
 
 EXCEPT 2: there's an interesting -L command-line flag that makes
-memcached and the slab allocator grab the max amount of memory
+memcached and the slab allocator preallocate the max amount of memory
 (specified with the '-m' parameter) right away on startup, by doing a
-single gigantic malloc() call.  This feature only appears to work on
-platforms that support HAVE_GETPAGES_SIZES and HAVE_MEMCNTL -- this
-might be one of Trond's Solaris-centric improvements.
+single gigantic malloc() call.  This can be a good thing because it 
+reduces internal malloc() overhead (malloc needs data structures 
+to manage all of the 1M requests done otherwise), and grabbing
+all the resources "up front" means not getting any failing 
+enomem errors later on.
 
-Earlier, I wrote that slabs can be simply thought of just being 1MB in
-size.  In reality, since not all chunk sizes fit perfectly into 1MB,
+Currently (2009/01/20 - rewritten/bin branch), the -L feature only 
+appears to work on platforms that support HAVE_GETPAGES_SIZES and 
+HAVE_MEMCNTL, such as Solaris.  With Solaris's support of large, 
+multiple page sizes, the -L flag can help (not much but a tiny 
+little bit) by reducing TLB misses.
+Trond Norbye, who worked on these Solaris improvements, 
+is working to make the preallocate part of the -L flag 
+available for all systems.
+
+Finally, earlier, I wrote that slabs can be simply thought of just being 
+1MB in size.  In reality, since not all chunk sizes fit perfectly into 1MB,
 the slab allocator has an optimization that will allocate the closest
 multiple of chunk size to 1MB, so there's no wasted slop.  
 For example, if the chunk size is 400K, the slab allocator will only
