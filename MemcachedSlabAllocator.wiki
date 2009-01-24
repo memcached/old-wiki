@@ -5,7 +5,8 @@ the files slabs.h and slabs.c.  The slab allocator does all the
 memory-management heavy lifting for item data in memcached, and
 I assume you know what a slab allocator is at a high handwave
 level, but just wanted to learn more about memcached's 
-implementation.
+implementation.  (More links about slab allocators are at the 
+bottom of this writeup.)
 
 When you start memcached with a max memory parameter ("-m" on the 
 command-line), for example, it's the slab allocator that knows and
@@ -85,9 +86,10 @@ So, what's that clsid?
 It's a 'slab class id', so let's talk about slabclass, slabs, chunks,
 chunk size growth factors, and calling malloc() as little as possible.
 
-Because normal malloc() is slow, we don't want to use malloc() to get
-new memory every time memcached wants to remember an item.  Instead, 
-the strategy is to invoke malloc() as little as possible, and that's
+Because normal malloc() is slow and prone to memory fragmentation, 
+we don't want to use malloc() to get new memory every time 
+memcached wants to remember an item.  
+Instead, the strategy is to invoke malloc() as little as possible, and that's
 what the slab allocator does by initially calling malloc() to allocate
 a big hunk (or 'slab') of memory.  The slab allocator then divvies up
 that slab into smaller 'chunks', where these chunks are all the same
