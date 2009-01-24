@@ -3,8 +3,9 @@
 The meat of memcached's famous slab allocator, or slabber, lives in
 the files slabs.h and slabs.c.  The slab allocator does all the 
 memory-management heavy lifting for item data in memcached, and
-I kinda assume you know what a slab allocator is at a high handwavy
-level, but just wanted to learn more about memcached's implementation.
+I assume you know what a slab allocator is at a high handwave
+level, but just wanted to learn more about memcached's 
+implementation.
 
 When you start memcached with a max memory parameter ("-m" on the 
 command-line), for example, it's the slab allocator that knows and
@@ -177,3 +178,9 @@ create a slab of size 800K, which can hold two chunks (400K + 400K),
 since 1200K goes over the 1MB limit.
 
 Back to: MemcachedInternals
+
+----
+To learn more about slab allocators...
+
+ * http://en.wikipedia.org/wiki/Slab_allocation
+ * http://www.usenix.org/publications/library/proceedings/bos94/full_papers/bonwick.a
