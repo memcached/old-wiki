@@ -204,7 +204,7 @@ flag.  After that, you can send memcached messages like
 This feature can be useful, as long running memcached instances
 will eventually allocate its max memory into slabs.  Unfortunately, 
 slabs allocated early
-in memcached's process life might be over time be effectively in the wrong slabclass.
+in memcached's process life might over time be effectively in the wrong slabclass.
 Imagine, for example, that you store session data in memcached, and
 memcached has been up and running for months.  Finally, you deploy a 
 new version of your application code, which stores more interesting
