@@ -199,19 +199,21 @@ behavior.  You can switch it off, though, as
 a tradeoff in order to gain an interesting, underdocumented feature:
 the ability to reassign slab memory from one slabclass to another
 slabclass at runtime.  To do so, recompile with the ALLOW_SLABS_REASSIGN
-flag, as use the 'slabs reassign (src_slabclass) (dest_slabclass)' command.  
+flag.  After that, you can send memcached messages like 
+'slabs reassign (src_slabclass) (dest_slabclass)'.  
 This feature can be useful, as long running memcached instances
-will eventually allocate all its memory into slabs.  Unfortunately, 
+will eventually allocate its max memory into slabs.  Unfortunately, 
 slabs allocated early
 in memcached's process life might be over time be effectively in the wrong slabclass.
 Imagine, for example, that you store session data in memcached, and
 memcached has been up and running for months.  Finally, you deploy a 
 new version of your application code, which stores more interesting
-information in your sessions.  Suddenly, memcached starts thrashing
-with huge amounts of evictions.  What might have happened is that
-since the session size grew, the slab allocator needs to use a different
-slabclass.  Most of the slabs are now sitting in the old slabclass.
-The usual solution is to restart memcached, unless you've turned on
+information in your sessions -- so your session sizes have grown.  
+Suddenly, memcached starts thrashing with huge amounts of evictions.  
+What might have happened is that since the session size grew, 
+the slab allocator needs to use a different slabclass.  
+Most of the slabs are now sitting idle and unused in the old slabclass.
+The usual solution is to just restart memcached, unless you've turned on
 ALLOW_SLABS_REASSIGN.
 
 Back to: MemcachedInternals
