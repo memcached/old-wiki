@@ -194,6 +194,26 @@ For example, if the chunk size is 400K, the slab allocator will only
 create a slab of size 800K, which can hold two chunks (400K + 400K),
 since 1200K goes over the 1MB limit.
 
+The previous slab-size-as-chunk-size-multiple optimization is the default 
+behavior.  You can switch it off, though, as
+a tradeoff in order to gain an interesting, underdocumented feature:
+the ability to reassign slab memory from one slabclass to another
+slabclass at runtime.  To do so, recompile with the ALLOW_SLABS_REASSIGN
+flag, as use the 'slabs reassign (src_slabclass) (dest_slabclass)' command.  
+This feature can be useful, as long running memcached instances
+will eventually allocate all its memory into slabs.  Unfortunately, 
+slabs allocated early
+in memcached's process life might be over time be effectively in the wrong slabclass.
+Imagine, for example, that you store session data in memcached, and
+memcached has been up and running for months.  Finally, you deploy a 
+new version of your application code, which stores more interesting
+information in your sessions.  Suddenly, memcached starts thrashing
+with huge amounts of evictions.  What might have happened is that
+since the session size grew, the slab allocator needs to use a different
+slabclass.  Most of the slabs are now sitting in the old slabclass.
+The usual solution is to restart memcached, unless you've turned on
+ALLOW_SLABS_REASSIGN.
+
 Back to: MemcachedInternals
 
 ----
