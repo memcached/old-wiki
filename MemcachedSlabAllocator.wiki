@@ -224,6 +224,7 @@ To learn more about slab allocators...
 
  * http://en.wikipedia.org/wiki/Slab_allocation
  * http://www.usenix.org/publications/library/proceedings/bos94/full_papers/bonwick.a
+ * In the memcached codebase, see doc/memory-management.txt
 
 ----
 Author: steve.yen, with thanks to trond for the feedback, improvements and pointers.
