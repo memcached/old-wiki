@@ -134,8 +134,9 @@ And a slab, finally, is divvied up into 1 or
 more chunks of the same chunk size.
 
 (Sometimes, you'll see the codebase use the word 'page' instead of
-slab.  Same thing.  Sometimes, it mixes up the word 'chunk' for other
-meanings.  Just look at the code/comment context to figure it out.)
+slab.  Sometimes, it mixes up the word 'chunk' for other
+meanings.  Sometimes, it uses 'bucket' instead of slabclass.  
+Just look at the code/comment context to figure it out.)
 
 Why are there only a fixed number of slabclass structs?  Because the
 slab allocator uses an array for quick O(1) lookup.  The array of 
