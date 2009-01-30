@@ -3,13 +3,16 @@
 = C / C++ =
 
 libmemcached 
- * http://tangent.org/552/libmemcached.html by Brian Aker; BSD license. This is a new library, under heavy development.
+ * http://tangent.org/552/libmemcached.html by Brian Aker
+  * BSD license. This is a new library, under heavy development.
 
 libmemcache 
- * http://people.freebsd.org/%7Eseanc/libmemcache by Sean Chittenden; BSD license. This is the original C library. It is no longer under active development. You should try libmemcached instead.
+ * http://people.freebsd.org/~seanc/libmemcache by Sean Chittenden
+  * BSD license. This is the original C library. It is no longer under active development. You should try libmemcached instead.
 
 apr_memcache 
- * http://www.outoforder.cc/projects/libs/apr_memcache by Paul Querna; Apache Software License version 2.0 (doesn't appear to be actively maintained since 2005)
+ * http://www.outoforder.cc/projects/libs/apr_memcache by Paul Querna
+  * Apache Software License version 2.0 (doesn't appear to be actively maintained since 2005)
 
 memcacheclient
  * http://code.jellycan.com/memcacheclient (cross-platform, but primary focus on Windows
@@ -19,10 +22,13 @@ libketama
 
 = PHP =
 
-PECL/memcache 
+PECL/memcached 
  * http://pecl.php.net/package/memcached (wraps libmemcached)
+  * pear install pecl/memcached
   * Announcement: http://gravitonic.com/2009/01/new-memcached-extension
- * http://pecl.php.net/package/memcache (pear install pecl/memcache)
+
+PECL/memcache 
+ * http://pecl.php.net/package/memcache
  * [http://www.php.net/manual/en/book.memcache.php php memcached docs]
 
 PHP libmemcached 
@@ -45,13 +51,17 @@ Cache::Memcached-compatible perl libmemcached wrapper wrapper (heh)
 = Java =
 
 spymemcached 
- * http://code.google.com/p/spymemcached An improved Java API maintained by Dustin Sallings. Aggressively optimised, ability to run async, supports binary protocol, etc. See site for details: 
+ * http://code.google.com/p/spymemcached 
+  * An improved Java API maintained by Dustin Sallings. 
+  * Aggressively optimised, ability to run async, supports binary protocol, etc. See site for details. 
 
 Java memcached client 
- * http://www.whalin.com/memcached A Java API is maintained by Greg Whalin from Meetup.com. 
+ * http://www.whalin.com/memcached 
+  * A Java API is maintained by Greg Whalin from Meetup.com. 
 
-Another Java memcached client
+More Java memcached clients
  * http://code.google.com/p/javamemcachedclient
+ * http://code.google.com/p/memcache-client-forjava
 
 = Python =
 
