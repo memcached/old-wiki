@@ -20,6 +20,8 @@ libketama
 = PHP =
 
 PECL/memcache 
+ * http://pecl.php.net/package/memcached (wraps libmemcached)
+  * Announcement: http://gravitonic.com/2009/01/new-memcached-extension
  * http://pecl.php.net/package/memcache (pear install pecl/memcache)
  * [http://www.php.net/manual/en/book.memcache.php php memcached docs]
 
