@@ -3,6 +3,7 @@ _note: we're looking for ways to integrate a windows port into mainline. Please 
 Articles:  
  * [http://www.shutupandcode.net/?p=26 Memcached Installation] (2009)
  * [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx introduction to Memcached on Windows] (2008)
+ * [http://pureform.wordpress.com/2008/01/10/installing-memcache-on-windows-for-php installing memcached on windows for php] (2008)
 
  * [http://jehiah.cz/projects/memcached-win32 memcached for windows, version 1.2.1 port]
  * [http://www.splinedancer.com/memcached-win32 memcached for windows, version 1.2.4 port]
