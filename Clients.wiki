@@ -80,6 +80,9 @@ cmemcache
 Django's caching framework works with memcached
  * http://docs.djangoproject.com/en/dev/topics/cache/
 
+Twisted python client
+ * http://python.net/crew/mwh/apidocs/twisted.protocols.memcache.html
+
 = Ruby =
 
 cache_fu Rails plugin works with memcached
