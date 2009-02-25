@@ -1,0 +1,4 @@
+= QA Development / source code repositories =
+
+  * http://github.com/victorkirkebo/mctest/tree/master
+   * Tests for textual and binary protocol
