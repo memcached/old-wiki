@@ -26,6 +26,7 @@
   * http://code.google.com/p/peafowl - python based
   * http://xph.us/software/beanstalkd - incompatible protocol was inspired by memcached protocol
  * http://labs.gree.jp/Top/OpenSource/Flared.html - yet another memcached
+ * http://overlayweaver.sourceforge.net - research on overlay networks, recently speaks memcached protocol
 
 == Other ==
 
