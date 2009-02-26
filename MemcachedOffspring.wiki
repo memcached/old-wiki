@@ -21,7 +21,9 @@
  * http://code.google.com/p/cacherl - erlang version of memcached
  * Queues based on memcached protocol
   * http://memcachedb.org/memcacheq - queue based on memcached protocol
+  * http://code.google.com/p/memqd
   * http://rubyforge.org/projects/starling - ruby based, from twitter
+  * http://robey.lag.net/2008/11/27/scarling-to-kestrel.html - scala based queue, from twitter
   * http://code.google.com/p/sparrow - ruby based
   * http://code.google.com/p/peafowl - python based
   * http://xph.us/software/beanstalkd - incompatible protocol was inspired by memcached protocol
