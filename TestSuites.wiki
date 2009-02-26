@@ -1,4 +1,6 @@
 = QA Development / source code repositories =
 
   * http://github.com/victorkirkebo/mctest/tree/master
-   * Tests for textual and binary protocol
+   * Server tests (textual and binary protocol testing)
+  * http://github.com/dustin/memcached-test
+   * Client and server test code (used primarily for binary protocol testing)
