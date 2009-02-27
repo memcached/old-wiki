@@ -11,6 +11,7 @@
 == Reimplementations ==
 
  * http://code.google.com/p/spcached/
+ * http://tokyocabinet.sourceforge.net/tyrantdoc/ - HTTP and memcached protocol networking frontend to tokyo cabinet
  * Java versions
   * http://www.thimbleware.com/projects/jmemcached
   * http://code.google.com/p/jemcache/
