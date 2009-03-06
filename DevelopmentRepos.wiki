@@ -9,7 +9,7 @@
 = Development =
 
  * Binary protocol development
-  * http://github.com/dustin/memcached/tree/rewritten-bin
+  * http://github.com/dustin/memcached/tree/master
    * Includes corrected authorship/attribution history
   * http://github.com/dustin/memcached-test
    * Client and server test code (used primarily for binary protocol testing)
