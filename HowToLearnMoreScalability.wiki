@@ -17,3 +17,4 @@
    * [http://poocs.net/2006/4/3/the-adventures-of-scaling-stage-4 Part 4]
  * [http://highscalability.com/ highscalability.com - blog about scaling]
  * [http://www.jurriaanpersyn.com/archives/2009/02/12/database-sharding-at-netlog-with-mysql-and-php Netlog.com sharding] - with description of memcached role (2009)
+ * [http://mysqldba.blogspot.com/2008/09/how-do-you-know-when-you-need-more.html memcached at RockYou] - how do you know when you need more memcached (2008)
