@@ -12,6 +12,10 @@
 
  * [HowToLearnMoreScalability Learn more about scalability]
 
+== Production Support ==
+
+ * [http://www.mysql.com/products/enterprise/memcached.html Production Support for Memcached from Sun Microsystems]
+
 == Communication ==
 
  * [http://groups.google.com/group/memcached Mailing list]
