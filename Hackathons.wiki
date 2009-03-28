@@ -22,13 +22,27 @@ interest the most people. There are always many more proposals than end
 up getting worked on, and there is no stigma whatsoever to suggesting
 something then hearing someone else's idea and wanting to work on that
 instead.
-Upcoming events
-Previous Hackathons
-Memcached Hackathon at Sun Microsystems, 14 October 2008
+=Upcoming events=
+
+==Memcached Hackathon at MySQL BoF 2008==
+
+When: TBD
+Where: 
+Who: Trond Norbye
+What:
+
+Primary things to hack out at this hackathon are...
+
+    * Extend memslap to get a benchmark mode
+
+=Previous Hackathons=
+
+
+==Memcached Hackathon at Sun Microsystems, 14 October 2008=
+
 When: Final date: October 14th, starting at 6pm-ish
 Where: Sun Microsystems, 10 Network Circle, Menlo Park, CA
-Who: Brian Aker, Trond Norbye, Toru Maesaka, Matt Ingenthron, Denis Sheahan, Don MacAskill, Senthil Krishna Bryan Guillemette, John Menerick, Eric Lambert, Dustin Sallings, Steve Yen, Ken Shepppardson, Alan Kasindorf, Brad Fitzpatrick, Paul Saab,
- Pallab Bhattacharya, Heidi Bergh-Hoff
+Who: Brian Aker, Trond Norbye, Toru Maesaka, Matt Ingenthron, Denis Sheahan, Don MacAskill, Senthil Krishna Bryan Guillemette, John Menerick, Eric Lambert, Dustin Sallings, Steve Yen, Ken Shepppardson, Alan Kasindorf, Brad Fitzpatrick, Paul Saab, Pallab Bhattacharya, Heidi Bergh-Hoff
 What:
 
 Primary things to hack out at this hackathon are...
@@ -60,7 +74,7 @@ Notes:
     * http://torum.net/2008/10/memcached-hackathon-at-sun/
     * http://groups.google.com/group/memcached/browse_thread/thread/b1368c245d9c0d94
 
-Memcached Hackathon at MySQL BoF 2008
+==Memcached Hackathon at MySQL BoF 2008==
 
 When: 2008 April 15, 8pm-ish to midnight
 Who: Dormando, Brian Aker, Dustin S., Trond, Toru, Patrick G, Roy L, Harrison F, lots more mysql guys, ~30 folks in a very loud room.
@@ -68,12 +82,12 @@ Who: Dormando, Brian Aker, Dustin S., Trond, Toru, Patrick G, Roy L, Harrison F,
 One liner: the core guys hashed through binary protocol and Toru's multi-engine code, threading...
 Notes (thanks Dustin) http://lists.danga.com/pipermail/memcached/2008-April/006734.html
 
-Memcached Hackathon at Yahoo 2007
+==Memcached Hackathon at Yahoo 2007==
 
 When: Date is Thursday, December 13th, 2007
-If you're interested in attending, please drop a note to goffinet <at> yahoo-inc <dot> com with which date works best for you. We have tried to anchor the hackathon around core contributors for productivity's sake.
+If you're interested in attending, please drop a note to goffinet at yahoo-inc dot com with which date works best for you. We have tried to anchor the hackathon around core contributors for productivity's sake.
 
-Where: Yahoo! Sunnyvale Campus</http>, Building C, Classroom 5.
+Where: Yahoo! Sunnyvale Campus, Building C, Classroom 5.
 Why:
 
     * fix bugs
