@@ -25,11 +25,9 @@ instead.
 =Upcoming events=
 
 ==Memcached Hackathon at MySQL BoF 2008==
-<pre>
-When: TBD
-Who: Trond Norbye 
-What:
-</pre>
+||*When*||TBD||
+||*Who*||Trond Norbye||
+
 Primary things to hack out at this hackathon are...
 
     * Extend memslap to get a benchmark mode
@@ -38,12 +36,10 @@ Primary things to hack out at this hackathon are...
 
 
 ==Memcached Hackathon at Sun Microsystems, 14 October 2008=
-<pre>
-When: Final date: October 14th, starting at 6pm-ish
-Where: Sun Microsystems, 10 Network Circle, Menlo Park, CA
-Who: Brian Aker, Trond Norbye, Toru Maesaka, Matt Ingenthron, Denis Sheahan, Don MacAskill, Senthil Krishna Bryan Guillemette, John Menerick, Eric Lambert, Dustin Sallings, Steve Yen, Ken Shepppardson, Alan Kasindorf, Brad Fitzpatrick, Paul Saab, Pallab Bhattacharya, Heidi Bergh-Hoff
-What:
-</pre>
+||*When*||Final date: October 14th, starting at 6pm-ish||
+||*Where*||Sun Microsystems, 10 Network Circle, Menlo Park, CA||
+||*Who*||Brian Aker, Trond Norbye, Toru Maesaka, Matt Ingenthron, Denis Sheahan, Don MacAskill, Senthil Krishna Bryan Guillemette, John Menerick, Eric Lambert, Dustin Sallings, Steve Yen, Ken Shepppardson, Alan Kasindorf, Brad Fitzpatrick, Paul Saab, Pallab Bhattacharya, Heidi Bergh-Hoff||
+
 Primary things to hack out at this hackathon are...
 
     * Binary protocol
