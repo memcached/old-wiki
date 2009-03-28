@@ -25,12 +25,11 @@ instead.
 =Upcoming events=
 
 ==Memcached Hackathon at MySQL BoF 2008==
-
+<pre>
 When: TBD
-Where: 
-Who: Trond Norbye
+Who: Trond Norbye 
 What:
-
+</pre>
 Primary things to hack out at this hackathon are...
 
     * Extend memslap to get a benchmark mode
@@ -39,12 +38,12 @@ Primary things to hack out at this hackathon are...
 
 
 ==Memcached Hackathon at Sun Microsystems, 14 October 2008=
-
+<pre>
 When: Final date: October 14th, starting at 6pm-ish
 Where: Sun Microsystems, 10 Network Circle, Menlo Park, CA
 Who: Brian Aker, Trond Norbye, Toru Maesaka, Matt Ingenthron, Denis Sheahan, Don MacAskill, Senthil Krishna Bryan Guillemette, John Menerick, Eric Lambert, Dustin Sallings, Steve Yen, Ken Shepppardson, Alan Kasindorf, Brad Fitzpatrick, Paul Saab, Pallab Bhattacharya, Heidi Bergh-Hoff
 What:
-
+</pre>
 Primary things to hack out at this hackathon are...
 
     * Binary protocol
@@ -75,21 +74,21 @@ Notes:
     * http://groups.google.com/group/memcached/browse_thread/thread/b1368c245d9c0d94
 
 ==Memcached Hackathon at MySQL BoF 2008==
-
+<pre>
 When: 2008 April 15, 8pm-ish to midnight
 Who: Dormando, Brian Aker, Dustin S., Trond, Toru, Patrick G, Roy L, Harrison F, lots more mysql guys, ~30 folks in a very loud room.
-
+</pre>
 One liner: the core guys hashed through binary protocol and Toru's multi-engine code, threading...
 Notes (thanks Dustin) http://lists.danga.com/pipermail/memcached/2008-April/006734.html
 
 ==Memcached Hackathon at Yahoo 2007==
-
+<pre>
 When: Date is Thursday, December 13th, 2007
 If you're interested in attending, please drop a note to goffinet at yahoo-inc dot com with which date works best for you. We have tried to anchor the hackathon around core contributors for productivity's sake.
 
 Where: Yahoo! Sunnyvale Campus, Building C, Classroom 5.
 Why:
-
+</pre>
     * fix bugs
     * add features
     * addition of a binary protocol
