@@ -24,7 +24,7 @@ something then hearing someone else's idea and wanting to work on that
 instead.
 =Upcoming events=
 
-==Memcached Hackathon at MySQL BoF 2008==
+==Memcached Hackathon at MySQL BoF 2009==
 ||*When*||TBD||
 ||*Who*||Trond Norbye||
 
