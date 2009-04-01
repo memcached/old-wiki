@@ -24,13 +24,15 @@ something then hearing someone else's idea and wanting to work on that
 instead.
 =Upcoming events=
 
-==Memcached Hackathon at MySQL BoF 2009==
-||*When*||TBD||
-||*Who*||Trond Norbye||
+==Memcached Hackathon at MySQL BoF 2009, 21 April 2009 (Date still tentative) ==
+||*When*|| April 21st, starting at 7:30 PM||
+||*Where*|| Hyatt Regency Santa Clara, 5001 Great America Parkway, Santa Clara, CA 95054. Room TBD ||
+||*Who*||Trond Norbye, Eric Lambert||
 
 Primary things to hack out at this hackathon are...
 
     * Extend memslap to get a benchmark mode
+    * Overview of upcoming releases
 
 =Previous Hackathons=
 
