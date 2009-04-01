@@ -33,6 +33,7 @@ Primary things to hack out at this hackathon are...
 
     * Extend memslap to get a benchmark mode
     * Overview of upcoming releases
+    * Fix DTrace support on macosx
 
 =Previous Hackathons=
 
