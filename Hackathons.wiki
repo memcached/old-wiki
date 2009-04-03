@@ -24,8 +24,8 @@ something then hearing someone else's idea and wanting to work on that
 instead.
 =Upcoming events=
 
-==Memcached Hackathon at MySQL BoF 2009, 21 April 2009 (Date still tentative) ==
-||*When*|| April 21st, starting at 7:30 PM||
+==Memcached Hackathon at MySQL BoF 2009, 22 April 2009 (Date still tentative) ==
+||*When*|| April 22nd, starting at 8:30 PM||
 ||*Where*|| Hyatt Regency Santa Clara, 5001 Great America Parkway, Santa Clara, CA 95054. Room TBD ||
 ||*Who*||Trond Norbye, Eric Lambert||
 
