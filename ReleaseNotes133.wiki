@@ -2,7 +2,13 @@
 
 = Memcached 1.3 Beta 3 Release Notes =
 
-Date: 2009-03-11 Wed
+Date: 2009-04-03 Fri
+
+== Download ==
+
+Download link:
+
+http://memcached.googlecode.com/files/memcached-1.3.3.tar.gz
 
 == Features ==
 
@@ -26,6 +32,7 @@ as internal verification).
   * ascii UDP set (bug36)
   * stats slabs' used chunks (bug29)
   * stats reset should reset item stats, eviction counters, etc... (bug22)
+  * Fix all stat buffer management
 
 == Misc ==
   * More tests
@@ -87,12 +94,12 @@ refer to the 1.3.2 release notes for more info:
 ReleaseNotes133
 
 {{{
-    27  Dustin Sallings
-     7  Trond Norbye
-     5  Brad Fitzpatrick
-     5  dormando
-     4  Steve Yen
-     1  Eric Lambert
-     1  Chris Goffinet
-     1  Clinton Webb
+    28 Dustin Sallings
+     8 Trond Norbye
+     6 dormando
+     5 Brad Fitzpatrick
+     4 Steve Yen
+     1 Eric Lambert
+     1 Clinton Webb
+     1 Chris Goffinet
 }}}
