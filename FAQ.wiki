@@ -567,6 +567,26 @@ If you are seeing occasional dropped or refused connections to your memcached se
  * A stateful firewall in the middle is running out of resources. See http://lists.danga.com/pipermail/memcached/2006-November/003112.html for an example fix for iptables.
  * Running out of TIME_WAIT buckets, or local tcp/ip ports. See documentation for your particular OS.
 
+== Help! Sometimes clients hang connecting to memcached! ==
+
+See the below too sections on connections - the most likely culprit is that you are running into the maximum connection limit. When that happens new connections are queued into the TCP listen backlog, until old connections die off.
+
+The issue with client hangs being due to the TCP listen backlog was first noted by Chris Goffinet. Dormando later figured out the rest and added tools to track down this condition.
+
+Other possibilities include buggy OS's, dropped packets, and stateful firewalls falling over.
+
+== How do I tune the max connections setting (-c)? ==
+
+If you are running memcached 1.2.7 or newer, there is a stat called "listen_disabled_num". The short answer here is if this number is higher than 0, you need to increase your max connections limit.
+
+The longer answer, is to calculate how many clients you expect to be connecting at once. It's also okay to set this number higher than you absolutely need it to be.
+
+If you have 3 webservers running apache, and each apache process can potentially create one connection to memcached, you calculate this by your MaxClients setting. IE; the maximum potential apache processes that can be running at a time.
+
+If that's set to 30, then you have 30 * 3 == 90 possible connections. Might as well set -c to 4096 to be safe ;)
+
+As noted in the sections below, be very careful of bugs in your application which can cause extra connections to memcached. Improper usage of client objects can spawn many connections from a single page request, which will break your site.
+
 == Too many connections to memcached == 
 
 Constantly maxing out connections to a particular (or all) memcached server(s)? First, keep in mind that it's okay to have as many connections as you want connected to memcached. Increase the max size to be what you need. On the other hand, if you have 4,000 connections and three servers, something's out of whack.
