@@ -23,13 +23,13 @@ Also consider checking your distrobution's package management system (apt, yum, 
 Generic install instructions are standard. memcached requires [http://www.monkey.org/~provos/libevent/ libevent] to be installed first. This is most likely available via your distrobution's package manager.
 
 If your distrobution doesn't have memcached or an updated enough version, installing from source is simple. Fetch the tarball from our [http://code.google.com/p/memcached/downloads/list download page].
-
+{{
 $ tar -zxvf memcached-1.x.x.tar.gz
 $ ./configure --enable-threads (you probably want threads)
 $ make
 $ make test
 $ sudo make install
-
+}}
 use './configure --help' to see all of the options.
 
 == Where can I run memcached? == 
