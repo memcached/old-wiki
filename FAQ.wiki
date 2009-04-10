@@ -364,7 +364,7 @@ Row-based caching is checking a list of known data identifiers for cached data. 
 
 For example, if you have a dataset of users A, B, C, D, E
 
-You view a page with information on users A, B, E. First, ou do a memcached get with three independent keys, one for each user. Say they all come up miss. Then you would do an SQL query to fetch row info for all three users, then store into memcached.
+You view a page with information on users A, B, E. First, you do a memcached get with three independent keys, one for each user. Say they all come up miss. Then you would do an SQL query to fetch row info for all three users, then store into memcached.
 
 Now, you view another page with users C, D, E on it. When you do that memcached get again, you miss on C, D, and *hit* on E. Select rows for C, D, set into memcached.
 
