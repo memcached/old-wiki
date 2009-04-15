@@ -1,39 +1,43 @@
-#summary Notes on the latest and older memcached hackathons
+=Hackathon=
 
-_note: This is a copy/paste from the old wiki. We can format/update the next time we schedule a hackathon_
+*Who:* anyone interested in helping to implement and/or suggest features, bug fixes, add documentation, etc. may attend.
 
-Hackathon
-Who: anyone interested in helping to implement and/or suggest features, bug fixes, add documentation, etc. may attend.
-
-What: memcached hackathon
+*What:* memcached hackathon
 What's a hackathon?
-Pretty simple: it's a marathon coding session. The goal is to get something done. Come
-armed with a pet project of your own if you like, or just with some
-energy and a willingness to think hard and pound out code. It has a
-scheduled start time, and it ends when it ends. (But people are
-expected to call it quits as their body clocks and real lives dictate.
-We don't want bleary-eyed programmers pounding out buggy code because
-they stopped thinking straight an hour earlier. It's not an insomnia
-contest!)
+Pretty simple: it's a marathon coding session. The goal is to get something 
+done. Come armed with a pet project of your own if you like, or just with 
+some energy and a willingness to think hard and pound out code. It has a
+scheduled start time, and it ends when it ends. (But people are expected 
+to call it quits as their body clocks and real lives dictate. We don't want 
+bleary-eyed programmers pounding out buggy code because they stopped thinking 
+straight an hour earlier. It's not an insomnia contest!)
 
-At Facebook's hackathons, the beginning of the evening usually involves
+At Facebook's hackathons (who hosted the first and third hackathon), 
+the beginning of the evening usually involves
 throwing lots of ideas around to see which ones have the most merit and
 interest the most people. There are always many more proposals than end
 up getting worked on, and there is no stigma whatsoever to suggesting
 something then hearing someone else's idea and wanting to work on that
 instead.
+
 =Upcoming events=
 
 ==Memcached Hackathon at MySQL BoF 2009, 22 April 2009 (Date still tentative) ==
 ||*When*|| April 22nd, starting at 8:30 PM||
 ||*Where*|| Hyatt Regency Santa Clara, 5001 Great America Parkway, Santa Clara, CA 95054. Room TBD ||
-||*Who*||Trond Norbye, Eric Lambert||
+||*Who*||Trond Norbye, Eric Lambert, Matt Ingenthron||
 
 Primary things to hack out at this hackathon are...
 
-    * Extend memslap to get a benchmark mode
+    * Extend memslap to get a benchmark mode -or- fixup Trond's testclient to be released as a regular benchmark tool (sounds like a benchmark discussion is in order)
     * Overview of upcoming releases
     * Fix DTrace support on macosx
+
+Do you have an idea?  Then please just show up or post it to the [http://groups.google.com/group/memcached memcached group] to socialize it with others or ask for it to be posted to the wiki.
+
+Why is the date tentative?  The managers of the conference, O'Reilly, haven't scheduled the hackathon BOF yet.  We really, really expect Wednesday April 22nd.  Keep an eye on this wiki for any changes.
+
+[https://en.oreilly.com/mysql2009/public/register Registration for the conference] was free through February 15, but now costs $25.  If you're just coming for the hackathon BOF, it's pretty informal and there should be no problem attending.  You will want to register if you want to attend any of the other sessions/events.
 
 =Previous Hackathons=
 
