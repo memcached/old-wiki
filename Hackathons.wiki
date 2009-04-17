@@ -23,7 +23,7 @@ instead.
 =Upcoming events=
 
 ==Memcached Hackathon at MySQL BoF 2009, _confirmed:_ 22 April 2009 ==
-||*When*|| *confirmed:* [http://www.mysqlconf.com/mysql2009/public/schedule/detail/8965 April 22nd, starting at 7:30 PM]||
+||*When*|| *confirmed:* [http://www.mysqlconf.com/mysql2009/public/schedule/detail/8965 Wednesday April 22nd, starting at 7:30 PM]||
 ||*Where*|| Hyatt Regency Santa Clara, 5001 Great America Parkway, Santa Clara, CA 95054. Room TBD ||
 ||*Who*||Trond Norbye, Eric Lambert, Matt Ingenthron||
 
