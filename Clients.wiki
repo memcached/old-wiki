@@ -22,6 +22,8 @@ libketama
 
 = PHP =
 
+[PHPClientComparison Comparison of PECL/memcache and PECL/memcached]
+
 PECL/memcached 
  * http://pecl.php.net/package/memcached (wraps libmemcached)
   * pear install pecl/memcached
