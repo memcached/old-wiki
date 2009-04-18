@@ -25,6 +25,7 @@
  * [http://dormando.livejournal.com/tag/memcached Dormando's memcached tag]
  * [http://abhinavsingh.com/blog/2009/01/memcached-and-n-things-you-can-do-with-it/ N things you can do with memcached] (2009)
  * [http://www.majordojo.com/2007/03/memcached-howto.php How to Dramatically Speed Up Your Web Application: An Introduction to memcached] (2007)
+ * [http://blogs.sun.com/shanti/entry/memcached_on_nehalem1 Memcached 1.3.2 versus 1.2.6 performance test, 350K ops/second] (2009)
 
 == Books about or referencing memcached ==
 
