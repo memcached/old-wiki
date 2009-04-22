@@ -15,7 +15,7 @@
    * Client and server test code (used primarily for binary protocol testing)
 
  * Plugin storage engine development
-  * http://github.com/tmaesaka/memcached/tree/master
+  * http://github.com/trondn/memcached/tree/engine
 
 = Archive =
 
