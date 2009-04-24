@@ -4,6 +4,7 @@
    * [http://www.netuality.ro/monitoring-memcached-with-cacti/tools/20060802 blog article] (2006)
    * http://forums.cacti.net/about14605.html
    * http://www.faemalia.net/mysqlUtils/
+   * [http://tag1consulting.com/node/58 Multiple port per server Cacti Templates]
 
  * [http://www.hyperic.com/products/managed/memcached-management.htm Hyperic plugin]
  * [http://search.cpan.org/~zigorou/Nagios-Plugins-Memcached-0.02/lib/Nagios/Plugins/Memcached.pm Nagios plugin]
