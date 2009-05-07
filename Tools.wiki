@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This page the place to go for all things related memcached tools.  Not much here now, but more to come. If have something you want to add, drop a line to the mailing list and we'll get it here.
+This pageis the place to go for all things related memcached tools.  Not much here now, but more to come. If you have something you want to add, drop a line to the mailing list and we'll get it here.
 
 = List of Interesting Memcached Tools =
 
