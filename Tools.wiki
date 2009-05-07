@@ -11,8 +11,10 @@ This pageis the place to go for all things related memcached tools.  Not much he
    * a plugin for wireshark that understands the textual protocol.
       * [http://dev.gear6.com/downloads/wireshark-memcache-protocol-dissector]
    * brutis: a tool designed to exercise memcache instances
-      * http://code.google.com/p/brutis/.
+      * http://code.google.com/p/brutis
    * statsproxy: a tool that allows you to use your web browser to get real-time stats for your memcached servers instead of or in addition to the standard memcached telnet interface.
-      * http://code.google.com/p/statsproxy/
+      * http://code.google.com/p/statsproxy
    * cacti-templates: templates that let you use cacti to monitor your memcached instances
       * http://dealnews.com/developers/cacti/memcached.html
+   * mem-top: a command-line tool that grabs real-time stats from memcache 
+      * http://code.google.com/p/memcache-top
