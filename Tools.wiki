@@ -7,6 +7,6 @@ This pageis the place to go for all things related memcached tools.  Not much he
 = List of Interesting Memcached Tools =
 
    * Wireshark now understands memcached binary protocol.
-      *[http://www.wireshark.org/download/automated]
+      * [http://www.wireshark.org/download/automated]
    * a plugin for wireshark that understands the textual protocol.
       * [http://dev.gear6.com/downloads/wireshark-memcache-protocol-dissector]
