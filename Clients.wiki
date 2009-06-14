@@ -20,6 +20,9 @@ memcacheclient
 libketama 
  * http://www.last.fm/user/RJ/journal/2007/04/10/rz_libketama (the original consistent hashing algorithm from last.fm)
 
+= Erlang =
+ * [http://github.com/joewilliams/merle/tree/master merle, an erlang memcached client]
+
 = PHP =
 
 [PHPClientComparison Comparison of PECL/memcache and PECL/memcached]
