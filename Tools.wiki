@@ -2,7 +2,7 @@
 
 = Introduction =
 
-This pageis the place to go for all things related memcached tools.  Not much here now, but more to come. If you have something you want to add, drop a line to the mailing list and we'll get it here.
+This page is the place to go for all things related memcached tools.  Not much here now, but more to come. If you have something you want to add, drop a line to the mailing list and we'll get it here.
 
 = List of Interesting Memcached Tools =
 
@@ -18,5 +18,5 @@ This pageis the place to go for all things related memcached tools.  Not much he
       * http://dealnews.com/developers/cacti/memcached.html
    * mem-top: A command-line tool that grabs real-time stats from memcache.
       * http://code.google.com/p/memcache-top
-   * AdvandedReport: a stats tool for memcached which provides information about the most active clients and object keys for your memcached servers.
+   * AdvancedReporter: a stats tool for memcached which provides information about the most active clients and object keys for your memcached servers.
       * http://code.google.com/p/advancedreporter
