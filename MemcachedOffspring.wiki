@@ -31,9 +31,13 @@
  * http://labs.gree.jp/Top/OpenSource/Flared.html - yet another memcached
  * http://overlayweaver.sourceforge.net - research on overlay networks, recently speaks memcached protocol
 
+== Memcached proxies ==
+
+ * http://labs.northscale.com/moxi
+ * http://code.google.com/p/memagent
+
 == Other ==
 
- * http://code.google.com/p/memagent - memcached proxy
  * http://memcachefs.sourceforge.net
  * http://github.com/andrewfromgeni/mcinsight - GUI to examine memcached server
  * Accessing memcached directly from Apache
