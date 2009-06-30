@@ -1,6 +1,6 @@
 = Memcached Slab Allocator =
 
-The meat of memcached's famous slab allocator, or slabber, lives in
+The code for memcached's famous slab allocator, or slabber, lives in
 the files slabs.h and slabs.c.  The slab allocator does all the 
 memory-management heavy lifting for item data in memcached, and
 I assume you know what a slab allocator is at a high handwave
