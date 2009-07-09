@@ -8,7 +8,7 @@ Date:  Thu July 9, 2009
 
 Download Link:
 
-http://memcached.googlecode.com/files/memcached-1.4.tar.gz
+http://memcached.googlecode.com/files/memcached-1.4.0.tar.gz
 
 == New Features ==
 
@@ -223,10 +223,10 @@ report ended up as a commit with your name on it.
 Note that this is just a summary of how many changes each person made
 which doesn't necessarily reflect how significant each change was.
 For details on what led up into a branch, either grab the git repo and
-look at the output of `git log 1.2.8..1.4` or use a web view.
+look at the output of `git log 1.2.8..1.4.0` or use a web view.
 
   * Repo list:  http://code.google.com/p/memcached/wiki/DevelopmentRepos
-  * Web View: http://github.com/memcached/memcached/commits/1.4
+  * Web View: http://github.com/memcached/memcached/commits/1.4.0
 
 {{{
   149  Dustin Sallings
