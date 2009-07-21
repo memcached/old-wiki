@@ -25,11 +25,11 @@ The following builders make up this testing pool:
   * NetBSD
   * Something important to you that's not already covered.
 
-== Contributing ==
+= Contributing =
 
 If you'd like to contribute to this list, please install the latest version of the following tools available for your system:
 
-=== Software Requirements ===
+== Software Requirements ==
 
   * git
   * autotools (automake, autoconf)
@@ -38,11 +38,11 @@ If you'd like to contribute to this list, please install the latest version of t
   * C compiler
   * buildbot
 
-=== Availability Requirements ===
+== Availability Requirements ==
 
 We place no strict uptime requirements on build slaves, but it would be nice if they were generally available.  If your slave goes down, we'll try to get hold of you to get it running again.
 
-=== System Impact ===
+== System Impact ==
 
 The build process for memcached is currently fairly lightweight and buildbot's slave overhead is minimal.
 
@@ -54,6 +54,6 @@ Before a build, the minimal set of git objects required to represent a build tre
 
 After a successful build, the tested memcached binary is gzipped and retrieved from the system.
 
-=== Setting It Up ===
+== Setting It Up ==
 
 Once that's all in place, contact the list and let us know you're ready to contribute.  One of us will work with you on making it part of the official builds.
