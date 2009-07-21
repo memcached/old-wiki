@@ -1,0 +1,39 @@
+#summary Memcached's Build Farm
+
+= The Build Farm =
+
+Memcached builds are tests against a variety of hosts and configurations via [http://buildbot.net/ buildbot] before and after every bit of code is accepted.
+
+== Builders ==
+
+The following builders make up this testing pool:
+
+  * FreeBSD 7.2 AMD 64
+  * FreeBSD 7.2 i386
+  * OpenBSD 4.5 AMD 64
+  * OpenSolaris x86 (one with and one without dtrace)
+  * OS X 10.5 Intel
+  * OS X 10.5 PPC
+  * Solaris 10 Sparc (one with and one without dtrace)
+  * Ubuntu 8.04 i386
+  * Ubuntu 9.04 x86_64 (gcc 4.3 and icc)
+  * Ubuntu 9.10 x86_64 (gcc 4.4)
+
+== Needed Builders ==
+
+  * More GCC 4.4 (Our Ubuntu 9.10 is currently a part-time builder)
+  * NetBSD
+  * Something important to you that's not already covered.
+
+== Contributing ==
+
+If you'd like to contribute to this list, please install the latest version of the following tools available for your system:
+
+  * git
+  * autotools (automake, autoconf)
+  * libevent
+  * gnu make
+  * C compiler
+  * buildbot
+
+Once that's all in place, contact the list and let us know you're ready to contribute.  One of us will work with you on making it part of the official builds.
