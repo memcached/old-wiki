@@ -21,7 +21,6 @@ The following builders make up this testing pool:
 
 == Needed Builders ==
 
-  * More GCC 4.4 (Our Ubuntu 9.10 is currently a part-time builder)
   * NetBSD
   * Something important to you that's not already covered.
 
