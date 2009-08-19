@@ -8,6 +8,8 @@
 
 = Development =
 
+A tree for 1.5 development should be available sometime very soon (August 2009).  If you are working on development, please publish your work and cc the mailing list as much as possible.
+
  * Binary protocol development
   * http://github.com/dustin/memcached/tree/master
    * Includes corrected authorship/attribution history
