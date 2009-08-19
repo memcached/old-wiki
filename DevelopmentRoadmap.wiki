@@ -42,7 +42,7 @@ _Related_: contrib updated packages to distros (universe/EPEL?)
 There have been experiments and done in 1.3.x for several features which should be in a 1.5 development branch soon.  
 
   * Restructure the tree.
-  * Add storage engine support.
+  * Add storage [EngineInterface engine] support.
     * The first update would be refactoring without external API support.  This _could_ be considered for putback to a 1.4 update.
     * The goal is to be able to support experiments, specific features and protocol extensions
       * Example: SASL support
