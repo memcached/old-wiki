@@ -22,6 +22,7 @@
  * [http://lists.danga.com/mailman/listinfo/memcached Old Mailing List Archive]
  * IRC - irc.freenode.net #memcached
  * [Hackathons]
+ * [Aug2009DrizzleNotes Notes from Drizzle Developer Days]
 
 = Server ports to other platforms =
 
