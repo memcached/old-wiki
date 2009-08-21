@@ -1,4 +1,4 @@
-There was a discussion about the memcached client roadmaps at the Drizzle Developer Days in Seattle, August 2009.
+There was a discussion about the memcached client roadmaps at the [http://drizzle.org/wiki/Drizzle_team_agenda_Aug_2009 Drizzle Developer Days] in Seattle, August 2009.
 
 
 == Memcached Drivers ==
