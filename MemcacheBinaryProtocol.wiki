@@ -1,5 +1,4 @@
 {{{
-
 Network Working Group                                         Stone, Ed.
 Internet-Draft                                           Six Apart, Ltd.
 Intended status: Informational                               Norbye, Ed.
@@ -66,7 +65,7 @@ Table of Contents
      3.2.  Response Status  . . . . . . . . . . . . . . . . . . . . .  5
      3.3.  Command Opcodes  . . . . . . . . . . . . . . . . . . . . .  6
      3.4.  Data Types . . . . . . . . . . . . . . . . . . . . . . . .  6
-   4.  Commands . . . . . . . . . . . . . . . . . . . . . . . . . . .  6
+   4.  Commands . . . . . . . . . . . . . . . . . . . . . . . . . . .  7
      4.1.  Introduction . . . . . . . . . . . . . . . . . . . . . . .  7
        4.1.1.  Example  . . . . . . . . . . . . . . . . . . . . . . .  7
      4.2.  Get, Get Quietly, Get Key, Get Key Quietly . . . . . . . .  8
@@ -315,17 +314,17 @@ Internet-Draft          Memcache Binary Protocol             August 2008
    0x1A    PrependQ
 
    As a convention all of the commands ending with "Q" for Quiet.  A
-   quiet version of a command will not send back a response, except for
-   GetQ and GetKQ.  See the description of the Get commands
-   (Section 4.2) for a full description.
+   quiet version of a command will omit responses that are considered
+   uninteresting.  Whether a given response is interesting is dependent
+   upon the command.  See the descriptions of the set commands
+   (Section 4.2) and set commands (Section 4.3) for examples of commands
+   that include quiet variants.
 
 3.4.  Data Types
 
    Possible values of the one-byte field:
-   0x00    Raw bytes
 
 
-4.  Commands
 
 
 
@@ -335,6 +334,11 @@ Stone & Norbye            Expires March 1, 2009                 [Page 6]
 
 Internet-Draft          Memcache Binary Protocol             August 2008
 
+
+   0x00    Raw bytes
+
+
+4.  Commands
 
 4.1.  Introduction
 
@@ -349,11 +353,6 @@ Internet-Draft          Memcache Binary Protocol             August 2008
 
    The following figure illustrates the packet layout for a packet with
    an error message.
-
-
-
-
-
 
 
 
@@ -703,6 +702,10 @@ Internet-Draft          Memcache Binary Protocol             August 2008
 
    Set should store the data unconditionally if the item exists or not.
 
+   Quiet mutations only return responses on failure.  Success is
+   considered the general case and is suppressed when in quiet mode, but
+   errors should not be allowed to go unnoticed.
+
 4.3.1.  Example
 
    The following figure shows an add-command for
@@ -710,10 +713,6 @@ Internet-Draft          Memcache Binary Protocol             August 2008
       Value: "World"
       Flags: 0xdeadbeef
       Expiry: in two hours
-
-
-
-
 
 
 
