@@ -10,14 +10,16 @@
 
 A tree for 1.5 development should be available sometime very soon (August 2009).  If you are working on development, please publish your work and cc the mailing list as much as possible.
 
- * Binary protocol development
-  * http://github.com/dustin/memcached/tree/master
-   * Includes corrected authorship/attribution history
-  * http://github.com/dustin/memcached-test
-   * Client and server test code (used primarily for binary protocol testing)
+The "central" github repo:
 
- * Plugin storage engine development
-  * http://github.com/trondn/memcached/tree/engine
+ * Web View: http://github.com/memcached/memcached
+ * git clone git://github.com/memcached/memcached.git
+
+Developer repos:
+
+ * dormando: http://consoleninja.net/code/memcached/memcached.git 
+ * dustin: git://github.com/dustin/memcached.git
+ * trond: git://github.com/trondn/memcached.git
 
 = Archive =
 
