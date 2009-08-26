@@ -11,10 +11,10 @@ The following builders make up this testing pool:
   * FreeBSD 7.2 AMD 64
   * FreeBSD 7.2 i386
   * OpenBSD 4.5 AMD 64
-  * OpenSolaris x86 (one with and one without dtrace)
+  * OpenSolaris x86 (one with and one without dtrace) (sun studio and gcc)
   * OS X 10.5 Intel
   * OS X 10.5 PPC
-  * Solaris 10 Sparc (one with and one without dtrace)
+  * Solaris 10 Sparc (one with and one without dtrace) (sun studio and gcc)
   * Ubuntu 8.04 i386
   * Ubuntu 9.04 x86_64 (gcc 4.3 and icc)
   * Ubuntu 9.10 x86_64 (gcc 4.4)
