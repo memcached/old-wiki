@@ -55,13 +55,14 @@ look at the output of `git log 1.4.0..1.4.1` or use a web view.
   * Web View: http://github.com/memcached/memcached/commits/1.4.1
 
 {{{
-    16  Dustin Sallings
+    18  Dustin Sallings
      8  Trond Norbye
      2  dormando
      1  Mat Hostetter
-     1  Matt Ingenthron
+     1  Adam Thomason
      1  Monty Taylor
      1  Steve Yen
-     1  Adam Thomason
+     1  Matt Ingenthron
      1  Cosimo Streppone
+     1  James Cohen
 }}}
