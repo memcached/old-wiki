@@ -2,7 +2,7 @@
 
 = Development =
 
-If you are working on development, please publish your work and cc the mailing list as much as possible.
+If you are working on development, please publish your work and cc the mailing list as much as possible. The "master" tree in the central repo should always contain runnable, high quality code. We go out of our way to ensure nothing goes to the central repo without a barrage of regression tests and code reviews. That aside, use at your own risk.
 
 The "central" github repo:
 
