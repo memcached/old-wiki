@@ -1,15 +1,20 @@
-= Development / source code repositories =
-
 = Development =
 
-If you are working on development, please publish your work and cc the mailing list as much as possible. The "master" tree in the central repo should always contain runnable, high quality code. We go out of our way to ensure nothing goes to the central repo without a barrage of regression tests and code reviews. That aside, use at your own risk.
+If you are working on development, please publish your work and cc the mailing list as much as possible.
 
-The "central" github repo:
+The "master" tree in the central repo should always contain runnable, high quality code. We go out of our way to ensure nothing goes to the central repo without a barrage of regression tests and code reviews.
 
- * Web View: http://github.com/memcached/memcached
- * git clone git://github.com/memcached/memcached.git
+That aside, use at your own risk.
 
-Developer repos:
+== The "central" github repo: ==
+
+Web View: http://github.com/memcached/memcached
+
+{{{
+git clone git://github.com/memcached/memcached.git
+}}}
+
+== Developer repos: ==
 
  * dormando: git://github.com/dormando/memcached.git 
  * dustin: git://github.com/dustin/memcached.git
