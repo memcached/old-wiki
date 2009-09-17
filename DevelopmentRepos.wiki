@@ -1,14 +1,8 @@
 = Development / source code repositories =
 
-= Stable =
-
- * http://consoleninja.net/code/memcached/memcached.git 
-  * [http://consoleninja.net/gitweb/gitweb.cgi?p=memcached.git;a=summary gitweb view]
-  * [http://danga.com/memcached/download.bml more info + quick git tutorial]
-
 = Development =
 
-A tree for 1.5 development should be available sometime very soon (August 2009).  If you are working on development, please publish your work and cc the mailing list as much as possible.
+If you are working on development, please publish your work and cc the mailing list as much as possible.
 
 The "central" github repo:
 
@@ -17,7 +11,7 @@ The "central" github repo:
 
 Developer repos:
 
- * dormando: http://consoleninja.net/code/memcached/memcached.git 
+ * dormando: git://github.com/dormando/memcached.git 
  * dustin: git://github.com/dustin/memcached.git
  * trond: git://github.com/trondn/memcached.git
 
