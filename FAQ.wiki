@@ -25,7 +25,7 @@ Generic install instructions are standard. memcached requires [http://www.monkey
 If your distrobution doesn't have memcached or an updated enough version, installing from source is simple. Fetch the tarball from our [http://code.google.com/p/memcached/downloads/list download page].
 {{{
 $ tar -zxvf memcached-1.x.x.tar.gz
-$ ./configure --enable-threads (you probably want threads)
+$ ./configure
 $ make
 $ make test
 $ sudo make install
@@ -173,7 +173,7 @@ It doesn't! Memcached is the soft, doughy underbelly of your application. Part o
 
 If you wish to restrict access, you may use a firewall, or have memcached listen via unix domain sockets.
 
-== What are memcached threads? Why would I use them? == 
+== What are memcached threads? == 
 
 Threads rule! Thanks to Steven Grimm and Facebook, memcached 1.2 and higher has a threaded operation mode. The threaded system allows memcached to utilize more than a single CPU and share the cache between all of them. It does this by having a very simple locking mechanism when certain values, items, etc need to be updated. This helps make multi gets more efficient, versus running multiple nodes on the same physical server to achieve performance.
 
