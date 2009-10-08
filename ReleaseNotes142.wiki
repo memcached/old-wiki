@@ -43,6 +43,7 @@ This is a maintenance release consisting primarily of bug fixes.
   * Support for libhugetblfs
   * Support for evictions, evict_time and OOM counts in memcached-tool
   * Configurable maximum item size (e.g. -I 512k).
+  * New stat: 'evicted_nonzero' helps distinguish healthy vs. unhealthy evictions.
 
 == Contributors ==
 
@@ -61,13 +62,11 @@ look at the output of `git log 1.4.1..1.4.2` or use a web view.
   * Web View: http://github.com/memcached/memcached/commits/1.4.2
 
 {{{
-    16  Dustin Sallings
-     8  Trond Norbye
+    12  Dustin Sallings
+    10  Trond Norbye
+     9  dormando
+     1  Vladimir
+     1  Ryan Tomayko
      1  Mat Hostetter
-     1  Matt Ingenthron
-     1  Monty Taylor
-     1  Steve Yen
-     1  Adam Thomason
-     1  dormando
-     1  Cosimo Streppone
+     1  Dmitry Isaykin
 }}}
