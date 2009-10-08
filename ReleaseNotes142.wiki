@@ -1,0 +1,73 @@
+#summary Release Notes for Release 1.4.2
+
+= Memcached 1.4.2 Release Notes =
+
+Date: 2009-10-07 Sat
+
+== Download ==
+
+Download Link:
+
+http://memcached.googlecode.com/files/memcached-1.4.2.tar.gz
+
+== Overview ==
+
+This is a maintenance release consisting primarily of bug fixes.
+
+== Fixes ==
+
+=== Critical Fixes ===
+
+  * Reject keys larger than 250 bytes in the binary protocol (bug94)
+  * Bounds checking on stats cachedump (bug92)
+  * Binary protocol set+cas wasn't returning a new cas ID (bug87)
+
+=== Non-critical Fixes ===
+
+  * Binary quitq didn't actually close the connection (bug84)
+  * Build fix on CentOS 5 (bug88)
+  * Slab boundary checking cleanup (bad logic in unreachable code)
+  * Removed some internal redundancies.
+  * Use the OS's provided htonll/ntohll if present (bug83)
+  * Test fixes/cleanup/additions.
+  * Get hit memory optimizations (bug89)
+  * Disallow -t options that cause the server to not work (bug91)
+  * memcached -vv now shows the final slab
+  * Killed off incomplete slab rebalance feature.
+  * Better warnings.
+  * More consistent verbosity in binary and ascii (bug93)
+
+== New Features ==
+
+  * Protocol definitions for range protocol (not implemented, just specified).
+  * Support for libhugetblfs
+  * Support for evictions, evict_time and OOM counts in memcached-tool
+  * Configurable maximum item size (e.g. -I 512k).
+
+== Contributors ==
+
+The following people contributed to this release since 1.4.1.
+
+Note that this is based on who contributed changes, not how they were
+done.  In many cases, a code snippet on the mailing list or a bug
+report ended up as a commit with your name on it.
+
+Note that this is just a summary of how many changes each person made
+which doesn't necessarily reflect how significant each change was.
+For details on what led up into a branch, either grab the git repo and
+look at the output of `git log 1.4.1..1.4.2` or use a web view.
+
+  * Repo list:  http://code.google.com/p/memcached/wiki/DevelopmentRepos
+  * Web View: http://github.com/memcached/memcached/commits/1.4.2
+
+{{{
+    16  Dustin Sallings
+     8  Trond Norbye
+     1  Mat Hostetter
+     1  Matt Ingenthron
+     1  Monty Taylor
+     1  Steve Yen
+     1  Adam Thomason
+     1  dormando
+     1  Cosimo Streppone
+}}}
