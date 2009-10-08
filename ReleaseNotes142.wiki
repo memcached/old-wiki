@@ -2,7 +2,7 @@
 
 = Memcached 1.4.2 Release Notes =
 
-Date: 2009-10-07 Sat
+Date: 2009-10-07 Wed
 
 == Download ==
 
