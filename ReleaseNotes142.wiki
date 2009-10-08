@@ -39,11 +39,63 @@ This is a maintenance release consisting primarily of bug fixes.
 
 == New Features ==
 
-  * Protocol definitions for range protocol (not implemented, just specified).
-  * Support for libhugetlbfs
-  * Support for evictions, evict_time and OOM counts in memcached-tool
-  * Configurable maximum item size (e.g. -I 512k).
-  * New stat: 'evicted_nonzero' helps distinguish healthy vs. unhealthy evictions.
+=== Support for libhugetlbfs (in Linux) ===
+
+From http://libhugetlbfs.ozlabs.org/ -
+
+     libhugetlbfs is a library which provides easy access to huge
+     pages of memory. It is a wrapper for the hugetlbfs file
+     system.
+
+If you are running memcached with a very large heap in Linux, this
+change will make it available to you.  The hugetlbfs HOWTO provides
+detailed information on how to configure your Linux system and provide
+advice to applications (such as memcached) to make use of it.
+
+=== Support for evictions, evict_time and OOM counts in memcached-tool ===
+
+memcached-tool is a commandline tool to display information about your
+server.  It displays more now.
+
+=== Configurable maximum item size ===
+
+Many people have asked for memcached to be able to store items larger
+than 1MB, while it's generally recommended that one _not_ do this, it
+is now supported on the commandline.
+
+A few enlightened folk have also asked for memcached to reduce the
+maximum item size.  That is also an option.
+
+The new -I parameter allows you to specify the maximum item size at
+runtime.  It supports a unit postfix to allow for natural expression
+of item size.
+
+Examples:
+
+{{{
+memcached -I 128k # Refuse items larger than 128k.
+memcached -I 10m  # Allow objects up to 10MB
+}}}
+
+=== New stat: 'evicted_nonzero' ===
+
+The evicted_nonzero stat is a counter of all of the evictions for
+items that had an expiration time greater than zero.
+
+This can be used to help distinguish "healthy" evictions from
+"unhealthy" ones.  If all of your evictions are for objects with no
+expiration, then they're naturally falling off the LRU as opposed to
+being evicted before their maximum expiry that was set at item store
+time.
+
+=== Protocol definitions for range protocol ===
+
+memcached ships with a binary protocol header that can be used when
+implementing your own protocol parsers and generators.  The structure
+definitions and opcodes for the range specification are included in
+this header.
+
+Note that the server _does not_ support these operations.
 
 == Contributors ==
 
