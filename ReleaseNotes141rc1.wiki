@@ -8,7 +8,7 @@ Date: 2009-08-26 Wed
 
 Download Link:
 
-http://memcached.googlecode.com/files/memcached-1.4.1_rc1.tar.gz
+http://memcached.googlecode.com/files/memcached-1.4.1-rc1.tar.gz
 
 == Overview ==
 
