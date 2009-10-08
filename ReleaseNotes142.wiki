@@ -120,5 +120,6 @@ look at the output of `git log 1.4.1..1.4.2` or use a web view.
      1  Vladimir
      1  Ryan Tomayko
      1  Mat Hostetter
+     1  Jonathan Steinert
      1  Dmitry Isaykin
 }}}
