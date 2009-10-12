@@ -1,15 +1,8 @@
 #summary Release Notes for Release 1.4.2
 
-= NOTICE: 1.4.2 is not yet finalized =
-
-
-Please look at ReleaseNotes142rc1 for the current RC.
-
-----
-
 = Memcached 1.4.2 Release Notes =
 
-Date: 2009-10-07 Wed
+Date: 2009-10-11 Sun
 
 == Download ==
 
