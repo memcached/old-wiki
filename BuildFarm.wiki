@@ -8,6 +8,7 @@ Memcached builds are tests against a variety of hosts and configurations via [ht
 
 The following builders make up this testing pool:
 
+  * Debian Squeeze
   * FreeBSD 7.2 AMD 64
   * FreeBSD 7.2 i386
   * OpenBSD 4.5 AMD 64
@@ -16,6 +17,7 @@ The following builders make up this testing pool:
   * OS X 10.5 PPC
   * Solaris 10 Sparc (one with and one without dtrace) (sun studio and gcc)
   * Ubuntu 8.04 i386
+  * Ubuntu 8.10 x86_64 (gcc and icc)
   * Ubuntu 9.04 x86_64 (gcc 4.3 and icc)
   * Ubuntu 9.10 x86_64 (gcc 4.4)
 
