@@ -1,4 +1,4 @@
-#summary projects forked/inspired from, related to memcached
+#summary Open source software projects forked/inspired from, related to memcached
 
 == Forks and patchsets ==
 
