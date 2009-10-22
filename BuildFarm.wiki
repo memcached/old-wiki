@@ -2,7 +2,9 @@
 
 = The Build Farm =
 
-Memcached builds are tests against a variety of hosts and configurations via [http://buildbot.net/ buildbot] before and after every bit of code is accepted.
+Link to the [http://builds.northscale.com:8010/waterfall?category=memcached memcached build farm] waterfall status page.
+
+Memcached builds are tests against a variety of hosts and configurations via [http://buildbot.net/ buildbot] software before and after every bit of code is accepted.
 
 == Current Builders ==
 
