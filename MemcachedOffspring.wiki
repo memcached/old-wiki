@@ -38,11 +38,12 @@
 
 == Other ==
 
+ * memcached session manager
+  * http://code.google.com/p/memcached-session-manager/
  * http://memcachefs.sourceforge.net
  * http://github.com/andrewfromgeni/mcinsight - GUI to examine memcached server
  * Accessing memcached directly from Apache
   * http://tangent.org/608/mod_memcached.html
   * http://code.google.com/p/modmemcachecache/
-
  * HTTP caching frontend to memcached
   * http://tomayko.com/writings/rack-cache-announce = Rack::Cache
