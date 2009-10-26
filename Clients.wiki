@@ -20,9 +20,6 @@ memcacheclient
 libketama 
  * http://www.last.fm/user/RJ/journal/2007/04/10/rz_libketama (the original consistent hashing algorithm from last.fm)
 
-= Erlang =
- * [http://github.com/joewilliams/merle/tree/master merle, an erlang memcached client]
-
 = PHP =
 
 [PHPClientComparison Comparison of PECL/memcache and PECL/memcached]
@@ -141,6 +138,15 @@ MySQL Engine
 
 pgmemcache 
  * http://pgfoundry.org/projects/pgmemcache The pgmemcache project allows you to access memcache servers from Postgresql Stored Procedures and Triggers.
+
+= Erlang =
+
+erlmc
+ * [http://github.com/JacobVorreuter/erlmc]
+ * [http://jacobvorreuter.com/erlang-binary-protocol-memcached-client]
+
+merle
+ * [http://github.com/joewilliams/merle/tree/master merle, an erlang memcached client]
 
 = Lua =
 
