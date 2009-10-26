@@ -167,7 +167,7 @@ http://chicken.wiki.br/memcached
 
 http://weblambda.blogspot.com/2009/09/develop-memcached-client-4-bzlibdbd.html
 
-= ColdFusion =
+= !ColdFusion =
 
 http://memcached.riaforge.org
 
