@@ -51,6 +51,10 @@ More Java memcached clients
  * http://code.google.com/p/javamemcachedclient
  * http://code.google.com/p/memcache-client-forjava
 
+Integrations
+ * http://code.google.com/p/simple-spring-memcached
+ * http://code.google.com/p/memcached-session-manager
+
 = Python =
 
 python-memcached 
@@ -160,6 +164,8 @@ http://luamemcached.luaforge.net
 http://common-lisp.net/project/cl-memcached
 
 http://chicken.wiki.br/memcached
+
+http://weblambda.blogspot.com/2009/09/develop-memcached-client-4-bzlibdbd.html
 
 = ColdFusion =
 
