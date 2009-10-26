@@ -82,14 +82,15 @@ within the key as in the initial request.
 || *Status Code* || *Meaning* ||
 || 0x20 || Authentication required / Not Successful ||
 || 0x21 || Further authentication steps required. ||
- 
+
+
 = Command Reference =
- 
-|| *Command* || *OpCode* || *Key* || *Value* ||
+
+|| *Command* || *Op Code* || *Key* || *Value* ||
 ||  List Mechanisms || 0x20 || None || None ||
 || Start Authentication || 0x21 || Mechanism || Auth Data ||
 || Authentication Step || 0x22 || Mechanism || Auth Data ||
- 
+
 = See Also =
  
 http://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer
