@@ -68,7 +68,7 @@ More Java memcached clients
 = Python =
 
 python-memcached 
- * ftp://ftp.tummy.com/pub/python-memcached
+ * http://www.tummy.com/Community/software/python-memcached/
 
 pooling wrapper class 
  * http://jehiah.cz/download/MemcachePool.py.txt for use in multi-threaded applications
@@ -158,7 +158,7 @@ http://common-lisp.net/project/cl-memcached
 
 http://chicken.wiki.br/memcached
 
-= Cold Fusion =
+= ColdFusion =
 
 http://memcached.riaforge.org
 
