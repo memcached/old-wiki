@@ -27,7 +27,7 @@
 = Server ports to other platforms =
 
 memcached was originally created and maintained for the Linux OS.
- * [http://www.lullabot.com/articles/setup-memcached-mamp-sandbox-environment Mac OS X] (also try darwin ports!)
+ * [http://www.lullabot.com/articles/setup-memcached-mamp-sandbox-environment Mac OS X] (also try [http://www.macports.org/ Mac Ports])
  * [PlatformWindows Windows]
  * [http://blogs.sun.com/trond/entry/memcached_in_solaris Solaris]
 
