@@ -2,6 +2,8 @@
 
 = Memcached 1.4.3-rc1 Release Notes =
 
+Date: 2009-10-11 Sun
+
 = Download =
 
 Download Link:
