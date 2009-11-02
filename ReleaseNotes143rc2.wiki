@@ -15,6 +15,11 @@ http://memcached.googlecode.com/files/memcached-1.4.3_rc2.tar.gz
 This is a maintenance release of memcached featuring mostly bug fixes
 and one new feature.
 
+=== RC history ===
+
+rc2 fixes a multiget bug that showed up in rc1.  A bug was not filed,
+but it was found and patched at roughly the same time.
+
 == Fixes ==
 
 === Critical Fixes ===
