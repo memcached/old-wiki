@@ -64,6 +64,14 @@ You can read more about it here:
 
 http://code.google.com/p/memcached/wiki/SASLHowto
 
+=== New perl tool `damemtop` in scripts/ ===
+
+dormando's awesome memcached top - a new commandline perl tool for
+monitoring small to large memcached clusters. Supports monitoring
+arbitrary statistics. See scripts/README.damemtop for more information.
+
+This tool is intended to replace memcached-tool, but not yet.
+
 === Also Noteworthy, Slab Optimizations ===
 
 Objects on the larger end of the limit should be generally more memory
