@@ -27,6 +27,7 @@ and one new feature.
   * Provide better errors for deletion scenarios. bug3
   * Fix get stats accounting. bug104
   * Ignore stats prefix for keys without a delimiter. bug96
+  * Work around rpm's broken concept of versions more. bug98
   * Use slab class growth factor limit. bug57
   * Added LSB section to init script. bug54
   * Documentation fixes
@@ -49,6 +50,7 @@ does not exist.
   * bug69
   * bug96
   * bug97
+  * bug98
   * bug101
   * bug102
   * bug104
