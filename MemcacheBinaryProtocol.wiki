@@ -1,4 +1,7 @@
 {{{
+
+
+
 Network Working Group                                         Stone, Ed.
 Internet-Draft                                           Six Apart, Ltd.
 Intended status: Informational                               Norbye, Ed.
@@ -450,8 +453,6 @@ Internet-Draft          Memcache Binary Protocol             August 2008
       MUST have key.
       MUST NOT have value.
 
-   o  4 byte flags
-
    Response (if found):
 
       MUST have extras.
@@ -493,6 +494,8 @@ Internet-Draft          Memcache Binary Protocol             August 2008
 
    To request the data associated with the key "Hello" the following
    fields must be specified in the packet.
+
+
 
 
 
