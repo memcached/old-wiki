@@ -4,24 +4,24 @@
 
 Date: 2009-10-11 Sun
 
-= Download =
+== Download ==
 
 Download Link:
 
 http://memcached.googlecode.com/files/memcached-1.4.3_rc1.tar.gz
 
-= Overview =
+== Overview ==
 
 This is a maintenance release of memcached featuring mostly bug fixes
 and one new feature.
 
-= Fixes =
+== Fixes ==
 
-== Critical Fixes ==
+=== Critical Fixes ===
 
   * Malicious input can crash server. bug102
 
-== Non-critical Fixes ==
+=== Non-critical Fixes ===
 
   * Removed special case in slab sizing for factor 2. bug56
   * Provide better errors for deletion scenarios. bug3
@@ -32,7 +32,7 @@ and one new feature.
   * Documentation fixes
   * Various build fixes
 
-== Itemized List of Bugs Closed ==
+=== Itemized List of Bugs Closed ===
 
 If a bug shows up in this list that wasn't specifically mentioned
 above, it's either too minor to mention specifically or the bug was
@@ -53,9 +53,9 @@ does not exist.
   * bug102
   * bug104
 
-= New Features =
+== New Features ==
 
-== Support for SASL Authentication ==
+=== Support for SASL Authentication ===
 
 Some installations of memcached are not in controlled environments
 where simple network filtering keeps bad guys out of your stuff.  To
@@ -64,12 +64,12 @@ You can read more about it here:
 
 http://code.google.com/p/memcached/wiki/SASLHowto
 
-== Also Noteworthy, Slab Optimizations ==
+=== Also Noteworthy, Slab Optimizations ===
 
 Objects on the larger end of the limit should be generally more memory
 efficient now as more slabs are created (thus are more granular).
 
-= Contributors =
+== Contributors ==
 
 The following people contributed to this release since 1.4.2.
 
