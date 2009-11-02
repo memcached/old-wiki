@@ -96,7 +96,7 @@ look at the output of `git log 1.4.2..1.4.3-rc1` or use a web view.
 {{{
     15  Dustin Sallings
      7  Trond Norbye
-     3  dormando
+     5  dormando
      2  Colin Pitrat
      1  Chang Song
      1  CaptTofu
