@@ -1,15 +1,15 @@
 _note: we're looking for ways to integrate a windows port into mainline. Please contact the list if you're interested in this work_
 
 Ports:
- * [http://labs.northscale.com/memcached-packages/index.html memcached for windows, version 1.4.2]
-  * [http://github.com/CaptTofu/memcached source code], see 'win32' branch
+ * [http://labs.northscale.com/memcached-packages/ memcached for windows, version 1.4.2]
+ * [http://github.com/CaptTofu/memcached source code], see 'win32' branch
  * [http://code.jellycan.com/memcached/ memcached for windows, version 1.2.6 and 1.2.5 ports] (Sept 2008)
  * [http://www.splinedancer.com/memcached-win32 memcached for windows, version 1.2.4 port]
  * [http://jehiah.cz/projects/memcached-win32 memcached for windows, version 1.2.1 port]
 
 Eventually, win32 support will be integrated into the main server distribution.
 
-Articles:  
+Articles:
  * [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx introduction to Memcached on Windows] (2008)
  * [http://pureform.wordpress.com/2008/01/10/installing-memcache-on-windows-for-php installing memcached on windows for php] (2008)
  * [http://stackoverflow.com/questions/8896/memcached-on-windows-x64 general discussion]
