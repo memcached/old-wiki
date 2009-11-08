@@ -1,0 +1,112 @@
+#summary Release Notes for Release 1.4.3
+
+= Memcached 1.4.3 Release Notes =
+
+Date: 2009-11-07 Sat
+
+== Download ==
+
+Download Link:
+
+http://memcached.googlecode.com/files/memcached-1.4.3.tar.gz
+
+== Overview ==
+
+This is a maintenance release of memcached featuring mostly bug fixes
+and one new feature.
+
+=== RC history ===
+
+rc2 fixes a multiget bug that showed up in rc1.  A bug was not filed,
+but it was found and patched at roughly the same time.
+
+== Fixes ==
+
+=== Critical Fixes ===
+
+  * Malicious input can crash server. bug102
+
+=== Non-critical Fixes ===
+
+  * Removed special case in slab sizing for factor 2. bug56
+  * Provide better errors for deletion scenarios. bug3
+  * Fix get stats accounting. bug104
+  * Ignore stats prefix for keys without a delimiter. bug96
+  * Work around rpm's broken concept of versions more. bug98
+  * Use slab class growth factor limit. bug57
+  * Added LSB section to init script. bug54
+  * Documentation fixes
+  * Various build fixes
+
+=== Itemized List of Bugs Closed ===
+
+If a bug shows up in this list that wasn't specifically mentioned
+above, it's either too minor to mention specifically or the bug was
+closed by introducing a test that proves that the bug, as described,
+does not exist.
+
+  * bug3
+  * bug54
+  * bug56
+  * bug57
+  * bug62
+  * bug67
+  * bug68
+  * bug69
+  * bug96
+  * bug97
+  * bug98
+  * bug101
+  * bug102
+  * bug104
+
+== New Features ==
+
+=== Support for SASL Authentication ===
+
+Some installations of memcached are not in controlled environments
+where simple network filtering keeps bad guys out of your stuff.  To
+help with those other environments, we've introduced SASL support.
+You can read more about it here:
+
+http://code.google.com/p/memcached/wiki/SASLHowto
+
+=== New perl tool `damemtop` in scripts/ ===
+
+dormando's awesome memcached top - a new commandline perl tool for
+monitoring small to large memcached clusters. Supports monitoring
+arbitrary statistics. See scripts/README.damemtop for more information.
+
+This tool is intended to replace memcached-tool, but not yet.
+
+=== Also Noteworthy, Slab Optimizations ===
+
+Objects on the larger end of the limit should be generally more memory
+efficient now as more slabs are created (thus are more granular).
+
+== Contributors ==
+
+The following people contributed to this release since 1.4.2.
+
+Note that this is based on who contributed changes, not how they were
+done.  In many cases, a code snippet on the mailing list or a bug
+report ended up as a commit with your name on it.
+
+Note that this is just a summary of how many changes each person made
+which doesn't necessarily reflect how significant each change was.
+For details on what led up into a branch, either grab the git repo and
+look at the output of `git log 1.4.2..1.4.3` or use a web view.
+
+  * Repo list:  http://code.google.com/p/memcached/wiki/DevelopmentRepos
+  * Web View: http://github.com/memcached/memcached/commits/1.4.3
+
+{{{
+    15  Dustin Sallings
+    10  Trond Norbye
+     5  dormando
+     2  Colin Pitrat
+     1  Monty Taylor
+     1  Chang Song
+     1  CaptTofu
+     1  Tomash Brechko
+}}}
