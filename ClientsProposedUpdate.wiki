@@ -1,1 +1,199 @@
-Clients range from excellent, to dated, to abandoned.  It's hard for users to identify and pick a client, so the goal here is to take the existing wiki content and update it.  
+Clients range from excellent, to dated, to abandoned.  It's hard for users to identify and pick a client, so the goal here is to take the existing wiki content and update it. 
+
+[http://tangent.org/552/libmemcached.html libmemcached]
+|| dependencies || _N/A_ ||
+|| protocols || ascii / binary ||
+|| SASL authentication || no ||
+
+
+#summary Client API's / libraries
+
+= C / C++ =
+
+libmemcached 
+ * http://tangent.org/552/libmemcached.html by Brian Aker
+  * BSD license. This is a new library, under heavy development.
+
+libmemcache 
+ * http://people.freebsd.org/~seanc/libmemcache by Sean Chittenden
+  * BSD license. This is the original C library. It is no longer under active development. You should try libmemcached instead.
+
+apr_memcache 
+ * http://www.outoforder.cc/projects/libs/apr_memcache by Paul Querna
+  * Apache Software License version 2.0 (doesn't appear to be actively maintained since 2005)
+
+memcacheclient
+ * http://code.jellycan.com/memcacheclient (cross-platform, but primary focus on Windows
+
+libketama 
+ * http://www.last.fm/user/RJ/journal/2007/04/10/rz_libketama (the original consistent hashing algorithm from last.fm)
+
+= PHP =
+
+[PHPClientComparison Comparison of PECL/memcache and PECL/memcached]
+
+PECL/memcached 
+ * http://pecl.php.net/package/memcached (wraps libmemcached)
+  * pear install pecl/memcached
+  * Announcement: http://gravitonic.com/2009/01/new-memcached-extension
+
+PECL/memcache 
+ * http://pecl.php.net/package/memcache
+ * [http://www.php.net/manual/en/book.memcache.php php memcached docs]
+
+PHP libmemcached 
+ * http://github.com/kajidai/php-libmemcached/tree/master (wraps libmemcached)
+
+= Java =
+
+spymemcached 
+ * http://code.google.com/p/spymemcached 
+  * An improved Java API maintained by Dustin Sallings. 
+  * Aggressively optimised, ability to run async, supports binary protocol, etc. See site for details. 
+
+Java memcached client 
+ * http://www.whalin.com/memcached 
+  * A Java API is maintained by Greg Whalin from Meetup.com. 
+
+More Java memcached clients
+ * http://code.google.com/p/javamemcachedclient
+ * http://code.google.com/p/memcache-client-forjava
+
+Integrations
+ * http://code.google.com/p/simple-spring-memcached
+ * http://code.google.com/p/memcached-session-manager
+
+= Python =
+
+python-memcached 
+ * http://www.tummy.com/Community/software/python-memcached/
+
+pooling wrapper class 
+ * http://jehiah.cz/download/MemcachePool.py.txt for use in multi-threaded applications
+
+Python libmemcached
+ * http://code.google.com/p/python-libmemcached (libmemcached wrapper)
+
+cmemcache
+ * http://gijsbert.org/cmemcache/index.html
+
+Django's caching framework works with memcached
+ * http://docs.djangoproject.com/en/dev/topics/cache/
+
+Twisted python client
+ * http://python.net/crew/mwh/apidocs/twisted.protocols.memcache.html
+
+= Ruby =
+
+cache_fu Rails plugin works with memcached
+ * http://github.com/defunkt/cache_fu/tree/master
+ * http://errtheblog.com/posts/57-kickin-ass-w-cachefu
+ * http://blog.onmylist.com/articles/2007/06/15/memcached-and-cache_fu
+
+memcache-client 
+ * http://dev.robotcoop.com/Libraries/memcache-client/index.html (pure Ruby)
+ * http://seattlerb.rubyforge.org/memcache-client/
+ * http://www.freshports.org/databases/rubygem-memcache-client
+
+Ruby-MemCache 
+ * http://www.deveiate.org/projects/RMemCache (pure Ruby)
+
+fauna 
+ * http://blog.evanweaver.com/files/doc/fauna/memcached (compiled, wraps libmemcached)
+
+caffeine 
+ * http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcached, no license)
+
+More info:
+ * [http://nubyonrails.com/articles/memcached-basics-for-rails Memcached basics for rails]
+ * [http://zilkey.com/2008/7/5/rails-cache-memcached-development-mode-and-offline-cache-invalidation Rails and memcached while developing your app]
+
+= Perl =
+
+Cache::Memcached 
+ * http://search.cpan.org/dist/Cache-Memcached
+
+Cache::Memcached::Fast 
+ * http://search.cpan.org/dist/Cache-Memcached-Fast
+
+Perl libmemcached wrapper
+ * http://code.google.com/p/perl-libmemcached (libmemcached wrapper)
+
+Cache::Memcached-compatible perl libmemcached wrapper wrapper (heh)
+ * http://search.cpan.org/dist/Cache-Memcached-libmemcached/
+
+= Windows / .NET =
+
+.Net memcached client 
+ * https://sourceforge.net/projects/memcacheddotnet
+
+.Net 2.0 memcached client 
+ * http://www.codeplex.com/EnyimMemcached
+ * Client developed in .NET 2.0 keeping performance and extensibility in mind. (Supports consistent hashing.)
+ * http://www.codeplex.com/memcachedproviders
+
+BeIT Memcached Client (optimized C# 2.0) 
+ * http://code.google.com/p/beitmemcached
+
+jehiah
+ * http://jehiah.cz/projects/memcached-win32
+
+= MySQL =
+
+MySQL user data functions for memcached 
+ * http://tangent.org/586/Memcached_Functions_for_MySQL.html
+
+MySQL Engine 
+ * http://tangent.org/index.pl?node_id=507 (MySQL plugin to make MySQL store data in memcached. The memcache_engine allows memcache to work as a storage engine to MySQL. This means that you can SELECT/UPDATE/INSERTE/DELETE from it as though it is a table in MySQL.)
+
+= PostgreSQL =
+
+pgmemcache 
+ * http://pgfoundry.org/projects/pgmemcache The pgmemcache project allows you to access memcache servers from Postgresql Stored Procedures and Triggers.
+
+= Erlang =
+
+erlmc
+ * [http://github.com/JacobVorreuter/erlmc]
+ * [http://jacobvorreuter.com/erlang-binary-protocol-memcached-client]
+
+merle
+ * [http://github.com/joewilliams/merle/tree/master merle, an erlang memcached client]
+
+erlangmc
+ * http://code.google.com/p/erlangmc
+
+= Lua =
+
+http://luamemcached.luaforge.net
+
+= Lisp dialects = 
+
+http://common-lisp.net/project/cl-memcached
+
+http://chicken.wiki.br/memcached
+
+http://weblambda.blogspot.com/2009/09/develop-memcached-client-4-bzlibdbd.html
+
+= !ColdFusion =
+
+http://memcached.riaforge.org
+
+= OCaml =
+
+ * http://d.hatena.ne.jp/gtaka555/20080727/p1
+ * http://tategakibunko.blog83.fc2.com/blog-entry-170.html
+
+= Io =
+
+http://github.com/iamaleksey/memcached-client-io/tree/master - libmemcached based
+
+= Protocol =
+
+To write a new client, check out the [MemcacheBinaryProtocol binary protocol docs] and [http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt ascii protocol docs]. Be aware that the most important part of the client is the hashing across multiple servers, based on the key, or an optional caller-provided hashing value. Feel free to join the mailing list for help and/or a link to your client from this site.
+
+= Archive / Old  =
+
+Danga Interactive list of clients http://www.danga.com/memcached/apis.bml
+
+http://dealnews.com/developers/memcached.html - fastest client implementations (2006), obsoleted as more languages wrap the C-based libmemcached client library.
