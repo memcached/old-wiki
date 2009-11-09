@@ -1,12 +1,14 @@
+#summary Client API's / libraries
+
 Clients range from excellent, to dated, to abandoned.  It's hard for users to identify and pick a client, so the goal here is to take the existing wiki content and update it. 
 
-[http://tangent.org/552/libmemcached.html libmemcached]
+===[http://tangent.org/552/libmemcached.html libmemcached]===
 || dependencies || _N/A_ ||
 || protocols || ascii / binary ||
+|| UDP support || yes ||
 || SASL authentication || no ||
 
-
-#summary Client API's / libraries
+libmemcached is used by many higher-level languages such as Ruby, PHP and Perl.  Some of these link directly to libmemcached, others bundle their own version to minimize risk of issues as libmemcached evolves.  It has a great many features, including support for replication, get_multi, libketama consistent hashing, etc.  Clients wrapping libmemcached can use many of these features as long as they provide a way to make the appropriate calls to enable them.
 
 = C / C++ =
 
