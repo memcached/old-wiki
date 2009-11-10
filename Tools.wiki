@@ -6,17 +6,21 @@ This page is the place to go for all things related memcached tools.  Not much h
 
 = List of Interesting Memcached Tools =
 
+   * cacti-templates: Templates that let you use cacti to monitor your memcached instances.
+      * http://dealnews.com/developers/cacti/memcached.html
+   * dormando's awesome memcached top
+      * http://github.com/dormando/damemtop
+   * mem-top: A command-line tool that grabs real-time stats from memcache.
+      * http://code.google.com/p/memcache-top
    * Wireshark now understands memcached binary protocol.
       * [http://www.wireshark.org/download/automated]
    * A plugin for wireshark that understands the textual protocol.
       * [http://dev.gear6.com/downloads/wireshark-memcache-protocol-dissector]
+   * Windows powershell frontend to memcached
+      * http://mempowered.codeplex.com/
    * brutis: A tool designed to exercise memcache instances.
       * http://code.google.com/p/brutis
    * statsproxy: A tool that allows you to use your web browser to get real-time stats for your memcached servers instead of or in addition to the standard memcached telnet interface.
       * http://code.google.com/p/statsproxy
-   * cacti-templates: Templates that let you use cacti to monitor your memcached instances.
-      * http://dealnews.com/developers/cacti/memcached.html
-   * mem-top: A command-line tool that grabs real-time stats from memcache.
-      * http://code.google.com/p/memcache-top
    * AdvancedReporter: a stats tool for memcached which provides information about the most active clients and object keys for your memcached servers.
       * http://code.google.com/p/advancedreporter
