@@ -1,0 +1,6 @@
+#summary Memcached advocacy overview
+
+= Project Advocacy (TENTATIVE NOTES!) =
+
+ * [ConventionGuide]
+ * [BoothGuide]
