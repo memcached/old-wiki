@@ -2,6 +2,8 @@
 
 *TENTATIVE NOTES*
 
+[Advocacy From the Advocacy page]
+
 <wiki:toc max_depth="2" />
 
 = Organize =
