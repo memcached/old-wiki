@@ -6,6 +6,7 @@
  * [FAQ] - get started here
  * [HowTo How To's]
  * [Tutorials]
+ * [ReleaseNotes] Release notes for recent versions.
  * [Resources] - links to outside articles
 
  * [Clients Client API's] - Client libraries for your favorite programming language
