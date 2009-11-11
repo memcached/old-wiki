@@ -39,7 +39,7 @@ memcached was originally created and maintained for the Linux OS.
  * [MemcachedInternals Memcached Internals] 
 
 == Wire Protocols ==
- * [http://code.sixapart.com/svn/memcached/trunk/server/doc/protocol.txt text protocol] - current memcached networking protocol
+ * [http://github.com/memcached/memcached/blob/master/doc/protocol.txt text protocol] - current memcached networking protocol
  * [MemcacheBinaryProtocol binary protocol] - forthcoming, optional protocol in development
   * [http://www.slideshare.net/tmaesaka/memcached-binary-protocol-in-a-nutshell-presentation/ slides on the binary protocol] by Toru Maesaka (2008)
 
