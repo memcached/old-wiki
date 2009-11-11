@@ -25,6 +25,9 @@ Only contributors are allowed within the memcached portfolio. If you are not a c
   to potential booth visitors.
 * Material presented at the booths will be memcached and memcached
   contributors only.
+* Material should be constructive, showing off the strengths and new abilities
+  of memcached. Advocacy in the form of commercial alternatives or commercial
+  support at the cost of the project are to be strictly avoided. 
 }}}
 
 The material provided by contributors will be presented via a memcached "portfolio". Essentially a folder. The folder will be memcached branded, full color and very attractive. The requirement for submission to the folder is:
