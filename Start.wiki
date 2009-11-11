@@ -22,6 +22,7 @@
  * [http://groups.google.com/group/memcached Mailing list]
  * [http://lists.danga.com/mailman/listinfo/memcached Old Mailing List Archive]
  * IRC - irc.freenode.net #memcached
+ * [Advocacy]
  * [Hackathons]
  * [Aug2009DrizzleNotes Notes from Drizzle Developer Days]
 
