@@ -66,7 +66,7 @@ pooling wrapper class
 Python libmemcached
  * http://code.google.com/p/python-libmemcached (libmemcached wrapper)
 
-cmemcache
+cmemcache (Note: this library is deprecated, old, buggy, you should *not* use it).
  * http://gijsbert.org/cmemcache/index.html
 
 Django's caching framework works with memcached
