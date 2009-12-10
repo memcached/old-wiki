@@ -50,6 +50,7 @@ Java memcached client
 More Java memcached clients
  * http://code.google.com/p/javamemcachedclient
  * http://code.google.com/p/memcache-client-forjava
+ * http://code.google.com/p/xmemcached
 
 Integrations
  * http://code.google.com/p/simple-spring-memcached
