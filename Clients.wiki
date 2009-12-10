@@ -159,6 +159,8 @@ erlangmc
 higepon's memcached client
  * http://github.com/higepon/memcached-client
 
+Zhou Li's memcached client
+ * http://github.com/echou/memcached-client
 
 = Lua =
 
