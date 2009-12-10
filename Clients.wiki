@@ -155,6 +155,10 @@ merle
 erlangmc
  * http://code.google.com/p/erlangmc
 
+higepon's memcached client
+ * http://github.com/higepon/memcached-client
+
+
 = Lua =
 
 http://luamemcached.luaforge.net
