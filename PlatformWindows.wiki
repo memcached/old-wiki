@@ -20,6 +20,8 @@ Clients:
    * http://www.codeplex.com/memcachedproviders
 
 Tools:
+ * damemtop
+   * Downloaded with memcached, in the "scripts" directory or see [http://github.com/memcached/memcached/tree/master/scripts/ the repo on github]
  * MemCacheD Manager, by Nick Pirocanac
    * http://allegiance.chi-town.com/MemCacheDManager.aspx
 
