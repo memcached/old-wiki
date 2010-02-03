@@ -44,7 +44,7 @@ if($huge_data_for_frong_page === false){
     while($rec = mysql_fetch_assoc($res)){
         $huge_data_for_frong_page[] = $rec;
     }
-    // cache for 5 minutes
+    // cache for 10 minutes
     $memcache->set("huge_data_for_frong_page", $huge_data_for_frong_page, 600);
 }
 
