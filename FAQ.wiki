@@ -18,11 +18,11 @@ Follow the pointers from the [http://www.danga.com/memcached/download.bml downlo
 == How can I install memcached? == 
 
 For a tutorial, go to: http://blog.ajohnstone.com/archives/installing-memcached
-Also consider checking your distrobution's package management system (apt, yum, etc).
+Also consider checking your distribution's package management system (apt, yum, etc).
 
-Generic install instructions are standard. memcached requires [http://www.monkey.org/~provos/libevent/ libevent] to be installed first. This is most likely available via your distrobution's package manager.
+Generic install instructions are standard. memcached requires [http://www.monkey.org/~provos/libevent/ libevent] to be installed first. This is most likely available via your distribution's package manager.
 
-If your distrobution doesn't have memcached or an updated enough version, installing from source is simple. Fetch the tarball from our [http://code.google.com/p/memcached/downloads/list download page].
+If your distribution doesn't have memcached or an updated enough version, installing from source is simple. Fetch the tarball from our [http://code.google.com/p/memcached/downloads/list download page].
 {{{
 $ tar -zxvf memcached-1.x.x.tar.gz
 $ ./configure
@@ -290,7 +290,7 @@ A few notes, for now:
 
 If you want to learn about memcached's options, just run memcached -h. It will give you a brief output of options. You can fiddle with the options to easily learn how they work.
 
-There is also a memcached(1) manpage which (should) come with the memcached distrobution.
+There is also a memcached(1) manpage which (should) come with the memcached distribution.
 
 = Item Expiration =
 
