@@ -22,6 +22,8 @@ The following builders make up this testing pool:
   * Ubuntu 8.10 x86_64 (gcc and icc) (includes a variant with SASL enabled)
   * Ubuntu 9.04 x86_64 (gcc 4.3 and icc)
   * Ubuntu 9.10 x86_64 (gcc 4.4)
+  * RedHat Enterprise Linux 5.4 x86
+  * RedHat Enterprise Linux 5.4 x86_64
   * Gentoo ARMv5el
 
 == Needed Builders ==
