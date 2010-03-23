@@ -10,7 +10,7 @@ There are cases, however, where memcached is deployed in untrusted
 networks or where administrators would like to exercise a bit more
 control over the clients that are connecting.
  
-This page mostly exists to describe the protocol.  If you just want to use it, check out the SASLHowto
+This page mostly exists to describe the protocol.  If you just want to use it, check out the [SASLHowto SASL howto]
 
 = Authentication Concepts =
  
@@ -95,6 +95,6 @@ within the key as in the initial request.
 
 = See Also =
  
-memcached SASLHowto
+[SASLHowto memcached SASL howto]
 
 http://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer
