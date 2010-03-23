@@ -31,3 +31,7 @@ The `-S` flag does a few things things:
   # Enable all of the SASL commands.
   # Require binary protocol _only_.
   # Require authentication to have been successful before commands may be issued on a connection.
+
+== Further Info ==
+
+Read more about memcached's [SASLAuthProtocol SASL auth protocol].
