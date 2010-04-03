@@ -1,10 +1,8 @@
 #summary Release notes for Release 1.4.5
 
-*PRELIMINARY: THIS IS A PLACEHOLDER FOR 1.4.5*
-
 = Memcached 1.4.5 Release Notes =
 
-Date: 2010-04-02
+Date: 2010-04-03
 
 == Download ==
 
