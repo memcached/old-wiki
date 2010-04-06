@@ -1,0 +1,49 @@
+﻿#summary Memcached Wiki
+
+= Memcached =
+
+Your friendly neighborhood memory cache daemon.
+
+== About ==
+
+ * [NewOverview What Memcached Is]
+ * [TutorialCachingStory An Adventure in Learning Memcached]
+ * [NewCommunication Communicating With Users and Developers] - Mailing list, irc, etc.
+ * [NewGlossary Glossary of Common Terms]
+
+== Installation ==
+
+ * [NewInstallFromPackage Installing From Packages]
+ * [NewInstallFromSource Installing From Source]
+ * [ReleaseNotes Recent Release Notes]
+ * [NewClients Finding Clients]
+ * [NewHardware Hardware Considerations]
+
+== Configuration ==
+
+ * [NewConfiguringServer Configuring Memcached]
+ * [NewConfiguringClient Client Configurations]
+ * [NewClustering Cluster Configurations]
+
+== Using Memcached ==
+
+ * [NewCommands Protocol Commands]
+ * [NewCommonFeatures Common Client Features]
+ * [NewProgramming Using Memcached Basics]
+ * [NewProgrammingFAQ Memcached Usage FAQ]
+ * [NewProgrammingTricks Programming HOWTO's and Tricks]
+ * [NewUserInternals Memcached Internals for End Users]
+
+== Maintenance ==
+
+ * [NewServerMaint Maintaining a Server]
+ * [NewClusterMaint Maintaining a Cluster]
+
+== Memcached Development ==
+
+ * [NewInternals Memcached Internals for Developers]
+ * [NewSource Source Code]
+ * [BuildFarm Build Farm]
+ * [TestSuites Test Suites]
+ * [NewProposals Proposals and RFCs]
+ * [NewProtocols Protocols]
