@@ -38,6 +38,7 @@ Your friendly neighborhood memory cache daemon.
 
  * [NewServerMaint Maintaining a Server]
  * [NewClusterMaint Maintaining a Cluster]
+ * [NewPerformance What To Expect With Performance]
 
 == Memcached Development ==
 
