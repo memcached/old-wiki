@@ -1,0 +1,43 @@
+﻿#summary Using the Source, Luke
+
+= Why Build From Source =
+
+Before you build from source, consider why? If you have a perfectly good package of a recent version, you're better off using that. That said:
+{{{
+wget http://memcached.org/latest
+tar -zxvf memcached-1.x.x.tar.gz
+cd memcached-1.x.x
+./configure
+make && make test
+sudo make install
+}}}
+
+If you wish to build with SASL support, ensure the cyrus-sasl libraries are built and run `./configure --enable-sasl`. See the [SASLHowto] for more information.
+
+= To Build a Package, or `make install` ? =
+
+If you're deploying memcached to more than one server, you probably really want to package it. That way you may have cleaner updates, easy uninstalls, easy re-installs, future installs, etc. `make install` is for developers and chumps.
+
+== Building an RPM ==
+
+For a few years now, the memcached source tarball has contained a workable .spec file.
+{{{
+echo "%_topdir /home/you/rpmbuild" >> ~/.rpmmacros
+wget http://memcached.org/latest
+rpmbuild -ta memcached-1.x.x.tar.gz
+}}}
+You may need to create some directories first, and will need gcc and libevent-devel installed.
+
+Then install the RPM via a standard `rpm -Uvh memcached-etc.rpm`
+
+== Building a deb ==
+
+TODO: this section
+
+= Building clients =
+
+Note that many clients depend on [http://libmemcached.org libmemcached]. They either include it in their sources, or require an external build. You can follow the above practices for fetching and installing libmemcached as well.
+
+== PEAR/CPAN/GEM/etc ==
+
+If you're building from source, especially remember that most major languages have distribution systems which make installation easy.

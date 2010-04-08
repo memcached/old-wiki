@@ -1,0 +1,13 @@
+﻿#summary Speaking Memcached
+
+Memcached fosters an active mailing list and friendly IRC channel. Developers and users attend many technical conferences as well. If you're having trouble, odds are good the mailing list archives, or contacting the mailing list, will be a step in the right direction. Many smart people from many web companies chill out with us.
+
+If you wish to partake in the fun, please remember to be courteous and professional. We should aim to help people accomplish great things, and in doing so learn more ourselves. Remember that these channels are about the *open source project*, memcached. We're thankful for your commerical support and amazing products, but please keep advertising outside.
+
+ * [http://groups.google.com/group/memcached Mailing list]
+ * [http://lists.danga.com/mailman/listinfo/memcached Old Mailing List Archive]
+ * IRC - irc.freenode.net #memcached
+ * [Advocacy]
+ * [Hackathons]
+ * [Aug2009DrizzleNotes Notes from Drizzle Developer Days]
+
