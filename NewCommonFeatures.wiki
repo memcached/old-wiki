@@ -1,5 +1,7 @@
 ﻿#summary Dandelions
 
+<wiki:toc max_depth="2" />
+
 Clients have a set of common features that they share. The intent here is to give you an overview of how typical clients behave, and some helpful features to look for.
 
 This section does not describe which clients implement what, but merely what most do implement.

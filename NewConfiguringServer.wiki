@@ -1,6 +1,6 @@
 ﻿#summary Square Peg Into Round Hole
 
-<wiki:toc max_depth="1" />
+<wiki:toc max_depth="2" />
 
 = Commandline Arguments =
 

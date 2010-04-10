@@ -1,5 +1,7 @@
 ﻿#summary You Can't Get There From Here
 
+<wiki:toc max_depth="2" />
+
 = Common Client Configurables =
 
 Most clients are similar in some important ways. They may implement some ideas differently, but they contain many common concepts to twiddle and fiddle.
