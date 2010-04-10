@@ -1,6 +1,6 @@
 ﻿#summary Installing Memcached Binaries
 
-<wiki:toc max_depth="1" />
+<wiki:toc max_depth="2" />
 
 The version of memcached you install matters a lot for what support will be available to you. Ancient versions lack bugfixes, statistics, etc. Commands may be missing, and we may not be able to assist you if the software is too old. Try to have at least 1.4.4 or higher, if that's not too difficult ;)
 
