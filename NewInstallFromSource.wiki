@@ -1,5 +1,7 @@
 ﻿#summary Using the Source, Luke
 
+<wiki:toc max_depth="2" />
+
 = Why Build From Source =
 
 Before you build from source, consider why? If you have a perfectly good package of a recent version, you're better off using that. That said:
