@@ -1,0 +1,102 @@
+﻿#summary Never Stops For Directions
+
+<wiki:toc max_depth="2" />
+
+= Basics =
+
+== How can you list all keys? ==
+
+You don't.
+
+You "can" via the debug interface `stats cachedump`, but that will only ever be a partial dump, and is slow.
+
+Debugging programs using memcached should use alternate methods of testing applications. Add proper error handling, logging. You can run `memcached -vvv` in your test environment to watch keys go in and out. This is often more helpful anyway, as you can see why keys were expired if you don't get them back.
+
+== Why only RAM? ==
+
+Everything memcached does is an attempt to guarantee latency and speed. If you have to sometimes hit disk, that's no longer true.
+
+== Why no complex operations? ==
+
+All operations should run in O(1) time. They must be atomic. This doesn't necessarily mean complex operations can never happen, but it means we have to think very carefully about them first. Many complex operations can be emulated on top of more basic functionality.
+
+== Why is memcached not recommended for sessions? Everyone does it! ==
+
+If a session disappears, often the user is logged out. If a portion of a cache disappears, either due to a hardware crash or a simple software upgrade, it should not cause your users noticable pain. [http://dormando.livejournal.com/495593.html This overly wordy post] explains alternatives. Memcached can often be used to reduce IO requirements to very very little, which means you may continue to use your existing relational database for the things it's good at.
+
+Like keeping your users from being knocked off your site.
+
+== What about the MySQL query cache? ==
+
+The MySQL query cache is sometimes a useful start for small sites.
+
+== Is memcached atomic? ==
+
+Aside from any bugs you may come across, yes all commands are internally atomic. Issuing multiple sets at the same time has no ill effect, aside from the last one in being the one that sticks.
+
+== Why is there a binary protocol? ==
+
+Because it's awesome. TODO: link to the new protocol page.
+
+= Setup Questions =
+
+== How do I authenticate? ==
+
+You don't! Well, you used to not be able to. [SASLHowto Now you can]. If your client supports it, you may use SASL authentication to connect to memcached.
+
+Keep in mind that you should do this only if you really need to. On a closed internal network this ends up just being added latency for new connections (if minor).
+
+== How do you handle failover? ==
+
+You don't. Some clients have a "failover" option that will try the next server in the case of a failure. As noted in [NewConfiguringClient Configuring Clients] this isn't always the best idea.
+
+== How do you handle replication? ==
+
+It doesn't. Adding replication to the system halves your effective cache size. If you can't handle even a few percent extra cache misses, you have serious problems. Even with replication, things can break. More moving parts. Software to crash.
+
+== Can you persist cache between restarts? ==
+
+No. Sometime in the future it might, but as of now it does not. This is often a bad idea since the cache that comes back up will be out of date. Folks who use this really want a database instead.
+
+== Do clients and servers all need to talk to each other? ==
+
+Nope. The less chatter, the more scalable.
+
+= Use Cases =
+
+== When would you not want to use memcached? ==
+
+It doesn't always make sense to add memcached to your application.
+
+TODO: link to that whynot page here or just inline new stuff?
+
+== Why can't I use it as a database? ==
+
+Because it's a cache. Storage engines will start to support this use case, but primarily there're benefits for treating this *as a cache*, even if you were using a Key/Value database, it can be useful to have a cache in front of it.
+
+== Can using memcached make my application slower? ==
+
+Yes, absolutely. If your DB queries are all fast, your website is fast, adding memcached might not make it faster.
+
+Also, this:
+
+{{{
+my @post_ids = fetch_all_posts($thread_id);
+my @post_entries = ();
+for my $post_id (@post_ids) {
+	push(@post_entries, $memc->get($post_id));
+}
+# Yay I have all my post entries!
+}}}
+
+See that? Don't do that. Use a multi-get. Fetching a single item from memcached still requires a network roundtrip and a little processing. The more you can fetch at once the better.
+
+= Architectural =
+
+== Why can't we use memcached as a queue server? ==
+
+TODO: need to expand on this more.
+
+To be succinct: queue servers should either push to their workers, or notify their workers. If using memcached, they must constantly poll. Scaling out beyond one server also ends up being silly. Workers poll all servers, and that doesn't mesh well with memcached clients, who want to resolve keys to a particular server.
+
+If you think your memcached client is broken because you're trying to use it with multiple memcached queues, it's not broken. Sorry :)
