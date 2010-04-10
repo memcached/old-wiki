@@ -14,6 +14,10 @@ At heart it is a simple Key/Value store.
 
 See the [http://memcached.org/about memcached.org about page] for a brief overview.
 
+== I Turned It On and My App Isn't Faster!!! ==
+
+Memcached is a developer tool, not a "code accelerator", nor is it database middleware. If you're trying to set up an application you have downloaded or purchased to use memcached, your best bet is to head back their way and read your app's documentation on how to utilize memcached. Odds are these documents will not help you much.
+
 == What is it Made Up Of? ==
 
  * Client software, which is given a list of available memcached servers.
