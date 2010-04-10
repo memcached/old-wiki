@@ -1,6 +1,6 @@
 ﻿#summary Make Me a Sandwich
 
-<wiki:toc max_depth="2" />
+<wiki:toc max_depth="3" />
 
 Memcached handles a small number of basic commands.
 
