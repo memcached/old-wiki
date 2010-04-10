@@ -11,3 +11,12 @@ If you wish to partake in the fun, please remember to be courteous and professio
  * [Hackathons]
  * [Aug2009DrizzleNotes Notes from Drizzle Developer Days]
 
+= Wiki Contributions =
+
+Want to contribute to the wiki? Be our guest!
+
+The easiest way to get a change through is to e-mail a patch or phrase or page idea to the mailing list. Many wiki editors are active over there.
+
+If you would like to edit it yourself, or continue to make contributions more easily, simply ask the mailing list for wiki access. Restrictions are purely to avoid spam, and not to keep people from helping.
+
+Seriously, it's easy. We like documentation. Help out!
