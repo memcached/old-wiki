@@ -1,0 +1,35 @@
+﻿#summary Ponies
+
+We expect memcached to be fast. Occasionally folks test memcached and see something they don't expect. This is a short list of how we (the developers and users) expect memcached to perform. If you're seeing different, it's likely a configuration problem at some layer. You should troubleshoot or request help in getting a properly oiled setup.
+
+== Handles Extremely High Load ==
+
+On a fast machine with very high speed networking, memcached can easily handle 200,000+ requests per second. With heavy tuning or even faster hardware it can go above 500,000 per second. Hitting it a few hundred times per second, even on a slow machine, usually isn't cause for concern.
+
+== It Should Not Hang ==
+
+Memcached operations are almost all O(1). Connecting to it and issuing a get or stat command should never lag. If connecting lags, you may be hitting the max connections limit. See [NewServerMaint ServerMaint] for details on stats to monitor.
+
+If issuing commands lags, you can have a number of tuning problems. Most common are hardware problems, not enough RAM (swapping), network problems (bandwidth, dropped packets, half-duplex connections). On rare occasion OS bugs or memcached bugs can contribute.
+
+=== OS Issues / Firewalls ===
+
+It's not usually necessary to run a stateful firewalling system in front of a memcached server. You might if you run them by default, or need to protect memcached from the internet at large.
+
+These systems have limits in the number of connections that can pass through it in a certain number of time, and how fast those connections or packets can pass through. A lot of connectivity bugs end up being tracked back to someone's firewall.
+
+== It Should Respond Quickly ==
+
+On a good day memcached can serve requests in less than a millisecond. After accounting for outliers due to OS jitter, CPU scheduling, or network jitter, very few commands should take more than a millisecond or two to complete.
+
+== Expiration Times Should Be Accurate ==
+
+Memcached tries to expire items when you tell it to. To avoid hitting the clock constantly, it updates an internal clock value every second. This means your expiration times should be accurate up to the nearest second. So an expiration can be a second early or a second late, but should not waver beyond that.
+
+Since expiration values are stored as timestamps, be sure your OS clock is correct. If your OS clock is set to some time in the future, you're storing items into memcached, and you suddenly adjust the clock far into the past, those items will not expire on time. Inversely, jumping a clock forward can prematurely expire items.
+
+== How It Handles `set` Failures ==
+
+There are conditions which memcached will "fail" a set. If it cannot find free memory, if the object is too large, or some unknown factor. In most cases where you are issuing a `set` against an item that already exists, a failure will cause the old item to be removed from the cache.
+
+Memcached assumes that if you are issuing a set, even if the item is invalid, that means your intent was to update the cache, and whatever it contains is now stale. It error's on the side of caution and throws the old item out for you.
