@@ -10,6 +10,7 @@ Your friendly neighborhood memory cache daemon.
  * [TutorialCachingStory An Adventure in Learning Memcached]
  * [NewCommunication Communicating With Users and Developers] - Mailing list, irc, etc.
  * [NewGlossary Glossary of Common Terms]
+ * [NewLinks External Links] - presentations, programs, etc.
 
 == Installation ==
 
@@ -42,8 +43,9 @@ Your friendly neighborhood memory cache daemon.
 
 == Memcached Development ==
 
+ * [DevelopmentRepos Source Code]
+ * [NewDevelopmentProcess Process and Roadmap]
  * [NewInternals Memcached Internals for Developers]
- * [NewSource Source Code]
  * [BuildFarm Build Farm]
  * [TestSuites Test Suites]
  * [NewProposals Proposals and RFCs]

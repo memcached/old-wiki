@@ -1,0 +1,14 @@
+﻿#summary I Declare
+
+<wiki:toc max_depth="2" />
+
+A recent primary focus proposal are [EngineInterface Storage Engines], which will allow people to use the memcached protocol shell and daemon to do similar activities easily, ideally preventing forking and allowing experimentation with improving existing features.
+
+There are two very old proposals:
+
+ * [ProposalTagSupport]
+ * [ProposalCrossCompatClients]
+
+They have not been updated in a long time, but are included here for discussion. It is important for us to spend some time getting clients to be more compatible with each other; use standard flags, expose standard features. It would also be nice to support tags in some fashion, if for no reason other than to save memory in keyspaces when doing manual tagging.
+
+So we should update these proposals and ... well, do them.
