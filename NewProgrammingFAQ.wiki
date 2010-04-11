@@ -28,7 +28,9 @@ Like keeping your users from being knocked off your site.
 
 == What about the MySQL query cache? ==
 
-The MySQL query cache is sometimes a useful start for small sites.
+The MySQL query cache can be a useful start for small sites. Unfortunately it uses many global locks on the mysql database, so enabling it can throttle you down. It also caches queries per table, and has to expire the entire cache related to a table when it changes, at all. If your site is fairly static this can work out fine, but when your tables start changing with any frequency this immediately falls over.
+
+Memory is also limited, as it requires using a chunk of what's directly on your database.
 
 == Is memcached atomic? ==
 
