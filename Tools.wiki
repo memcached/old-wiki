@@ -7,6 +7,7 @@ This page is the place to go for all things related memcached tools.  Not much h
 = List of Interesting Memcached Tools =
 
    * cacti-templates: Templates that let you use cacti to monitor your memcached instances.
+      * http://code.google.com/p/mysql-cacti-templates/wiki/MemcachedTemplates
       * http://dealnews.com/developers/cacti/memcached.html
    * dormando's awesome memcached top
       * http://github.com/dormando/damemtop
