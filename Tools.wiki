@@ -17,6 +17,8 @@ This page is the place to go for all things related memcached tools.  Not much h
       * [http://www.wireshark.org/download/automated]
    * A plugin for wireshark that understands the textual protocol.
       * [http://dev.gear6.com/downloads/wireshark-memcache-protocol-dissector]
+   * Maatkit's mk-query-digest understands the textual protocol and can do advanced analysis of the queries.
+      * [http://www.maatkit.org/doc/mk-query-digest.html]
    * Windows powershell frontend to memcached
       * http://mempowered.codeplex.com/
    * brutis: A tool designed to exercise memcache instances.
