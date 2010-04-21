@@ -1,6 +1,8 @@
 #summary Monitoring memcached
 
- * [http://dealnews.com/developers/cacti/memcached.html Cacti template]
+ * Cacti templates:
+   * [http://code.google.com/p/mysql-cacti-templates/wiki/MemcachedTemplates Better Cacti Templates Memcached Templates]
+   * [http://dealnews.com/developers/cacti/memcached.html Dealnews Cacti template]
    * [http://www.netuality.ro/monitoring-memcached-with-cacti/tools/20060802 blog article] (2006)
    * http://forums.cacti.net/about14605.html
    * http://www.faemalia.net/mysqlUtils/
