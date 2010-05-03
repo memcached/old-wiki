@@ -10,7 +10,7 @@ Your friendly neighborhood memory cache daemon.
  * [TutorialCachingStory An Adventure in Learning Memcached]
  * [NewCommunication Communicating With Users and Developers] - Mailing list, irc, etc.
  * [NewGlossary Glossary of Common Terms]
- * [NewLinks External Links] - presentations, programs, etc.
+ * [NewLinks Tools and External Links] - Monitoring programs, tools, presentations, etc.
 
 == Installation ==
 
