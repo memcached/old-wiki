@@ -6,11 +6,19 @@
 
 == How can you list all keys? ==
 
-You don't.
+With memcached, you can't list all keys. There is a debug interface, but that is not an advisable usage.
+
+=== Why are you trying to dump the cache? ===
+
+Think about why you need to do it. If you're trying to troubleshoot your application, we find that it's often more informative to look at the *flow* rather than the current state. Run memcached in a screen session with `-vv` or `-vvv` to have it print what it's doing. You may also use [http://www.maatkit.org MaatKit] to use tcpdump to analyze traffic to an instance.
+
+Watching the flow is very useful. You can see if your application is fetching keys inappropriately (one at a time vs multiget, or repeatedly in a single request), or you can see why memcached decided to invalidate a key (if ran in `-vvv` mode). Inspecting the state can't tell you any of this useful information anyway.
+
+=== My application requires it ===
+
+If it's a requirement that your application is able to pull or walk keys, you really want a database. Tokyo Tyrant, MySQL, etc, are good candidates for this. Memcached as a caching service cannot support the ability to safely walk keys without locking out all other operations. Adding indexes, multiversioning, etc, can make this possible but will lower memory and cpu efficiency.
 
 You "can" via the debug interface `stats cachedump`, but that will only ever be a partial dump, and is slow.
-
-Debugging programs using memcached should use alternate methods of testing applications. Add proper error handling, logging. You can run `memcached -vvv` in your test environment to watch keys go in and out. This is often more helpful anyway, as you can see why keys were expired if you don't get them back.
 
 == Why only RAM? ==
 
