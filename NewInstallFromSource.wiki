@@ -22,9 +22,10 @@ If you're deploying memcached to more than one server, you probably really want 
 
 == Building an RPM ==
 
-For a few years now, the memcached source tarball has contained a workable .spec file.
+The memcached source tarball has contained a workable .spec file. To use it, create a build directory for RPM and compile memcached using the commands below. *Do not* run this as root, as tests will not pass.
 {{{
 echo "%_topdir /home/you/rpmbuild" >> ~/.rpmmacros
+mkdir -p /home/you/rpmbuild/{SPECS,BUILD,SRPMS,RPMS,SOURCES}
 wget http://memcached.org/latest
 rpmbuild -ta memcached-1.x.x.tar.gz
 }}}
