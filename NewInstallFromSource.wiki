@@ -29,7 +29,7 @@ mkdir -p /home/you/rpmbuild/{SPECS,BUILD,SRPMS,RPMS,SOURCES}
 wget http://memcached.org/latest
 rpmbuild -ta memcached-1.x.x.tar.gz
 }}}
-You may need to create some directories first, and will need gcc and libevent-devel installed.
+You will need gcc and libevent-devel installed. (`yum install gcc libevent libevent-devel`)
 
 Then install the RPM via a standard `rpm -Uvh memcached-etc.rpm`
 
