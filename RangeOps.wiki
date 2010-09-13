@@ -29,7 +29,7 @@ conversion or collation.
 This document uses standard [http://en.wikipedia.org/wiki/Interval_%28mathematics%29 interval notation], but you can see the
 possibilities listed here:
 
-  * (null, null) :: Operate over all key.
+  * (null, null) :: Operate over all keys.
   * (null, "X") :: Operate over every key up to (not including) "X".
   * (null, "X"] :: Operate over every key up to (and including) "X".
   * ("F", null) :: Operate over every key from (not including) "F".
