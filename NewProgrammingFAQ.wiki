@@ -48,6 +48,10 @@ Aside from any bugs you may come across, yes all commands are internally atomic.
 
 Because it's awesome. TODO: link to the new protocol page.
 
+== How do I troubleshoot client timeouts? ==
+
+See [Timeouts] for help.
+
 = Setup Questions =
 
 == How do I authenticate? ==

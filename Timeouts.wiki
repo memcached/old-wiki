@@ -1,0 +1,95 @@
+#summary Where'd I go
+
+<wiki:toc max_depth="2" />
+
+= Troubleshooting Timeouts =
+
+Client complaining about "timeout errors", but not sure how to track it down?
+Here's a simple utility for examining your situation.
+
+== First, check listen_disabled_num ==
+
+Before you go ahead with troubleshooting, you'll want to telnet to your
+memcached instance and run `stats`, then look for "listen_disabled_num". This
+is a poorly named counter which describes how many times you've reached
+maxconns. Each time memcached hits maxconns it will delay new connections,
+which means you'll possibly get timeouts.
+
+Also, disable or tune any firewalls you may have in the way.
+
+== Next, mc_conn_tester.pl ==
+
+Fetch this:
+
+http://consoleninja.net/code/memcached/mc_conn_tester.pl
+
+{{{
+$ ./mc_conn_tester.pl memcached-host:11211 1000 1
+Averages: (conn: 0.00081381) (set: 0.00001603) (get: 0.00040122)
+$ ./mc_conn_tester.pl -h
+Usage: mc_conn_tester.pl [HOST:PORT] [iterations] [timeout]
+}}}
+
+This is a minimal utility for testing a quick routine with a memcached
+instance. It will connect, attempt a set, attempt a get, and then loop and
+repeat.
+
+The utility does not use any memcached client and instead does minimal, raw
+commands with the ASCII protocol. Thus helping to rule out client bugs.
+
+If it reaches a timeout, you can see how far along in the cycle it was:
+
+{{{
+Fail: (timeout: 1) (elapsed: 1.00427794) (conn: 0.00000000) (set: 0.00000000) (get: 0.00000000)
+Fail: (timeout: 1) (elapsed: 1.00133896) (conn: 0.00000000) (set: 0.00000000) (get: 0.00000000)
+Fail: (timeout: 1) (elapsed: 1.00135303) (conn: 0.00000000) (set: 0.00000000) (get: 0.00000000)
+Fail: (timeout: 1) (elapsed: 1.00145602) (conn: 0.00000000) (set: 0.00000000) (get: 0.00000000)
+}}}
+
+In the above line, it has a total elapsed time of the test, and then the times
+at which each sub-test succeeded. In the above scanario it wasn't able to
+connect to memcached, so all tests failed.
+
+{{{
+Fail: (timeout: 1) (elapsed: 0.00121498) (conn: 0.00114512) (set: 1.00002694) (get: 0.00000000)
+Fail: (timeout: 1) (elapsed: 0.00368810) (conn: 0.00360799) (set: 1.00003314) (get: 0.00000000)
+Fail: (timeout: 1) (elapsed: 0.00128603) (conn: 0.00117397) (set: 1.00004005) (get: 0.00000000)
+Fail: (timeout: 1) (elapsed: 0.00115108) (conn: 0.00108099) (set: 1.00002789) (get: 0.00000000)
+}}}
+
+In this case, it failed waiting for "get" to complete.
+
+== You're probably dropping packets. ==
+
+In most cases, where listen_disabled_num doesn't apply, you're likely dropping
+packets for some reason. Either a firewall is in the way and has run out of
+stateful tracking slots, or your network card or switch is dropping packets.
+
+You'll most likely see this manifest as:
+
+{{{
+Fail: (timeout: 1) (elapsed: 1.00145602) (conn: 0.00000000) (set: 0.00000000) (get: 0.00000000)
+}}}
+
+... where `conn:` and the rest are all zero. So the test was not able to
+connect to memcached.
+
+On most systems SYN retries are 3 seconds, which is awfully long. Losing a
+single SYN packet will certainly mean a timeout. This is easily proven:
+
+{{{
+$ ./mc_conn_tester.pl memcached-host:11211 5000 1 > log_one_second
+&& ./mc_conn_tester.pl memcached-host:11211 5000 4 > log_three_seconds
+&& ./mc_conn_tester.pl memcached-host:11211 5000 8 > log_eight_seconds
+}}}
+
+... Run 5000 tests each round (you can adjust this if you wish). The first one
+having a timeout of 1s, which is often the client default. Then next with 4s,
+which would allow for one SYN packet to be lost but still pass the test. Then
+finally 8s, which allows two SYN packets to be lost in a row and yet still
+succeed.
+
+If you see the number of `Fail:` lines in each log file *decrease*, then your
+network is likely dropping SYN packets.
+
+Fixing that, however, is beyond the scope of this document.

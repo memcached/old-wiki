@@ -61,6 +61,10 @@ These two stats appear in `stats items`, and can indicate bugs in the memcached 
 
 If you see these counters move with any regularity, please contact the mailing list with as much info as you can. While we haven't hit problems with these for a long time, we feel it's better to be safe and instrument the case of the more common runtime bugs.
 
+== Troubleshooting Client Timeouts ==
+
+See [Timeouts] for help.
+
 = Stats for Application Health =
 
 Monitoring these stats can tell you how the available memory in memcached, and how your app behaves, changes efficiency.
