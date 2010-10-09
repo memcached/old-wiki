@@ -33,7 +33,7 @@
 
 == Memcached proxies ==
 
- * http://labs.northscale.com/moxi
+ * http://github.com/northscale/moxi
  * http://code.google.com/p/memagent
 
 == Other ==
