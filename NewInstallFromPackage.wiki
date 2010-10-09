@@ -30,10 +30,6 @@ Same caveat as debian for issues with old versions being available.
 
 Pretty easy eh? Sadly you're likely to pull an old version still.
 
-== Windows == 
-
-!NorthScale maintains a [http://labs.northscale.com/memcached-packages/ Windows zip file] of the built memcached source.
-
 = Commercial Distributions = 
 
 !NorthScale offers a free [http://northscale.com/products/memcached.html memcached server] with a Web UI based management layer and additional client capabilities.  It also uses the Open Source [http://github.com/northscale/bucket_engine bucket engine] to build in multi-tenancy.
