@@ -1,7 +1,6 @@
 _note: we're looking for ways to integrate a windows port into mainline. Please contact the list if you're interested in this work_
 
 Ports:
- * [http://labs.northscale.com/memcached-packages/ memcached for windows, version 1.4.4 both 32 and 64-bit]
  * [http://github.com/CaptTofu/memcached source code], see 'win32' branch
  * [http://code.jellycan.com/memcached/ memcached for windows, version 1.2.6 and 1.2.5 ports] (Sept 2008)
  * [http://www.splinedancer.com/memcached-win32 memcached for windows, version 1.2.4 port]
