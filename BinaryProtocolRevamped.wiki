@@ -8,7 +8,7 @@ Memcache was originally written to make LiveJournal `[LJ]` faster. It now powers
 
 == Conventions Used In This Document ==
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BinaryProtocolRevamped#Normative-References].
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [BinaryProtocolRevamped#Normative_References].
 
 = Packet Structure =
 
@@ -79,12 +79,12 @@ General format of a packet:
 </pre>
 
 == Header fields description ==
-   <dt>Magic</dt><dd>Magic number identifying the package (See [BinaryProtocolRevamped#Magic-Byte])</dd>
-   <dt>Opcode</dt><dd>Command code (See [BinaryProtocolRevamped#Command-opcodes])</dd>
+   <dt>Magic</dt><dd>Magic number identifying the package (See [BinaryProtocolRevamped#Magic_Byte])</dd>
+   <dt>Opcode</dt><dd>Command code (See [BinaryProtocolRevamped#Command_opcodes])</dd>
    <dt>Key length</dt><dd>Length in bytes of the text key that follows the command extras</dd>
-   <dt>Status</dt><dd>Status of the response (non-zero on error) (See [BinaryProtocolRevamped#Response-Status])</dd>
+   <dt>Status</dt><dd>Status of the response (non-zero on error) (See [BinaryProtocolRevamped#Response_Status])</dd>
    <dt>Extras length</dt><dd>Length in bytes of the command extras</dd>
-   <dt>Data type</dt><dd>Reserved for future use (See [BinaryProtocolRevamped#Data-Type])</dd>
+   <dt>Data type</dt><dd>Reserved for future use (See [BinaryProtocolRevamped#Data_Type])</dd>
    <dt>vbucket id</dt><dd>The virtual bucket for this command</dd>
    <dt>Total body length</dt><dd>Length in bytes of extra + key + value</dd>
    <dt>Opaque</dt><dd>Will be copied back to you in the response</dd>
