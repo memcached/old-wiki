@@ -3,7 +3,7 @@
 Memcached supports two main protocols; the classic ASCII, and the newer binary. It's simpler to write clients and debug problems via the ASCII protocol, but binary affords us many new abilities.
 
  * [http://github.com/memcached/memcached/blob/master/doc/protocol.txt Text Protocol]
- * [MemcacheBinaryProtocol Binary Protocol]
+ * [BinaryProtocolRevampedl Binary Protocol]
    * [http://www.slideshare.net/tmaesaka/memcached-binary-protocol-in-a-nutshell-presentation/ Slides on binary protocol ] by Toru Maesaka (2008)
 
 Further, there are sub protocols and proposals
