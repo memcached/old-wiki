@@ -32,7 +32,7 @@ Pretty easy eh? Sadly you're likely to pull an old version still.
 
 = Commercial Distributions = 
 
-!NorthScale offers a free [http://northscale.com/products/memcached.html memcached server] with a Web UI based management layer and additional client capabilities.  It also uses the Open Source [http://github.com/northscale/bucket_engine bucket engine] to build in multi-tenancy.
+Membase, Inc. offers [http://www.membase.com/products-and-services/memcached memcached capabilities] in the (freely available) Membase server.  It has a UI based management layer that gives visibility into memcached statistics and builds in proxying.  It uses the Open Source [http://github.com/membase/bucket_engine bucket engine] to build in multi-tenancy for memcached.
 
 = Installing Clients =
 
