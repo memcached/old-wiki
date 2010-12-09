@@ -93,3 +93,8 @@ If you see the number of `Fail:` lines in each log file *decrease*, then your
 network is likely dropping SYN packets.
 
 Fixing that, however, is beyond the scope of this document.
+
+== But your utility never fails! ==
+
+Odds are good your client has a bug :( Try reaching out to the client author
+for help.
