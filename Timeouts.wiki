@@ -17,6 +17,23 @@ which means you'll possibly get timeouts.
 
 Also, disable or tune any firewalls you may have in the way.
 
+== Then, carefully check the usual suspects ==
+
+Is the machine in swap? You will see random lag bubbles if your OS is swapping
+memcached to disk periodically.
+
+Is the machine overloaded? 0% CPU idle with a load of 400 and memcached
+probably isn't getting enough CPU time. You can try `nice` or `renice`, or
+just run less on the machine. If you're severely overloaded on CPU, you might
+notice the mc_conn_tester below reporting very high wait times for `set`
+commands.
+
+Is the memcached server 32bit? 32bit hosts have less memory available to the
+kernel for TCP sockets and friends. We've observed some odd behavior under
+large numbers of open sockets and high load with 32bit systems. Strongly
+consider going 64bit, as it may help some hard to trace problems go away,
+including segfaults due to the 2/4g memory limit.
+
 == Next, mc_conn_tester.pl ==
 
 Fetch this:
@@ -31,7 +48,7 @@ Usage: mc_conn_tester.pl [HOST:PORT] [iterations] [timeout]
 }}}
 
 This is a minimal utility for testing a quick routine with a memcached
-instance. It will connect, attempt a set, attempt a get, and then loop and
+instance. It will connect, attempt a couple sets, attempt a few gets, then loop and
 repeat.
 
 The utility does not use any memcached client and instead does minimal, raw
@@ -58,6 +75,22 @@ Fail: (timeout: 1) (elapsed: 0.00115108) (conn: 0.00108099) (set: 1.00002789) (g
 }}}
 
 In this case, it failed waiting for "get" to complete.
+
+If you want to log all of the tests mc_conn_tester.pl runs, open the file and
+change the line:
+
+{{{
+my $debug = 0;
+}}}
+
+to
+
+{{{
+my $debug = 1;
+}}}
+
+You will then see normal lines begin with `loop:` and failed tests will start
+with `Fail:` as usual.
 
 == You're probably dropping packets. ==
 
