@@ -162,6 +162,9 @@ higepon's memcached client
 Zhou Li's memcached client
  * http://github.com/echou/memcached-client
 
+
+https://github.com/EchoTeam/mcd
+
 = Lua =
 
 http://luamemcached.luaforge.net
