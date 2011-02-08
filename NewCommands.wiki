@@ -10,7 +10,7 @@ Full documentation can be found in the [NewProtocols Protocol Documentation].
 
 The "standard protocol stuff" of memcached involves running a command against an "item". An item consists of:
 
- * A key
+ * A key (arbitrary string up to 250 bytes in length. No spaces or newlines for ASCII mode)
  * A 32bit "flag" value
  * An expiration time, in seconds. Can be up to 30 days. After 30 days, is treated as a unix timestamp of an exact date.
  * A 64bit "CAS" value, which is kept unique.
