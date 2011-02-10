@@ -10,7 +10,7 @@ Full documentation can be found in the [NewProtocols Protocol Documentation].
 
 The "standard protocol stuff" of memcached involves running a command against an "item". An item consists of:
 
- * A key (arbitrary string up to 250 bytes in length. No spaces or newlines for ASCII mode)
+ * A key (arbitrary string up to 250 bytes in length. No white-space --'white-space' includes such items as space, tab, vertical tab, carriage return, etc.-- or newlines for ASCII mode)
  * A 32bit "flag" value
  * An expiration time, in seconds. Can be up to 30 days. After 30 days, is treated as a unix timestamp of an exact date.
  * A 64bit "CAS" value, which is kept unique.
@@ -97,4 +97,3 @@ A special command that shows you how items would be distributed if slabs were br
 Invalidate all existing cache items. Optionally takes a parameter, which means to invalidate all items after N seconds have passed.
 
 This command does not pause the server, as it returns immediately. It does not free up or flush memory at all, it just causes all items to expire.
-
