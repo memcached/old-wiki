@@ -244,5 +244,5 @@ key = 'SQL' . md5sum("SELECT blah blah blah")
 In this particular example, you may put your SQL queries into an outside file with the md5sum next to them. Or, more simply, appending a unique query ID into the key.
 
 {{{
-key = SQL' . query_id . ':' . m5sum("SELECT blah blah blah")
+key = 'SQL' . query_id . ':' . m5sum("SELECT blah blah blah")
 }}}
