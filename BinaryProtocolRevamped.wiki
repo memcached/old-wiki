@@ -637,7 +637,7 @@ Response:
 
 </pre>
 
-These commands will either add or remove the specified amount to the requested counter.
+These commands will either add or remove the specified amount to the requested counter. If you want to set the value of the counter with add/set/replace, the objects data must be the ascii representation of the value and not the byte values of a 64 bit integer. 
 
 If the counter does not exist, one of two things may happen:
 
