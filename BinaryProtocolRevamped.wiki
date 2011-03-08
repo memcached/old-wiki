@@ -648,6 +648,8 @@ If the counter does not exist, one of two things may happen:
        expire with the provided expiration time.  The flags will be set
        to zero.
 
+Decrementing a counter will never result in a "negative value" (or cause the counter to "wrap"). instead the counter is set to 0. Incrementing the counter may cause the counter to wrap.
+
 === Example ===
 
 The following figure shows an incr-command for key = "counter", delta = 0x01, initial = 0x00 which expires in two hours.
