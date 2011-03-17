@@ -58,6 +58,9 @@ Integrations
 
 = Python =
 
+pylibmc - a libmemcached wrapper
+ * http://sendapatch.se/projects/pylibmc/
+
 python-memcached 
  * http://www.tummy.com/Community/software/python-memcached/
 
