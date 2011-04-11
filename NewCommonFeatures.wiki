@@ -58,7 +58,7 @@ Find that your client does the latter? Complain to the author ;)
 
 = Less Common Features =
 
-== Get-By-Master-Key ==
+== Get-By-Group-Key ==
 
 In the above case of Multi-Get, sometimes having your keys spread out among all servers doesn't make quite as much sense.
 
@@ -66,9 +66,9 @@ For example, we're building a list of keys to fetch to display a user's profile 
 
 If you have 50 memcached servers, issuing a Multi-Get will end up writing each key to individual servers.
 
-However, you may choose to store data by an intermediate "key". This master key is used by the client to discover which server to store or retrieve the data. Then any keys you supply are all sent to that same server. The master key is *not* retained on the server, or added to the existing key in any way.
+However, you may choose to store data by an intermediate "key". This group key is used by the client to discover which server to store or retrieve the data.  Then any keys you supply are all sent to that same server. The group key is *not* retained on the server, or added to the existing key in any way.
 
-So in a final case, we have 50 memcached servers. Keys pertaining to a single user's profile are stored under the master key, which is their userid. Issuing a Multi-Get for all of their data will end up sending a single command to a single server.
+So in a final case, we have 50 memcached servers. Keys pertaining to a single user's profile are stored under the group key, which is their userid. Issuing a Multi-Get for all of their data will end up sending a single command to a single server.
 
 This isn't the best for everything. Sufficiently large requests may be more efficiently split among servers. If you're fetching fixed set of small values, it'll be more efficient on your network to send a few packets back and forth to a single server, instead of many small packets from many servers.
 
