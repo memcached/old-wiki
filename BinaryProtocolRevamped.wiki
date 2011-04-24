@@ -143,12 +143,12 @@ Possible values of the one-byte field. See [BinaryProtocolRevamped#Commands] for
 || 0x07 || Quit ||
 || 0x08 || Flush ||
 || 0x09 || GetQ ||
-|| 0x0A || No-op ||
-|| 0x0B || Version ||
-|| 0x0C || GetK ||
-|| 0x0D || GetKQ ||
-|| 0x0E || Append ||
-|| 0x0F || Prepend ||
+|| 0x0a || No-op ||
+|| 0x0b || Version ||
+|| 0x0c || GetK ||
+|| 0x0d || GetKQ ||
+|| 0x0e || Append ||
+|| 0x0f || Prepend ||
 || 0x10 || Stat ||
 || 0x11 || SetQ ||
 || 0x12 || AddQ ||
@@ -159,7 +159,11 @@ Possible values of the one-byte field. See [BinaryProtocolRevamped#Commands] for
 || 0x17 || QuitQ ||
 || 0x18 || FlushQ ||
 || 0x19 || AppendQ ||
-|| 0x1A || PrependQ ||
+|| 0x1a || PrependQ ||
+|| 0x1b || Verbosity * ||
+|| 0x1c || Touch *||
+|| 0x1d || GAT *||
+|| 0x1e || GATQ *||
 || 0x20 || SASL list mechs ||
 || 0x21 || SASL Auth ||
 || 0x22 || SASL Step ||
@@ -176,13 +180,20 @@ Possible values of the one-byte field. See [BinaryProtocolRevamped#Commands] for
 || 0x3a || RIncrQ ||
 || 0x3b || RDecr ||
 || 0x3c || RDecrQ ||
-|| 0x40 || TAP Connect ||
-|| 0x41 || TAP Mutation ||
-|| 0x42 || TAP Delete ||
-|| 0x43 || TAP Flush ||
-|| 0x44 || TAP Opaque ||
-|| 0x45 || TAP VBucket Set ||
+|| 0x3d || Set VBucket *||
+|| 0x3e || Get VBucket *||
+|| 0x3f || Del VBucket *||
+|| 0x40 || TAP Connect *||
+|| 0x41 || TAP Mutation *||
+|| 0x42 || TAP Delete *||
+|| 0x43 || TAP Flush *||
+|| 0x44 || TAP Opaque *||
+|| 0x45 || TAP VBucket Set *||
+|| 0x46 || TAP Checkpoint Start *||
+|| 0x47 || TAP Checkpoint End *||
 ||
+
+Commands marked with * is not currently fixed, but this is the current proposal for 1.6.
 
 As a convention all of the commands ending with "Q" for Quiet. A quiet version of a command will omit responses that are considered uninteresting. Whether a given response is interesting is dependent upon the command. See the descriptions of the set commands
 (Section 4.2) and set commands (Section 4.3) for examples of commands that include quiet variants.
@@ -1170,6 +1181,94 @@ The server will send each value in a separate packet with an "empty" packet (no 
    Key                 : The textual string "pid"
    Value               : The textual string "3078"
 </pre>
+
+== Verbosity ==
+
+Request:
+  * MUST have extras.
+  * MUST NOT have key.
+  * MUST NOT have value.
+
+   Extra data for flush:
+<pre>
+     Byte/     0       |       1       |       2       |       3       |
+        /              |               |               |               |
+       |0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|
+       +---------------+---------------+---------------+---------------+
+      0| Verbosity                                                     |
+       +---------------+---------------+---------------+---------------+
+     Total 4 bytes
+</pre>
+
+Response:
+  * MUST NOT have extras.
+  * MUST NOT have key.
+  * MUST NOT have value.
+
+
+Set the verbosity level of the server. This may cause your memcached server to generate
+more or less output.
+
+=== Example ===
+
+To set the verbosity level to two, set the following values in the request
+
+<pre>
+@todo add me
+</pre>
+
+The result of the operation is signaled through the status code.
+
+== Touch, GAT and GATQ ==
+
+Request:
+  * MUST have extras.
+  * MUST have key.
+  * MUST NOT have value.
+
+   Extra data for set/add/replace:
+<pre>
+     Byte/     0       |       1       |       2       |       3       |
+        /              |               |               |               |
+       |0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|
+       +---------------+---------------+---------------+---------------+
+      0| Expiration                                                    |
+       +---------------+---------------+---------------+---------------+
+       Total 4 bytes
+</pre>
+
+Touch is used to set a new expiration time for an existing item. GAT (Get and touch) and GATQ will return the value for the object if it is present in the cache.
+
+=== Example ===
+
+
+<pre>
+@todo add me
+</pre>
+
+==Get/Set/Del VBucket==
+
+@todo add me
+
+==TAP Connect==
+
+@todo add me
+
+==TAP Mutation / Delete / Flush==
+
+@todo add me
+
+==TAP Opaque==
+
+@todo add me
+
+== TAP VBucket set==
+
+@todo add me
+
+== TAP Checkpoint start/stop==
+
+@todo add me
 
 = Security Considerations =
 
