@@ -1,4 +1,4 @@
-_note: we're looking for ways to integrate a windows port into mainline. Please contact the list if you're interested in this work_
+Windows support is in the mainline now, so most of this is history.  Build toolchain relies on mingw.  Other than that, building memcached is like every other platform.
 
 Ports:
  * [http://github.com/CaptTofu/memcached source code], see 'win32' branch
