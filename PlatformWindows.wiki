@@ -1,13 +1,5 @@
 Windows support is in the mainline now, so most of this is history.  Build toolchain relies on mingw.  Other than that, building memcached is like every other platform.
 
-Ports:
- * [http://github.com/CaptTofu/memcached source code], see 'win32' branch
- * [http://code.jellycan.com/memcached/ memcached for windows, version 1.2.6 and 1.2.5 ports] (Sept 2008)
- * [http://www.splinedancer.com/memcached-win32 memcached for windows, version 1.2.4 port]
- * [http://jehiah.cz/projects/memcached-win32 memcached for windows, version 1.2.1 port]
-
-Eventually, win32 support will be integrated into the main server distribution.
-
 Articles:
  * [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx introduction to Memcached on Windows] (2008)
  * [http://pureform.wordpress.com/2008/01/10/installing-memcache-on-windows-for-php installing memcached on windows for php] (2008)
@@ -24,5 +16,11 @@ Tools:
  * MemCacheD Manager, by Nick Pirocanac
    * http://allegiance.chi-town.com/MemCacheDManager.aspx
 
-Old:
+Ports (older):
+ * [http://github.com/CaptTofu/memcached source code], see 'win32' branch
+ * [http://code.jellycan.com/memcached/ memcached for windows, version 1.2.6 and 1.2.5 ports] (Sept 2008)
+ * [http://www.splinedancer.com/memcached-win32 memcached for windows, version 1.2.4 port]
+ * [http://jehiah.cz/projects/memcached-win32 memcached for windows, version 1.2.1 port]
+
+Even older:
  * [http://www.ctoforaday.com/articles/000039.html windows port] (2004)
