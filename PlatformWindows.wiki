@@ -1,9 +1,9 @@
 Windows support is in the mainline now, so most of this is history.  Build toolchain relies on mingw.  Other than that, building memcached is like every other platform.
 
 Articles:
+ * [http://stackoverflow.com/questions/8896/memcached-on-windows-x64 StackOverflow discussion]
  * [http://codebetter.com/blogs/karlseguin/archive/2008/07/07/scale-cheaply-memcached.aspx introduction to Memcached on Windows] (2008)
  * [http://pureform.wordpress.com/2008/01/10/installing-memcache-on-windows-for-php installing memcached on windows for php] (2008)
- * [http://stackoverflow.com/questions/8896/memcached-on-windows-x64 general discussion]
 
 Clients:
  * See the [Clients] page for Windows client libraries.
