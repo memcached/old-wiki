@@ -3,7 +3,7 @@
 = C / C++ =
 
 libmemcached 
- * http://libmemcached.org/ by <A HREF="http://krow.net/">Brian Aker</A>, Commercial Support available from http://datadifferential.com/
+ * http://libmemcached.org/ by  [http://krow.net/ Brian Aker], Commercial Support available from http://datadifferential.com/
   * BSD license, it has been in production at websites for years. Aggressively optimised, ability to run async, supports binary protocol, triggers, replica, etc.
 
 libmemcache 
