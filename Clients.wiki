@@ -3,19 +3,19 @@
 = C / C++ =
 
 libmemcached 
- * http://tangent.org/552/libmemcached.html by Brian Aker
-  * BSD license. This is a new library, under heavy development.
+ * http://libmemcached.org/ by Brian Aker, Commercial Support available from http://datadifferential.com/
+  * BSD license, it has been in production at websites for years. Aggressively optimised, ability to run async, supports binary protocol, triggers, replica, etc.
 
 libmemcache 
  * http://people.freebsd.org/~seanc/libmemcache by Sean Chittenden
-  * BSD license. This is the original C library. It is no longer under active development. You should try libmemcached instead.
+  * BSD license. It is no longer under active development (last updated in 2006). You should try libmemcached instead.
 
 apr_memcache 
  * http://www.outoforder.cc/projects/libs/apr_memcache by Paul Querna
   * Apache Software License version 2.0 (doesn't appear to be actively maintained since 2005)
 
 memcacheclient
- * http://code.jellycan.com/memcacheclient (cross-platform, but primary focus on Windows
+ * http://code.jellycan.com/memcacheclient (cross-platform, but primary focus on Windows (last updated in 2008).
 
 libketama 
  * http://www.last.fm/user/RJ/journal/2007/04/10/rz_libketama (the original consistent hashing algorithm from last.fm)
@@ -137,10 +137,10 @@ jehiah
 = MySQL =
 
 MySQL user data functions for memcached 
- * http://tangent.org/586/Memcached_Functions_for_MySQL.html
+ * https://launchpad.net/memcached-udfs
 
 MySQL Engine 
- * http://tangent.org/index.pl?node_id=507 (MySQL plugin to make MySQL store data in memcached. The memcache_engine allows memcache to work as a storage engine to MySQL. This means that you can SELECT/UPDATE/INSERTE/DELETE from it as though it is a table in MySQL.)
+ * no longer developed
 
 = PostgreSQL =
 
