@@ -14,6 +14,15 @@ Web View: http://github.com/memcached/memcached
 git clone git://github.com/memcached/memcached.git
 }}}
 
+== Active Development ==
+
+We are actively developing against the 1.4 and 1.6 trees.
+
+New changes are *highly* preferred for 1.6 only. 1.4 should receive fewer
+updates.
+
+The 1.4 tree is the "master" branch", while 1.6 is the "engine-pu" branch.
+
 == Developer repos: ==
 
  * dormando: git://github.com/dormando/memcached.git 

@@ -8,13 +8,12 @@ The memcached development model aims to have regular updates for stable releases
 
   * 3 weeks after each new stable release, we release -rc1 for the next release.
   * New -rc's will be kicked out daily or bidaily if there are fixes.
-  * After 1 week in RC, unless there are still bug reports coming in, stable is released.
+  * After a minimum of 3 days in RC, unless there are still bug reports coming in, stable is released.
 
 This should lead to a stable release roughly once per month. Exceptions
 can be made, as usual. Major bug finds, of course, warrant earlier releases. 
 Cycles with large code changes all at once might warrant
-an earlier cut to -rc1 and a 2-3 week -rc cycle, but the goal is to have about 
-a month between releases.
+an earlier cut to -rc1 and a 2-3 week -rc cycle.
 
 The release may be done by any of the core committers to memcached, but the process requires separation of contribution and review (i.e. the author does not commit/review their own changes).  
 
@@ -22,40 +21,14 @@ The release may be done by any of the core committers to memcached, but the proc
 
 == Updates to 1.4 ==
 
-  * 1.4.1
-    * fix to reported crash
-    * fix for exploit, [http://www.debian.org/security/2009/dsa-1853 reported on Debian] (though running as root has never been recommended)
+The 1.4 tree is in maintenance mode. However, since 1.6 is taking a long time
+to stabilize, we will resume producing regular updates to 1.4. If you have
+bugs, fixes, or feature requests for 1.4, please go ahead and submit them.
 
-  * 1.4.2
-    * bug fixes
-    * [http://mysql-ha.com/post/63 pandora build] support
-      * this will initially be a copy-in to memcached tree, may get to some kind of submodule work for the pandora build macros
-      * requires fixing a number of warnings to complete
+== Development Branch: 1.6 ==
 
-_Related_: additional test language support _or_ external test support<br/>
-The goal here is to allow for the ease of increasing test coverage.  Since we may not want to increase dependencies for tests in memcached itself, it may make sense to have a separate subproject with more test coverage.
+The 1.6 release is a major rewrite of the system. It supports modular engines,
+protocol extensions, and has had significant internal reworking.
 
-_Related_: contrib updated packages to distros (universe/EPEL?)
-
-== Development Branch: 1.5 ==
-
-There have been experiments and done in 1.3.x for several features which should be in a 1.5 development branch soon.  
-
-  * Restructure the tree.
-  * Add storage [EngineInterface engine] support.
-    * The first update would be refactoring without external API support.  This _could_ be considered for putback to a 1.4 update.
-    * The goal is to be able to support experiments, specific features and protocol extensions
-      * Example: SASL support
-  * protocol extension support
-    * think mod_auth for type of mechanism to add to core
-    * want to be sure they're async friendly
-    * want to be sure runtime configuration is 
-    * one example goal here is SASL (in binary only, text is much more work)
-    * partitioned slabber support
-  * features
-    * tagging 
-    * constant time regex invalidation 
-
-1.6 
-  * Stable release of 1.5 development features:
-    * Engine API
+The goal for this branch, at of this writing, is to vet these changes to
+ensure they are stable, make sense, and are generally the right thing to do.
