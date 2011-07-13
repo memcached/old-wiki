@@ -4,17 +4,14 @@
 
   * 3 weeks after each new stable release, we release -rc1 for the next release.
   * New -rc's will be kicked out daily or bidaily if there are fixes.
-  * After 1 week in RC, unless there are still bug reports coming in, stable is released.
+  * After 3 days in RC, unless there are still bug reports coming in, stable is released.
 
 This should lead to a stable release roughly once per month. Exceptions
 can be made, as usual. Major bug finds warrant earlier releases. 
 Cycles with large code changes all at once might warrant
-an earlier cut to -rc1 and a 2-3 week -rc cycle, but the goal is to have about 
-a month between releases.
+an earlier cut to -rc1 and a 2-3 week -rc cycle.
 
 The release may be done by any of the core committers to memcached, but the process requires separation of contribution and review (i.e. the author does not commit/review their own changes).
-
-This is the ideal, however if there isn't much in the repository or larger development is taking time, releases can be skipped.
 
 == Road Map ==
 
