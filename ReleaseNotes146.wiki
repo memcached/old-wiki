@@ -1,14 +1,14 @@
-#summary Release notes for Release 1.4.6-rc1
+#summary Release notes for Release 1.4.6
 
-= Memcached 1.4.6-rc1 Release Notes =
+= Memcached 1.4.6 Release Notes =
 
-Date: 2011-07-12
+Date: 2011-07-15
 
 == Download ==
 
 Download Link:
 
-http://memcached.googlecode.com/files/memcached-1.4.6_rc1.tar.gz
+http://memcached.googlecode.com/files/memcached-1.4.6.tar.gz
 
 
 == Overview ==
@@ -21,6 +21,9 @@ fixed.
 
 == Fixes ==
 
+  * Gcc on Solaris sparc wants -R and not -rpath
+  * Issue 121: Set the runtime path when --with-libevent is used
+  * Fix autogen failure when unable to find supported command.
   * fix race crash for accepting new connections 
   * fix incr/decr race conditions for binary prot 
   * fix incr/decr race conditions for ASCII prot 
@@ -59,17 +62,18 @@ report ended up as a commit with your name on it.
 Note that this is just a summary of how many changes each person made
 which doesn't necessarily reflect how significant each change was.
 For details on what led up into a branch, either grab the git repo and
-look at the output of `git log 1.4.5..1.4.6-rc1` or use a web view.
+look at the output of `git log 1.4.5..1.4.6` or use a web view.
 
   * Repo list:  http://code.google.com/p/memcached/wiki/DevelopmentRepos
-  * Web View: http://github.com/memcached/memcached/commits/1.4.6-rc1
+  * Web View: http://github.com/memcached/memcached/commits/1.4.6
 
 {{{
-    11  Trond Norbye
+    13  Trond Norbye
      6  dormando
      5  Dan McGee
+     2  Paul Lindner
      1  Jon Jensen
-     1  Paul Lindner
+     1  nirvanazc
 }}}
 
 
