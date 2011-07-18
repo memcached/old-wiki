@@ -76,6 +76,16 @@ No. Sometime in the future it might, but as of now it does not. This is often a 
 
 Nope. The less chatter, the more scalable.
 
+= Monitoring =
+
+== Why Isn't curr_items Decreasing When Items Expire?
+
+Expiration in memcached is lazy.  In general, an item cannot be known to be expired until something looks at it.
+
+Think of it this way:  You can add billions of items to memcached that all expire at the exact same second, but no additional work is performed during that second by memcached itself.  Only as you attempt to retrieve (or update) those items will memcached ever notice that they shouldn't be there.  At this point, curr_items will be decremented by each item it has seen expired.
+
+We may also notice expired items while searching for memory for new items, though this isn't likely to create an observable difference in curr_items because we'll be replacing it with a new item anyway.
+
 = Use Cases =
 
 == When would you not want to use memcached? ==
