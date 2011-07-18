@@ -78,7 +78,7 @@ Nope. The less chatter, the more scalable.
 
 = Monitoring =
 
-== Why Isn't curr_items Decreasing When Items Expire?
+== Why Isn't curr_items Decreasing When Items Expire? ==
 
 Expiration in memcached is lazy.  In general, an item cannot be known to be expired until something looks at it.
 
