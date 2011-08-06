@@ -359,32 +359,18 @@ other than any message requesting an ACK needs a response.
 
 === Java ===
 
-[spymemcached] supports a pretty rich API in tap in recent versions
-
-
-[spymemcached]: http://code.google.com/p/spymemcached/
-
+[http://code.google.com/p/spymemcached/ spymemcached] supports a pretty rich API in tap in recent versions
 
 === Python ===
 
-[ep-engine] has a python implementation that's used in a lot of
+[https://github.com/membase/ep-engine ep-engine] has a python implementation that's used in a lot of
 utilities
-
-
-[ep-engine]: https://github.com/membase/ep-engine
-
 
 === go ===
 
-[gotap] is a working go implementation of tap, though has no real-world
+[https://github.com/dustin/gotap gotap] is a working go implementation of tap, though has no real-world
 deployments.
-
-
-[gotap]: https://github.com/dustin/gotap
-
 
 === C ===
 
-[Trond's libcouchbase] has support for tap.
-
-[Trond's libcouchbase]: https://github.com/trondn/libcouchbase
+[https://github.com/trondn/libcouchbase Trond's libcouchbase] has support for tap.
