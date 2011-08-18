@@ -39,9 +39,9 @@ PHP libmemcached
 = Java =
 
 spymemcached 
- * http://code.google.com/p/spymemcached 
-  * An improved Java API maintained by Dustin Sallings. 
-  * Aggressively optimised, ability to run async, supports binary protocol, etc. See site for details. 
+ * http://www.couchbase.org/code/couchbase/java
+  * An improved Java API maintained by Matt Ingenthron and others at Couchbase. 
+  * Aggressively optimised, ability to run async, supports binary protocol, support Membase and Couchbase features, etc. See site for details. 
 
 Java memcached client 
  * http://www.whalin.com/memcached 
