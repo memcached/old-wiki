@@ -1,7 +1,8 @@
 #summary Quick links to release notes of various versions.
 
 = Recent Releases =
- * [ReleaseNotes145] 1.4.6 (July 15th, 2011)
+ * [ReleaseNotes147] 1.4.7 (August 16th, 2011)
+ * [ReleaseNotes146] 1.4.6 (July 15th, 2011)
  * [ReleaseNotes145] 1.4.5 (April 3rd, 2010)
  * [ReleaseNotes144] 1.4.4 (November 26th 2009)
  * [ReleaseNotes143] 1.4.3 (November 7th, 2009)
