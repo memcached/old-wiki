@@ -78,7 +78,7 @@ More than two is probably unnecessary.
 
 == Bonus #2 ==
 
-First bonus would be even more cores. 24 or 32.
+Even more cores! 24 or 32.
 I can easily get memcached to scale to about 12 cores today, so
 anything less than 16 won't get us very far into the future.
 
