@@ -14,6 +14,8 @@ internet. I've spent a lot of spare time and honestly a lot of my own money on
 the project. I want to see if one (or more) people would like to stand
 up and give back.
 
+If you want to contribute, skip to the bottom.
+
 ----
 = Why do you need hardware? =
 
@@ -134,9 +136,15 @@ I could also use the hardware to test those projects and give them many more
 improvements.
 
 ----
-= So, what now? =
+= How to Contribute? =
 
-I have no idea. Send me an e-mail (dormando in rydia dawt net) with what
+Back of the napkin cost looks to be between $9,000 and $14,000 USD. More money
+means more of the bonuses get filled. This is a rough estimate as people may
+get steep discounts with their hardware vendor, or one may be feeling
+charitable and help with the cost more. If you can get a four socket modern
+intel box for cheaper than that, I'd love to know!
+
+Otherwise, I have no idea. Send me an e-mail (dormando in rydia dawt net) with what
 you're willing to do. Even if you couldn't afford the whole thing yourself, if
 your company could pledge some amount, or convince me to toss up a
 kickstarter/something page, that'd help.
