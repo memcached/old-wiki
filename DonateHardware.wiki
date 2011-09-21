@@ -11,19 +11,18 @@ somewhere) to run tests on anytime.
 
 There are lots of alternatives these days, but memcached sorta runs half the
 internet. I've spent a lot of spare time and honestly a lot of my own money on
-the project. I want to see if some one (or multiple) folks would like to stand
+the project. I want to see if one (or more) people would like to stand
 up and give back.
 
 ----
 = Why do you need hardware? =
 
-Having good hardware to test high performance software on is sort of a no
-brainer. I can get pretty far with my desktop, but if we want to find the same
+I can get pretty far with my desktop, but if we want to find the same
 bottlenecks you'll see in production, we need to push to the breaking point.
 
 == Version over Version verification ==
 
-I would absolutely love to develop a better performance regression suite, and
+I would love to develop a better performance regression suite, and
 be able to run this across versions to ensure performance gets better and not
 worse. Having ready access to hardware means I can kick off regression tests
 against patches without having to schedule or scruitinize them with great
@@ -49,7 +48,7 @@ falters, then work on both scaling the total throughput (for batch
 processing), and the most amount of work doable without impacting latency.
 
 As is things are pretty good so long as you're not swapping. We want to
-improve this.
+improve this (but you still can't swap).
 
 ----
 = What type of hardware are we looking at? =
@@ -57,8 +56,8 @@ improve this.
 == Minimum ==
 
 At minimum, a fast 16 core machine with 8g of RAM, and two 1gbit NIC's.
-Doesn't have to be the fastest cores on the market, but very slow cores don't
-help us much.
+Don't have to be the fastest cores on the market, but very slow cores don't
+help much.
 
 High speed NIC's (10gbps) are desireable but not entirely necessary. It's
 possible to test with smaller packet sizes to get most of what we need.
@@ -79,8 +78,8 @@ More than two is probably unnecessary.
 
 == Bonus #2 ==
 
-First bonus would be even more cores. 24 or 32. More than that is probably
-excessive. I can easily get memcached to scale to about 12 cores today, so
+First bonus would be even more cores. 24 or 32.
+I can easily get memcached to scale to about 12 cores today, so
 anything less than 16 won't get us very far into the future.
 
 == Bonus #3 ==
@@ -124,6 +123,9 @@ discover while bench testing the software.
 I will develop a performance regression suite that anyone can use, and if
 possible allow people to run their own tests on the hardware.
 
+I give *no guarantees*. I may take this hardware and slack off for months at a
+time. Odds are pretty good I'll make use of it most every day though.
+
 == What else? ==
 
 I also maintain or work on many other projects that are widely used for
@@ -144,3 +146,4 @@ until enough pledges come in that I could have everyone send money to a
 hardware vendor to have the machines built. It would be much less shady if I
 have people pay a vendor or 3rd party, I think.
 
+Thanks!
