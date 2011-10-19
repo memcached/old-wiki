@@ -47,31 +47,46 @@ should be used as a reference for any information omitted from this document.
         /              |               |               |               |
        |0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|
        +---------------+---------------+---------------+---------------+
-      0| Magic flags   | Opcode        | Key length                    |
+    0-3| Magic byte    | Flag byte     | Opcode        |
        +---------------+---------------+---------------+---------------+
-      4| Total body length                                             |
+    4-5| Key length                    |
        +---------------+---------------+---------------+---------------+
-      8| vbucket id                    | Opaque...                     |
+    6-9| Total body length                                             |
        +---------------+---------------+---------------+---------------+
-     12| ...                           | CAS...                        |
+  10-11| Vbucket id                    |
        +---------------+---------------+---------------+---------------+
-     16| ...                                                           |
-       |                               |                               |
+  12-15| Opaque                                                        |
        +---------------+---------------+---------------+---------------+
-       Total 22 bytes
+  ...etc.
+  Final byte order TBD
 </pre>
 
-=== Magic flags ===
+Required bytes:
 
-If the high bit is set, protocol is defined as "binprot v3" and the first 7
-bits in the magic byte are options flags.
+ * Magic byte
+ * Flag byte
+ * Opcode byte
+ * Two byte key length
 
- * extra: contains an extras length field
- * vbucket: contains a 2 byte vbucket field
- * body: contains a 4 byte body length
- * opaque: contains a 4 byte opaque
- * CAS: contains an 8 byte CAS.
- * response: (MAYBE) packet is a response packet
+All other headers are conditional on flags. Shortest possible "get" command
+would be six bytes.
+
+=== Magic byte ===
+
+Magic byte operates the same as binary protocol. New numbers are assigned for
+"V3", request, response.
+
+Also, *maybe* a third magic byte value meaning "unsolicited response"
+
+=== Flag byte ===
+
+ * 0 extra: contains an extras field
+ * 1 vbucket: contains a 2 byte vbucket field
+ * 2 body: contains a 4 byte body length
+ * 3 opaque: contains a 4 byte opaque
+ * 4 CAS: contains an 8 byte CAS.
+ * 5 quiet: suppress unimportant responses
+ * 6 status: contains a status code
 
 If any of these flags are unset, the associated data will not appear in the
 header.
@@ -79,7 +94,8 @@ header.
 Final flags are reserved, but will stay *undefined* until a legitimate
 usage is proposed.
 
-Return headers are identical, except vbucket is flipped to mean "status"
+Return headers are identical, except the "status" flag is set. *maybe*, not
+sure if this is necessary.
 
 === Opaque or Keys in return packets ===
 
@@ -88,8 +104,8 @@ binary K command (ie GETK) and the key is returned.
 
 === Opcode byte ===
 
-If the high bit is set, command is parsed as being _quiet_ (ie GETQ, SETQ).
-The other 7 bits define the numeric opcode.
+Opcode byte is identical to previous binprot, except "getq" variants are no
+longer required.
 
 === Extra Length ===
 
