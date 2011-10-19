@@ -71,11 +71,12 @@ bits in the magic byte are options flags.
  * body: contains a 4 byte body length
  * opaque: contains a 4 byte opaque
  * CAS: contains an 8 byte CAS.
+ * response: (MAYBE) packet is a response packet
 
 If any of these flags are unset, the associated data will not appear in the
 header.
 
-Final two flags are reserved, but will stay *undefined* until a legitimate
+Final flags are reserved, but will stay *undefined* until a legitimate
 usage is proposed.
 
 Return headers are identical, except vbucket is flipped to mean "status"
@@ -184,3 +185,10 @@ Adoption of binprot is difficult. For some users, it could inflate bandwidth
 usage. For others, it may just be simpler to implement in a more _ascii_ way.
 
 It's time to solve this damn thing.
+
+== What about the old protocols? ==
+
+The previous protocols can continue to exist for as long as is reasonable. New
+features will be added only to the new protocol, but there shouldn't be any
+great reason to hasten removal of the older protocols.
+
