@@ -118,9 +118,9 @@ byte under asciiprot.
 
 == Request ==
 
-zCOMMAND vBUCKET bLENGTH kLENGTH oOPAQUE cCAS q [EXTRAS]
-[key in raw bytes]
-[rest of body in raw bytes]
+zCOMMAND vBUCKET bLENGTH kLENGTH oOPAQUE cCAS q (EXTRAS)
+(key in raw bytes)
+(rest of body in raw bytes)
 
 === Extras for Ascii ===
 
