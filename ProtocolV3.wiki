@@ -28,7 +28,7 @@ should be used as a reference for any information omitted from this document.
        /                                                               /
        +---------------+---------------+---------------+---------------+
      H / COMMAND-SPECIFIC EXTRAS (as needed)                           /
-      +/  (note length in the extras length header field)              /
+      +/                                                               /
        +---------------+---------------+---------------+---------------+
       m/ Key (as needed)                                               /
       +/  (note length in key length header field)                     /
@@ -86,6 +86,12 @@ binary *K command (ie GETK) and the key is returned.
 
 If the high bit is set, command is parsed as being _quiet_ (ie GETQ, SETQ).
 The other 7 bits define the numeric opcode.
+
+=== Extra Length ===
+
+I'm tentatively omitted the "extras length" byte, as all (known to me) cases
+of extras have a fixed size per-command. If they exist at all, they are of
+such and so size. If this is wrong, please correct me :)
 
 ----
 
