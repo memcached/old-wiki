@@ -117,11 +117,11 @@ ideal but I don't see what downside there is beyond ugliness and a wasted
 byte under asciiprot.
 
 == Request ==
-
-zCOMMAND vBUCKET bLENGTH kLENGTH oOPAQUE cCAS q (EXTRAS)
+{{{
+zCOMMAND vBUCKET bLENGTH kLENGTH oOPAQUE cCAS q (EXTRAS)\r\n
 (key in raw bytes)
 (rest of body in raw bytes)
-
+}}}
 === Extras for Ascii ===
 
 on commands which require extras, the one-char identifier is
