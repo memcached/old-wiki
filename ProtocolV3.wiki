@@ -1,0 +1,150 @@
+<wiki:toc max_depth="3" />
+
+= Introduction =
+
+Memcached is a high performance key-value cache. This document describes a
+proposal for a third generation protocol. This proposal is to alleviate issues
+of wasted space (binprot) and ease of use (asciiprot). It is *not* to be taken
+as an authoritative document on how to currently access memcached.
+
+== How to Read This Proposal ==
+
+This proposal stands as an addendum to the binary protocol described in
+[BinaryProtocolRevamped]. Many parts of the protocol, such as byte sizes,
+signed/unsignedness, may be omitted from this document. The binary protocol
+should be used as a reference for any information omitted from this document.
+
+= Binary-V3 =
+
+== Packet Structure ==
+<pre>
+     Byte/     0       |       1       |       2       |       3       |
+        /              |               |               |               |
+       |0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|
+       +---------------+---------------+---------------+---------------+
+      0/ HEADER                                                        /
+       /                                                               /
+       /                                                               /
+       /                                                               /
+       +---------------+---------------+---------------+---------------+
+     H / COMMAND-SPECIFIC EXTRAS (as needed)                           /
+      +/  (note length in the extras length header field)              /
+       +---------------+---------------+---------------+---------------+
+      m/ Key (as needed)                                               /
+      +/  (note length in key length header field)                     /
+       +---------------+---------------+---------------+---------------+
+      n/ Value (as needed)                                             /
+      +/  (note length is total body length header field, minus        /
+      +/   sum of the extras and key length body fields)               /
+       +---------------+---------------+---------------+---------------+
+       Total H + m + n bytes
+
+</pre>
+
+== Request header ==
+<pre>
+     Byte/     0       |       1       |       2       |       3       |
+        /              |               |               |               |
+       |0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|0 1 2 3 4 5 6 7|
+       +---------------+---------------+---------------+---------------+
+      0| Magic flags   | Opcode        | Key length                    |
+       +---------------+---------------+---------------+---------------+
+      4| vbucket id                    | Total body length...          |
+       +---------------+---------------+---------------+---------------+
+      8| ....                          | Opaque...                     |
+       +---------------+---------------+---------------+---------------+
+     12| ...                           | CAS...                        |
+       +---------------+---------------+---------------+---------------+
+     16| ...                                                           |
+       |                               |                               |
+       +---------------+---------------+---------------+---------------+
+       Total 22 bytes
+</pre>
+
+=== Magic flags ===
+
+If the high bit is set, protocol is defined as "binprot v3" and the first 7
+bits in the magic byte are options flags.
+
+ * extra: contains an extras length field
+ * vbucket: contains a 2 byte vbucket field
+ * body: contains a 4 byte body length
+ * opaque: contains a 4 byte opaque
+ * CAS: contains an 8 byte CAS.
+
+If any of these flags are unset, the associated data will not appear in the
+header.
+
+Return headers are identical, except vbucket is flipped to mean "status"
+
+=== Opaque or Keys in return packets ===
+
+If an opaque header is *not* set, commands are processed with their equivalent
+binary *K command (ie GETK) and the key is returned.
+
+=== Opcode byte ===
+
+If the high bit is set, command is parsed as being _quiet_ (ie GETQ, SETQ).
+The other 7 bits define the numeric opcode.
+
+----
+
+= Ascii-V3 =
+
+new ASCII protocol must have feature parity with binprot. This allows two
+parsers, but identical implementation. Server can continue to use the same
+binary structs it's always used, but filled from ascii content.
+
+I won't hear no bitching on this: It is not hard to support and makes it
+leagues easier for simple clients to exist. With feature parity, clients can
+choose one over the other (ie libmemcached only has to support binprot).
+
+Only thing I'm not thrilled about is how "bodylen" is treated, as it's
+potentially confusing. This is meant to act in a similar way to how binprot
+counts bytes.
+
+Also the "z" at the start is to instruct which parser is used. This isn't
+ideal but I don't see what downside there is beyond ugliness and a wasted
+byte under asciiprot.
+
+== Request ==
+
+zCOMMAND vBUCKET bLENGTH kLENGTH oOPAQUE cCAS q [EXTRAS]
+[key in raw bytes]
+[rest of body in raw bytes]
+
+=== Extras for Ascii ===
+
+on commands which require extras, the one-char identifier is
+context-dependent.
+It *may* be reused as a different token type for another command, though that
+is discouraged.
+
+{{{
+eEXPIRATION
+fFLAGS
+aAMOUNT (incr/decr)
+iINITIALVAL (incr/decr)
+lVERBOSITY (level)
+}}}
+
+=== QUIET (noreply) ===
+
+The singular 'q' flag sets command to quiet mode
+
+=== NOOP ===
+
+In order to match feature parity with binprot, ASCII gains a NOOP command.
+
+== Response ==
+
+zCOMMAND sSTATUS oOPAQUE kLENGTH bLENGTH [EXTRAS]
+
+== Example ==
+
+{{{
+zSET b6 k3 q\r\n
+foobar
+}}}
+The above sets key "foo" to value "bar" (body is keylen + value len)
+
