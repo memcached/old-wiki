@@ -83,7 +83,7 @@ Return headers are identical, except vbucket is flipped to mean "status"
 === Opaque or Keys in return packets ===
 
 If an opaque header is *not* set, commands are processed with their equivalent
-binary *K command (ie GETK) and the key is returned.
+binary K command (ie GETK) and the key is returned.
 
 === Opcode byte ===
 
