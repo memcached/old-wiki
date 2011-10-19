@@ -75,6 +75,9 @@ bits in the magic byte are options flags.
 If any of these flags are unset, the associated data will not appear in the
 header.
 
+Final two flags are reserved, but will stay *undefined* until a legitimate
+usage is proposed.
+
 Return headers are identical, except vbucket is flipped to mean "status"
 
 === Opaque or Keys in return packets ===
