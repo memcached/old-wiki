@@ -147,7 +147,7 @@ In order to match feature parity with binprot, ASCII gains a NOOP command.
 
 == Response ==
 
-zCOMMAND sSTATUS oOPAQUE kLENGTH bLENGTH [EXTRAS]
+zCOMMAND sSTATUS oOPAQUE kLENGTH bLENGTH (EXTRAS)
 
 == Example ==
 
