@@ -157,3 +157,30 @@ foobar
 }}}
 The above sets key "foo" to value "bar" (body is keylen + value len)
 
+= Notes =
+
+== Why not Avro/Buffers/JSON/etc ==
+
+Apache Avro (or JSON or protocol buffers or whatever) look like wonderful ways
+to serialize an application's data structures. To me, Avro has a ton of
+potential in this area.
+
+However, memcached has a very specific set of operations (key/value), with a
+very common subset of headers (key, flags, expiration, etc). It is much
+simpler for someone to write a client in any language with a succinct, focused
+protocol description, than to dig up and work a second level of dependency
+just to parse the protocol itself.
+
+In this case, only JSON is pervasive enough to be considered an option for
+being easily accessable by many languages. We're not writing a high speed
+protocol on top of JSON, sorry.
+
+This doesn't rule out that we could; the protocol could easily be described
+with a JSON packet. It's still best to have options.
+
+== Whyyyyyy another one ==
+
+Adoption of binprot is difficult. For some users, it could inflate bandwidth
+usage. For others, it may just be simpler to implement in a more _ascii_ way.
+
+It's time to solve this damn thing.
