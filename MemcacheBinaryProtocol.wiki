@@ -325,6 +325,8 @@ Internet-Draft          Memcache Binary Protocol             August 2008
 
 3.4.  Data Types
 
+   This field is currently not used by the memcached server, and is constant.
+
    Possible values of the one-byte field:
 
 
