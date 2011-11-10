@@ -13,19 +13,19 @@ http://memcached.googlecode.com/files/memcached-1.4.10.tar.gz
 
 == Overview ==
 
-This release is focused around thread scalability and performance
+This release is focused on thread scalability and performance
 improvements. This release should be able to feed data back faster than any
 network card can support as of this writing.
 
 == Fixes ==
 
-  * disable issue 140's test.
-  * push cache_lock deeper into item_alloc
-  * use item partitioned lock for as much as possible
+  * Disable issue 140's test.
+  * Push cache_lock deeper into item_alloc
+  * Use item partitioned lock for as much as possible
   * Remove the depth search from item_alloc
-  * move hash calls outside of cache_lock
+  * Move hash calls outside of cache_lock
   * Use spinlocks for main cache lock
-  * remove uncommon branch from asciiprot hot path
+  * Remove uncommon branch from asciiprot hot path
   * Allow all tests to run as root
 
 
@@ -37,6 +37,22 @@ For more details, read the commit messages from git. Each change was carefully
 researched to not increase memory requirements and to be safe from deadlocks.
 Each change was individually tested via mc-crusher
 (http://github.com/dormando/mc-crusher) to ensure benefits.
+
+Tested improvements in speed between 3 and 6 worker threads (-t 3
+to -t 6). More than -t 6 reduced speed.
+
+In my tests, set was raised from 300k/s to
+around 930k/s. Key fetches/sec (multigets) from 1.6 million/s to around
+3.7 million/s for a quadcore box. A machine with more cores was able to
+pull 6 million keys per second. Incr/Decr performance increased similar
+to set performance. Non-bulk tests were limited by the packet rate of
+localhost or the network card.
+
+Multiple NUMA nodes reduces performance (but not enough to really
+matter). If you want the absolute highest speed, as of this release you can
+run one instance per numa node (where n is your core count):
+
+{{{numactl --cpunodebind=0 ./memcached -m 4000 -t n }}}
 
 Older versions of memcached are plenty fast for just about all users. This
 changeset is to allow more flexibility in future feature additions, as well as
