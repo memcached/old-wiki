@@ -1,0 +1,69 @@
+#summary Release notes for Release 1.4.10
+
+= Memcached 1.4.10 Release Notes =
+
+Date: 2011-11-9
+
+== Download ==
+
+Download Link:
+
+http://memcached.googlecode.com/files/memcached-1.4.10.tar.gz
+
+
+== Overview ==
+
+This release is focused around thread scalability and performance
+improvements. This release should be able to feed data back faster than any
+network card can support as of this writing.
+
+== Fixes ==
+
+  * disable issue 140's test.
+  * push cache_lock deeper into item_alloc
+  * use item partitioned lock for as much as possible
+  * Remove the depth search from item_alloc
+  * move hash calls outside of cache_lock
+  * Use spinlocks for main cache lock
+  * remove uncommon branch from asciiprot hot path
+  * Allow all tests to run as root
+
+
+== New Features ==
+
+=== Performance ===
+
+For more details, read the commit messages from git. Each change was carefully
+researched to not increase memory requirements and to be safe from deadlocks.
+Each change was individually tested via mc-crusher
+(http://github.com/dormando/mc-crusher) to ensure benefits.
+
+Older versions of memcached are plenty fast for just about all users. This
+changeset is to allow more flexibility in future feature additions, as well as
+improve memcached's overall latency on busy systems.
+
+Keep an eye on your hitrate and performance numbers. Please let us know
+immediately if you experience any regression from these changes. We have tried
+to be as thorough as possible in testing, but you never know.
+
+== Contributors ==
+
+The following people contributed to this release since 1.4.9.
+
+Note that this is based on who contributed changes, not how they were
+done.  In many cases, a code snippet on the mailing list or a bug
+report ended up as a commit with your name on it.
+
+Note that this is just a summary of how many changes each person made
+which doesn't necessarily reflect how significant each change was.
+For details on what led up into a branch, either grab the git repo and
+look at the output of `git log 1.4.9..1.4.10` or use a web view.
+
+  * Repo list:  http://code.google.com/p/memcached/wiki/DevelopmentRepos
+  * Web View: http://github.com/memcached/memcached/commits/1.4.10
+
+{{{
+    10	dormando
+}}}
+
+== Control ==
