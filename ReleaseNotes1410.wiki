@@ -52,7 +52,7 @@ Multiple NUMA nodes reduces performance (but not enough to really
 matter). If you want the absolute highest speed, as of this release you can
 run one instance per numa node (where n is your core count):
 
-{{{numactl --cpunodebind=0 ./memcached -m 4000 -t n }}}
+{{{numactl --cpunodebind=0 memcached -m 4000 -t n }}}
 
 Older versions of memcached are plenty fast for just about all users. This
 changeset is to allow more flexibility in future feature additions, as well as
