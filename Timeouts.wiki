@@ -127,6 +127,34 @@ network is likely dropping SYN packets.
 
 Fixing that, however, is beyond the scope of this document.
 
+== TIME_WAIT buckets or local port exhaustion ==
+
+If mc_conn_tester.pl is seeing connection timeouts (conn: is 0), you may be
+running out of local ports, firewall states, or TIME_WAIT buckets. This can
+happen if you are opening and closing connections quicker than the sockets can
+die off.
+
+Use netstat to see how many you have open, and if the number is high enough
+that it may be problematic. `netstat -n | grep -c TIME_WAIT`.
+
+Details of how to tune these variables are outside the scope of this document,
+but google for "Linux TCP network tuning TIME_WAIT" (or whatever OS you have) will
+usually give you good results. Look for the variables below and understand
+their meaning before tuning.
+
+{{{
+!THESE ARE EXAMPLES, NOT RECOMMENDED VALUES!
+net.ipv4.ip_local_port_range = 16384 65534
+net.ipv4.tcp_max_tw_buckets = 262144
+net.ipv4.tcp_fin_timeout = 30
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+}}}
+
+Also read up on iptables and look up information on managing conntrack states
+or conntrack buckets. If you find some links you love e-mail us and we'll link
+them here.
+
 == But your utility never fails! ==
 
 Odds are good your client has a bug :( Try reaching out to the client author
