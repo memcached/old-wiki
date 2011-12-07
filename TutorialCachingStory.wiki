@@ -81,4 +81,4 @@ So, the Programmer and Sysadmin continue to build websites. They continue to cac
 
 Author: Dormando via IRC. Edited by Brian Moon for fun. Further fun editing by Emufarmers.
 
-This story has been illustrated by the online comic [http://toblender.com/comic/tag/memcached/ TOBlender.com].
+This story has been illustrated by the online comic [http://toblender.com/tag/memcached/ TOBlender.com].
