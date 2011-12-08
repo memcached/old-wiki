@@ -49,11 +49,11 @@ clients, working just fine.
 
 There are a few hard limits:
 
-* Each connected client uses some TCP memory. You can only connect as many clients as you have spare RAM
+  * Each connected client uses some TCP memory. You can only connect as many clients as you have spare RAM
 
-* There is only one thread to accept new client connections. If you are cycling connections very quickly, you can overwhelm the thread. Use persistent connections or UDP in this case.
+   * There is only one thread to accept new client connections. If you are cycling connections very quickly, you can overwhelm the thread. Use persistent connections or UDP in this case.
 
-* High connection churn requires OS tuning. You will run out of local ports, TIME_WAIT buckets, and similar. Do research on how to properly tune the TCP stack for your OS.
+  * High connection churn requires OS tuning. You will run out of local ports, TIME_WAIT buckets, and similar. Do research on how to properly tune the TCP stack for your OS.
 
 == Maximum number of nodes in a cluster ==
 
@@ -67,9 +67,9 @@ reuse it between requests.
 Looking up a server to issue a request is simply a hash lookup, so it is not a
 performance issue.
 
-* Establishing too many TCP sockets from the client wastes RAM
+  * Establishing too many TCP sockets from the client wastes RAM
 
-* Disabling persistent connections means the client will likely connect to all servers on every request. The 3 way handshake will add latency and packets to each request.
+  * Disabling persistent connections means the client will likely connect to all servers on every request. The 3 way handshake will add latency and packets to each request.
 
 === The Multiget Hole ===
 
