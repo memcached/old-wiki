@@ -3,9 +3,8 @@
 
 We expect memcached to be fast. Occasionally folks test memcached and see something they don't expect. This is a short list of how we (the developers and users) expect memcached to perform. If you're seeing different, it's likely a configuration problem at some layer. You should troubleshoot or request help in getting a properly oiled setup.
 
-----
-
 = General Performance =
+----
 
 == Handles Extremely High Load ==
 
@@ -39,9 +38,8 @@ There are conditions which memcached will "fail" a set. If it cannot find free m
 
 Memcached assumes that if you are issuing a set, even if the item is invalid, that means your intent was to update the cache, and whatever it contains is now stale. It error's on the side of caution and throws the old item out for you.
 
-----
-
 = Theoretical Limits =
+----
 
 == Max Clients ==
 
