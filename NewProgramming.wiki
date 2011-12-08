@@ -225,7 +225,7 @@ On the other hand, it should be easy to figure out exactly where in your code a 
 
 == Avoid User Input ==
 
-It's very easy to compromise memcached if you use arbitrary user input for keys. The ASCII protocol uses spaces and newlines. Ensure that neither show up your keys, live long and propser. Binary protocol does not have this issue.
+It's very easy to compromise memcached if you use arbitrary user input for keys. The ASCII protocol uses spaces and newlines. Ensure that neither show up your keys, live long and prosper. Binary protocol does not have this issue.
 
 == Short Keys ==
 
