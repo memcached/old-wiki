@@ -108,8 +108,10 @@ memcached without the -o slab_reassign option.
 
 === New Stats ===
 
-{{{STAT slab_reassign_running 0
-STAT slabs_moved 0}}}
+{{{
+STAT slab_reassign_running 0
+STAT slabs_moved 0
+}}}
 
 slab_reassign_running indicates if the slab thread is attempting to move a
 page. It may need to wait for some memory to free up, so it could take several
