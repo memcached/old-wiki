@@ -1,9 +1,6 @@
 #summary Quick links to release notes of various versions.
 
 = Recent Releases =
- * [ReleaseNotes1411-rc1] 1.4.11-rc1 (2012-1-11)
- * [ReleaseNotes1411-beta1] 1.4.11-beta1 (2012-1-8)
- * [ReleaseNotes1411beta1] 1.4.11beta1 (2012-1-8)
  * [ReleaseNotes1410] 1.4.10 (2011-11-9)
  * [ReleaseNotes149] 1.4.9 (2011-10-18)
  * [ReleaseNotes148] 1.4.8 (October 4th, 2011)
