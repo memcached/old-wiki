@@ -8,8 +8,6 @@ If you wish to partake in the fun, please remember to be courteous and professio
  * [http://lists.danga.com/mailman/listinfo/memcached Old Mailing List Archive]
  * IRC - irc.freenode.net #memcached
  * [Advocacy]
- * [Hackathons]
- * [Aug2009DrizzleNotes Notes from Drizzle Developer Days]
 
 = Wiki Contributions =
 

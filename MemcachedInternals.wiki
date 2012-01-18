@@ -1,8 +1,0 @@
-Want to hack on memcached, or just learn how memcached works 
-underneath the hood from curiosity?  Here are some notes 
-from code spelunking.  
-
-From bottom's up...
-
- * [MemcachedSlabAllocator Slab Allocator]
- * [MemcachedItemModule Item Module]

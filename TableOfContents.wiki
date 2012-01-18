@@ -1,8 +1,0 @@
-#summary TOC
-
- * [Start Main Page]
- * [FAQ]
- * [HowTo How To's]
- * [Tutorials]
- * [Resources External Resources]
- * [HowToLearnMoreScalability More About Scalability]
