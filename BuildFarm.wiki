@@ -2,7 +2,7 @@
 
 = The Build Farm =
 
-Link to the [http://builds.northscale.com:8010/waterfall?category=memcached memcached build farm] waterfall status page.
+Link to the [http://builds.memcached.org/waterfall?category=memcached memcached build farm] waterfall status page.
 
 Memcached builds are tests against a variety of hosts and configurations via [http://buildbot.net/ buildbot] software before and after every bit of code is accepted.
 
