@@ -6,34 +6,9 @@ Link to the [http://builds.northscale.com:8010/waterfall?category=memcached memc
 
 Memcached builds are tests against a variety of hosts and configurations via [http://buildbot.net/ buildbot] software before and after every bit of code is accepted.
 
-== Current Builders ==
-
-The following builders make up this testing pool:
-
-  * Debian Squeeze
-  * FreeBSD 7.2 AMD 64
-  * FreeBSD 7.2 i386
-  * OpenBSD 4.5 AMD 64
-  * !OpenSolaris x86 (one with and one without dtrace) (sun studio and gcc)
-  * OS X 10.6 Intel
-  * OS X 10.5 PPC
-  * Solaris 10 Sparc (one with and one without dtrace) (sun studio and gcc)
-  * Ubuntu 8.04 i386
-  * Ubuntu 8.10 x86_64 (gcc and icc) (includes a variant with SASL enabled)
-  * Ubuntu 9.04 x86_64 (gcc 4.3 and icc)
-  * Ubuntu 9.10 x86_64 (gcc 4.4)
-  * !RedHat Enterprise Linux 5.4 x86
-  * !RedHat Enterprise Linux 5.4 x86_64
-  * Gentoo ARMv5el
-
-== Needed Builders ==
-
-  * NetBSD
-  * Something important to you that's not already covered.
-
 = Contributing =
 
-If you'd like to contribute to this list, please install the latest version of the following tools available for your system:
+If you'd like to contribute, please install the latest version of the following tools available for your system:
 
 == Software Requirements ==
 
