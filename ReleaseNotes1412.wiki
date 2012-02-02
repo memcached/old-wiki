@@ -19,7 +19,7 @@ For the real meat, see [ReleaseNotes1411 1.4.11 Release Notes]
 
 == Fixes ==
 
-  * fix glitch with flush_all <future>
+  * fix glitch with flush_all (exptime)
   * Skip SASL tests unless RUN_SASL_TESTS is defined.
   * Look around for saslpasswd2 (typically not in the user's path).
   * build fix:  Define sasl_callback_ft on older versions of sasl.
