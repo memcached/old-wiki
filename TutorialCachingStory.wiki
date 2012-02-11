@@ -36,19 +36,19 @@ If not, run the query, take the results, and PUT it in memcache!
 Like so:
 
 {{{
-$huge_data_for_frong_page = $memcache->get("huge_data_for_frong_page");
-if($huge_data_for_frong_page === false){
-    $huge_data_for_frong_page = array();
+$huge_data_for_front_page = $memcache->get("huge_data_for_front_page");
+if($huge_data_for_front_page === false){
+    $huge_data_for_front_page = array();
     $sql = "SELECT * FROM hugetable WHERE timestamp > lastweek ORDER BY timestamp ASC LIMIT 50000";
     $res = mysql_query($sql, $mysql_connection);
     while($rec = mysql_fetch_assoc($res)){
         $huge_data_for_frong_page[] = $rec;
     }
     // cache for 10 minutes
-    $memcache->set("huge_data_for_frong_page", $huge_data_for_frong_page, 600);
+    $memcache->set("huge_data_for_front_page", $huge_data_for_front_page, 0, 600);
 }
 
-// use $huge_data_for_frong_page how you please
+// use $huge_data_for_front_page how you please
 }}}
 
 Programmer pushes code. Sysadmin sweats. BAM! DB load is down to 10! The website is pretty fast now. So now, the Sysadmin puzzles, "What the HELL just happened!?" "I put graphs on my memcacheds! I used cacti, and this is what I see! I see traffic to one memcached, but I made three :(." So, the Sysadmin quickly learns the ascii protocol and telnets to port 11211 on each memcached and asks it:
