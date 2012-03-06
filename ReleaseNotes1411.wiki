@@ -54,7 +54,7 @@ and the commands may change for the next few releases, so *please* keep this
 in mind. When the commands are finalized they will be noted in the release
 notes.
 
-Enable slab reassign on startup:
+Slab reassignment can only be enabled at start time:
 
 {{{$ memcached -o slab_reassign}}}
 
@@ -74,8 +74,10 @@ automatic memory reassignment algorithm.
 
 {{{$ memcached -o slab_reassign,slab_automove}}}
 
-The above enables it on startup, and it may also be enabled or disabled at
-runtime:
+The above enables it on startup. slab_automove requires slab_reassign first be
+enabled.
+
+automove itself may also be enabled or disabled at runtime:
 
 {{{$ echo "slabs automove 0" | nc localhost 11211}}}
 
