@@ -427,7 +427,7 @@ The response packet for a getk and getkq request differs from get(q) in that the
 Request:
   * MUST have extras.
   * MUST have key.
-  * MUST have value.
+  * MAY have value.
 
    Extra data for set/add/replace:
 <pre>
