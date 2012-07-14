@@ -66,7 +66,7 @@ Removes an item from the cache, if it exists.
 
 == incr/decr ==
 
-Increment and Decrement. If an item stored is the string representation of a 64bit integer, you may run incr or decr commands to modify that number. You can incr by positive or negative values, so decr is included for completeness.
+Increment and Decrement. If an item stored is the string representation of a 64bit integer, you may run incr or decr commands to modify that number. You may only incr by positive values, or decr by positive values. They does not accept negative values.
 
 If a value does not already exist, incr/decr will fail.
 
