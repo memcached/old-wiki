@@ -70,6 +70,9 @@ pooling wrapper class
 Python libmemcached
  * http://code.google.com/p/python-libmemcached (libmemcached wrapper)
 
+Python-Binary-Memcached - binprot pure-python client
+ * https://github.com/jaysonsantos/python-binary-memcached
+
 cmemcache (Note: this library is deprecated, old, buggy, you should *not* use it).
  * http://gijsbert.org/cmemcache/index.html
 
