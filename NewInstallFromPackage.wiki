@@ -6,7 +6,7 @@ The version of memcached you install matters a lot for what support will be avai
 
 = Dependencies =
 
-Memcached is a C program, depending on a recent version of GCC and a rececnt version of [http://www.monkey.org/~provos/libevent/ libevent]. The recommended method of installation is to first try your distribution's package manager. If the version it contains is too old, you may have to try installing from a backport, or by source.
+Memcached is a C program, depending on a recent version of GCC and a recent version of [http://www.monkey.org/~provos/libevent/ libevent]. The recommended method of installation is to first try your distribution's package manager. If the version it contains is too old, you may have to try installing from a backport, or by source.
 
 = Installing From Your Distribution =
 

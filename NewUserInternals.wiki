@@ -29,7 +29,7 @@ slab class  10: chunk size       696 perslab    1506
 [...etc...]
 }}}
 
-In slab class 1, each chukn is 80 bytes, and each page can then contain 13,107 chunks (or items). This continues all the way up to 1 megabyte.
+In slab class 1, each chunk is 80 bytes, and each page can then contain 13,107 chunks (or items). This continues all the way up to 1 megabyte.
 
 When storing items, they are pushed into the slab class of the nearest fit. If your key + misc data + value is 50 bytes total, it will go into class 1, with an overhead loss of 30 bytes. If your data is 90 bytes total, it will go into class2, with an overhead of 14 bytes.
 

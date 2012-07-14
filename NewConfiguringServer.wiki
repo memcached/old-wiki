@@ -50,7 +50,7 @@ By default the max number of concurrent connections is set to 1024. Configuring 
 
 Memcached can scale with a large number of connections very simply. The amount of memory overhead per connection is low (even lower if the connection is idle), so don't sweat setting it very high.
 
-Lets say you have 5 webservers, each running apache. Each apache process has a MaxClients setting of 12. This means that the maxiumum number of concurrent connections you may receive is 5 * 12. Always leave a few extra slots open if you can, for administrative tasks, adding more webservers, crons/scripts/etc.
+Lets say you have 5 webservers, each running apache. Each apache process has a MaxClients setting of 12. This means that the maximum number of concurrent connections you may receive is 5 x 12 (60). Always leave a few extra slots open if you can, for administrative tasks, adding more webservers, crons/scripts/etc.
 
 = Threading =
 
