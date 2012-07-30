@@ -41,16 +41,20 @@ been removed, and you can move pages as fast as the system can ... move them.
 
 A few new features as well:
 
-* `slabs reassign -1 15` will pick a page from any slab class and move it to
-  class 15.
+=== slabs reassign ===
 
-* `slabs automove 2` now enables an ultra aggressive page reassignment
-  algorithm. On every eviction, it will try to move a slab page into that
-  class. You should *never* run this in production unless you have a very, very
-  good idea of what's going to happen. For most people who have spurious
-  evictions everywhere, you'll end up mass evicting random data and hurting your
-  hit rate. It can be useful to momentarily enable for emergency situations, or
-  if you have a data access pattern where evictions should never happen.
+`slabs reassign -1 15` will pick a page from any slab class and move it to
+class 15.
+
+=== slabs automove ===
+
+`slabs automove 2` now enables an ultra aggressive page reassignment
+algorithm. On every eviction, it will try to move a slab page into that
+class. You should *never* run this in production unless you have a very, very
+good idea of what's going to happen. For most people who have spurious
+evictions everywhere, you'll end up mass evicting random data and hurting your
+hit rate. It can be useful to momentarily enable for emergency situations, or
+if you have a data access pattern where evictions should never happen.
 
 This was work we were planning on doing already, but twitter's rewrite has
 people presently interested in trying it out. You've been warned.
