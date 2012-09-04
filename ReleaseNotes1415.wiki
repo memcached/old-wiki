@@ -24,7 +24,7 @@ caution and do slow rollouts or testing. Thanks!
   * Add some mild thread documentation
   * README.md was missing from dist tarball
   * Issue 286: --disable-coverage drops "-pthread" option
-
+  * Reduce odds of getting OOM errors in some odd cases
 
 == New Features ==
 
