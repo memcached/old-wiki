@@ -25,7 +25,7 @@ This page is the place to go for all things related memcached tools.  Not much h
       * http://mempowered.codeplex.com/
    * brutis: A tool designed to exercise memcache instances.
       * http://code.google.com/p/brutis
-   * statsproxy: A tool that allows you to use your web browser to get real-time stats for your memcached servers instead of or in addition to the standard memcached telnet interface.
+   * statsproxy: Allows you to view real-time status via your web browser 
       * http://code.google.com/p/statsproxy
-   * AdvancedReporter: a stats tool for memcached which provides information about the most active clients and object keys for your memcached servers.
+   * AdvancedReporter: Provides information about the most active clients and object keys for your memcached servers.
       * http://code.google.com/p/advancedreporter
