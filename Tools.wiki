@@ -13,6 +13,8 @@ This page is the place to go for all things related memcached tools.  Not much h
       * http://github.com/dormando/damemtop
    * mem-top: A command-line tool that grabs real-time stats from memcache.
       * http://code.google.com/p/memcache-top
+   * Munin plugin: Graphs of traffic/items/memory/etc via Munin 
+      * https://github.com/mhwest13/Memcached-Munin-Plugin" :D
    * Wireshark now understands memcached binary protocol.
       * [http://www.wireshark.org/download/automated]
    * A plugin for wireshark that understands the textual protocol.
