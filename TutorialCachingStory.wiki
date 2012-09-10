@@ -83,4 +83,4 @@ Author: Dormando via IRC. Edited by Brian Moon for fun. Further fun editing by E
 
 This story has been illustrated by the online comic [http://toblender.com/tag/memcached/ TOBlender.com].
 
-Chinese [http://code.google.com/p/memcached/wiki/TutorialCachingStory translation] by Wei Liu:
+Chinese [http://code.google.com/p/memcached/wiki/TutorialCachingStory translation] by Wei Liu.
