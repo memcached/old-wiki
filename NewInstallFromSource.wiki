@@ -4,12 +4,28 @@
 
 = Why Build From Source =
 
-Before you build from source, consider why? If you have a perfectly good package of a recent version, you're better off using that. That said:
+Before you build from source, consider why? If you have a perfectly good package of a recent version, you're better off using that.
+
+= Building From Source =
+== Prereqs ==
+You'll likely need to install libevent-devel
+ * *Ubuntu:* {{{apt-get install libevent-devel}}}
+ * *Redhat/Fedora:* {{{yum install libevent-devel}}}
+== Get ==
 {{{
 wget http://memcached.org/latest
 tar -zxvf memcached-1.x.x.tar.gz
 cd memcached-1.x.x
-./configure
+}}}
+
+== Config ==
+=== Optional install destination ===
+If your compiling from source you likely want to specify a destination directory as well, replace {{{/usr/local/memcached}}} with whatever you fancy.
+{{{
+./configure --prefix=/usr/local/memcached
+}}}
+== Make and install ==
+{{{
 make && make test
 sudo make install
 }}}
