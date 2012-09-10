@@ -10,25 +10,29 @@ Memcached is a C program, depending on a recent version of GCC and a recent vers
 
 = Installing From Your Distribution =
 
-== Debian ==
-
-`apt-get install memcached`
+== Ubuntu & Debian ==
+{{{
+apt-get install memcached
+}}}
 
 You will also need libevent installed, and apt should fetch that for you.
 
 Be warned that most versions of ubuntu and debian have very old versions of memcached packaged. We're working on improving this situation. If you are a Debian user, [http://backports.org Debian Backports] may have a more recent version available.
 
-== Ubuntu ==
-
-`apt-get install memcached` - Same as with debian.
-
-Same caveat as debian for issues with old versions being available.
-
 == Redhat/Fedora ==
-
-`yum install memcached`
+{{{
+yum install memcached
+}}}
 
 Pretty easy eh? Sadly you're likely to pull an old version still.
+
+== FreeBSD ==
+
+{{{
+portmaster databases/memcached
+}}}
+
+(or substitute whatever ports management tool you use)
 
 = Commercial Distributions = 
 
