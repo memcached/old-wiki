@@ -23,6 +23,7 @@ segfault/crash/hang, *please* contact us. Please do the following:
 - Build memcached 1.4.16 from the tarball.
 - Run the "memcached-debug" binary that is generated at make time under a gdb
   instance
+- Don't forget to ignore SIGPIPE in gdb: "handle SIGPIPE nostop"
 - Grab a backtrace "thread apply all bt" if it crashes and post it to the
   mailing list or otherwise hunt me down.
 - Grab "stats", "stats settings", "stats slabs", "stats items" from an
