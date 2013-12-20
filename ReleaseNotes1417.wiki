@@ -21,7 +21,7 @@ still see crashes.
 The other notable bug is a SASL authentication bypass glitch. If a client
 makes an invalid request with SASL credentials, it will initially fail.
 However if you issue a second request with bad SASL credentials, it will
-authenticate. This has now been fixed .
+authenticate. This has now been fixed.
 
 If you see crashes please try the following:
 
