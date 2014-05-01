@@ -34,10 +34,6 @@ portmaster databases/memcached
 
 (or substitute whatever ports management tool you use)
 
-= Commercial Distributions = 
-
-Membase, Inc. offers [http://www.membase.com/products-and-services/memcached memcached capabilities] in the (freely available) Membase server.  It has a UI based management layer that gives visibility into memcached statistics and builds in proxying.  It uses the Open Source [http://github.com/membase/bucket_engine bucket engine] to build in multi-tenancy for memcached.
-
 = Installing Clients =
 
 Some of the popular clients will likely be available in your distribution. Search with `apt` or `yum` and see what you can find!
