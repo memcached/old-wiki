@@ -19,6 +19,9 @@ max CPU.
 1.4.18 and 1.4.19 were affected. 1.4.17 and earlier were not affected. If you
 are on .18 or .19 an upgrade to 1.4.20 is strongly advised.
 
+Thanks to commando.io for reporting the bug initially and putting up with me
+being blind for a few weeks.
+
 == Fixes ==
 
   * Fix a race condition causing new connections to appear closed, causing an inifinte loop.
