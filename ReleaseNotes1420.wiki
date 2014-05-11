@@ -21,8 +21,7 @@ are on .18 or .19 an upgrade to 1.4.20 is strongly advised.
 
 == Fixes ==
 
-  * Fix a race condition causing new connections to appear closed, causing an
-    inifinte loop.
+  * Fix a race condition causing new connections to appear closed, causing an inifinte loop.
 
 
 == New Features ==
