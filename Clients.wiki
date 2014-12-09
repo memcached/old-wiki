@@ -123,6 +123,9 @@ Cache::Memcached-compatible perl libmemcached wrapper wrapper (heh)
 
 = Windows / .NET =
 
+NMemcached.Client
+ * http://nmemcached.codeplex.com/
+
 .Net memcached client 
  * https://sourceforge.net/projects/memcacheddotnet
 
