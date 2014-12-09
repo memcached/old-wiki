@@ -84,6 +84,9 @@ Twisted python client
 
 = Ruby =
 
+dalli
+ * https://github.com/mperham/dalli (pure Ruby) 
+
 cache_fu Rails plugin works with memcached
  * http://github.com/defunkt/cache_fu/tree/master
  * http://errtheblog.com/posts/57-kickin-ass-w-cachefu
@@ -96,9 +99,6 @@ memcache-client
 
 Ruby-MemCache 
  * http://www.deveiate.org/projects/RMemCache (pure Ruby)
-
-fauna 
- * http://blog.evanweaver.com/files/doc/fauna/memcached (compiled, wraps libmemcached)
 
 caffeine 
  * http://rubyforge.org/projects/adocca-plugins (compiled, wraps libmemcached, no license)
