@@ -41,10 +41,16 @@ Fetch this:
 http://www.memcached.org/files/mc_conn_tester.pl
 
 {{{
-$ ./mc_conn_tester.pl memcached-host:11211 1000 1
+$ ./mc_conn_tester.pl -s memcached-host -p 11211 -c 1000 --timeout 1
 Averages: (conn: 0.00081381) (set: 0.00001603) (get: 0.00040122)
-$ ./mc_conn_tester.pl -h
-Usage: mc_conn_tester.pl [HOST:PORT] [iterations] [timeout]
+$ ./mc_conn_tester.pl --help
+Usage:
+    mc_conn_tester.pl [options]
+
+Options:
+    -s --server hostname
+            Connect to an alternate hostname.
+[...etc...]
 }}}
 
 This is a minimal utility for testing a quick routine with a memcached
@@ -111,9 +117,9 @@ On most systems SYN retries are 3 seconds, which is awfully long. Losing a
 single SYN packet will certainly mean a timeout. This is easily proven:
 
 {{{
-$ ./mc_conn_tester.pl memcached-host:11211 5000 1 > log_one_second
-&& ./mc_conn_tester.pl memcached-host:11211 5000 4 > log_three_seconds
-&& ./mc_conn_tester.pl memcached-host:11211 5000 8 > log_eight_seconds
+$ ./mc_conn_tester.pl -s memcached-host -c 5000 --timeout 1 > log_one_second
+&& ./mc_conn_tester.pl -s memcached-host -c 5000 --timeout 4 > log_three_seconds
+&& ./mc_conn_tester.pl -s memcached-host -c 5000 --timeout 8 > log_eight_seconds
 }}}
 
 ... Run 5000 tests each round (you can adjust this if you wish). The first one
