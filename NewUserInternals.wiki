@@ -43,9 +43,9 @@ Memcached uses chunks of memory for other functions as well. There is overhead i
 
 Memory for an item is not actively reclaimed. If you store an item and it expires, it sits in the LRU cache at its position until it falls to the end and is reused.
 
-However, if you fetch an expired item, memcached will find hte item, notice that it's expired, and free its memory. This gives you the common case of normal cache churn reusing its own memory.
+However, if you fetch an expired item, memcached will find the item, notice that it's expired, and free its memory. This gives you the common case of normal cache churn reusing its own memory.
 
-Items can also be evicted to make way for new items that need to be stored, or expired items are discvered and their memory reused.
+Items can also be evicted to make way for new items that need to be stored, or expired items are discovered and their memory reused.
 
 == How Much Memory Will an Item Use ==
 
