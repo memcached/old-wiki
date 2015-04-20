@@ -1,6 +1,7 @@
 #summary Quick links to release notes of various versions.
 
 = Recent Releases =
+ * [ReleaseNotes1423] 1.4.23 (2015-4-19)
  * [ReleaseNotes1422] 1.4.22 (2014-12-31)
  * [ReleaseNotes1421] 1.4.21 (2014-10-12)
  * [ReleaseNotes1420] 1.4.20 (2014-5-11)
