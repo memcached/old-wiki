@@ -711,7 +711,7 @@ The following figure shows an incr-command for key = "counter", delta = 0x01, in
    Extras              :
      delta      (24-31): 0x0000000000000001
      initial    (32-39): 0x0000000000000000
-     exipration (40-43): 0x00000e10
+     expiration (40-43): 0x00000e10
    Key                 : Textual string "counter"
    Value               : None
 
