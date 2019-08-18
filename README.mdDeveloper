@@ -1,0 +1,37 @@
+ съществуващ частен ключ:
+certs:update server.crt server.key
+Updated certificate details:
+Common Name(s):www.example.com
+Expires At:     2027-03-21 21:35 UTC
+Issuer:         /C=US/ST=California/L=San 
+Francisco/O=/HYPER LINK/OU=Engineering/CN=www.example.com
+Starts At:      2016-03-21 21:35 UTC 
+Subject:        /C=US/ST=California/L=San 
+Francisco/O=HI/OU=Engineering вашия защитен домейн.
+
+curl -vI https://www.example.com
+* About to connect() to www.example.com port 443 (#0)
+*   Trying 50.16.234.21... connected
+* Connected to www.example.com (50.16.234.21) port 443 (#0)
+* SSLv3, TLS handshake, Client hello (1):
+* SSLv3, TLS handshake, Server hello (2):
+* SSLv3, TLS handshake, CERT (11):
+* SSLv3, TLS handshake, Server finished (14):
+* SSLv3, TLS handshake, Client key exchange (16):
+* SSLv3, TLS change cipher, Client hello (1):
+* SSLv3, TLS handshake, Finished (20):
+* SSLv3, TLS change cipher, Client hello (1):
+* SSLv3, TLS handshake, Finished (20):
+* SSL connection using AES256-SHA
+* Server certificate:
+*    subject: C=US; ST=CA; L=SF; O=SFDC; OU=Heroku ; CN=www.example.com
+*    start date: 2011-11-01 17:18:11 GMT
+*    expire date: 2012-10-31 17:18:11 GMT
+*    common name: www.example.com (matched)
+*    issuer: C=US; ST=CA; L=SF; O=SFDC; OU=Heroku; CN=www.heroku.com
+*    SSL certificate verify ok.
+GET / HTTP/1.1
+User-Agent: curl/7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8r zlib/1.2.3
+Host: www.example.com
+Accept: */*
+...
